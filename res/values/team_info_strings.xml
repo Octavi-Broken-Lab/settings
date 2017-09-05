@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2019 Potato Open Sauce Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+
+    <!-- Dev Info -->
+    <string name="octavi_about_info">About OctaviOS</string>
+    <string name="octavi_about_info_summary_title">Get to know more about us here!</string>
+    <string name="octavi_about_info_summary">OctaviOS is an AOSP based third party custom rom, which focuses on Unique and Smooth UI with handful features. We are trying to give every elemnt of AOSP source a new look / life</string>
+    <string name="devs_header">Developers</string>
+    <string name="maintainers_header">Maintainers</string>
+    <string name="dev_1">Sagar Rokade</string>
+    <string name="dev1_description">Lead Developer </string>
+    <string name="dev_2">Rahul Mishra</string>
+    <string name="dev2_description">Lead Developer, UI/UX Developer</string>
+    <string name="dev_3">Satyam Sharma</string>
+    <string name="dev3_description">Lead Developer, UI/UX Developer</string>
+    <string name="dev_4">Sukeerat</string>
+    <string name="dev4_description">Core Developer, Infrastructure Manager</string>
+    <string name="dev_5">Overclockboi</string>
+    <string name="dev5_description">Graphic Designer, Website Developer</string>
+    <string name="dev_6">Biilou &amp; Audrey</string>
+    <string name="dev6_description">Project Moderator</string>
+
+    <string name="dev_7">Rahul Mishra</string>
+    <string name="dev7_description">Redmi Note 5 Pro/nWhyred</string>
+</resources>
