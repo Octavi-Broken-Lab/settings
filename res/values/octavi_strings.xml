@@ -90,6 +90,8 @@
     <string name="custom_light_on_time_title">Light ON time during led pulse (ms)</string>
     <string name="custom_light_off_time_title">Light OFF time during led pulse (ms)"</string>
     <string name="value_equals_default">def</string>
+    <string name="dont_touch_me">Don\'t\nyou\ndare touch\nmy phone!</string>
+    <string name="trademark">&#8482;</string>
 
     <!-- Scramble pin -->
     <string name="unlock_scramble_pin_layout_title">Scramble layout</string>
