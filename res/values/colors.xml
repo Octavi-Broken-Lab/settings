@@ -179,6 +179,7 @@
     <color name="black">#171717</color>
     <color name="off_black">#90171717</color>
     <color name="white">#fff</color>
+    <color name="pureBlack">#000</color>
 
     <color name="settings_new_about">#8950cc</color>
     <color name="settings_new_access">#2cbf85</color>

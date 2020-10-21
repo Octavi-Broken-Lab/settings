@@ -46,7 +46,8 @@
     <color name="card_view_bg">#1B1B1B</color>
 
     <color name="white">#000</color>
-
+    <color name="pureBlack">#fff</color>
+       
     <color name="settings_new_about">#AC64FF</color>
     <color name="settings_new_access">#37EFA7</color>
     <color name="settings_new_accounts">#EE47FF</color>
