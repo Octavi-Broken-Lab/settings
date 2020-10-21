@@ -26,12 +26,18 @@ import android.widget.FrameLayout;
 import android.provider.Settings;
 import android.widget.ImageView;
 import android.widget.Toolbar;
+import android.widget.TextView;
+
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.LinearInterpolator;
 
 import androidx.annotation.VisibleForTesting;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import com.google.android.material.appbar.AppBarLayout;
 
 import com.android.settings.R;
 import com.android.settings.accounts.AvatarViewMixin;
@@ -49,15 +55,42 @@ public class SettingsHomepageActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.settings_homepage_container);
+	Animation fadeIn = new AlphaAnimation(0, 1);
+        fadeIn.setInterpolator(new LinearInterpolator());
+        fadeIn.setDuration(500);
+
+        Animation fadeOut = new AlphaAnimation(1, 0);
+        fadeOut.setInterpolator(new LinearInterpolator());
+        fadeOut.setDuration(500);
         final View root = findViewById(R.id.settings_homepage_container);
         root.setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+               View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
 
         setHomepageContainerPaddingTop();
 
-        final Toolbar toolbar = findViewById(R.id.search_action_bar);
-        FeatureFactory.getFactory(this).getSearchFeatureProvider()
+        //final Toolbar toolbar = findViewById(R.id.search_action_bar);
+        //FeatureFactory.getFactory(this).getSearchFeatureProvider()
+//                .initSearchToolbar(this /* activity */, toolbar, SettingsEnums.SETTINGS_HOMEPAGE);
+
+	final Toolbar toolbar = findViewById(R.id.action_bar);
+
+        TextView textView = findViewById(R.id.textViewHeader);
+
+        setActionBar(toolbar);
+	getActionBar().setElevation(0);
+	FeatureFactory.getFactory(this).getSearchFeatureProvider()
                 .initSearchToolbar(this /* activity */, toolbar, SettingsEnums.SETTINGS_HOMEPAGE);
+
+        AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.app_bar);
+        appBarLayout.addOnOffsetChangedListener((appBarLayout1, i) -> {
+            if (Math.abs(i) == appBarLayout1.getTotalScrollRange()) {
+                textView.setVisibility(View.VISIBLE);
+                textView.startAnimation(fadeIn);
+            } else if (i==0){
+                textView.startAnimation(fadeOut);
+                textView.setVisibility(View.GONE);
+            }
+        });
 
 //        final ImageView avatarView = findViewById(R.id.account_avatar);
 //        getLifecycle().addObserver(new AvatarViewMixin(this, avatarView));
@@ -74,10 +107,10 @@ public class SettingsHomepageActivity extends FragmentActivity {
         homepageSpacer = findViewById(R.id.settings_homepage_spacer);
         homepageMainLayout = findViewById(R.id.main_content_scrollable_container);
 
-        if (!isHomepageSpacerEnabled() && homepageSpacer != null && homepageMainLayout != null) {
+        /*if (!isHomepageSpacerEnabled() && homepageSpacer != null && homepageMainLayout != null) {
             homepageSpacer.setVisibility(View.GONE);
             setMargins(homepageMainLayout, 0,0,0,0);
-        }
+        }*/
     }
 
     private void showFragment(Fragment fragment, int id) {
@@ -114,8 +147,7 @@ public class SettingsHomepageActivity extends FragmentActivity {
         final int searchBarMargin = getResources().getDimensionPixelSize(R.dimen.search_bar_margin);
 
         // The top padding is the height of action bar(48dp) + top/bottom margins(16dp)
-        final int paddingTop = searchBarHeight + searchBarMargin * 2;
-        view.setPadding(0 /* left */, paddingTop, 0 /* right */, 0 /* bottom */);
+        final int paddingTop = searchBarHeight + searchBarMargin;
 
         // Prevent inner RecyclerView gets focus and invokes scrolling.
         view.setFocusableInTouchMode(true);
