@@ -29,6 +29,7 @@ android_library {
 
     srcs: ["src/**/*.java",
            "OctaviLab/src/**/*.java",
+           "OctaviLab/src/**/*.kt",
     ],
 
     aaptflags: ["--extra-packages com.octavi.lab"],
@@ -50,6 +51,7 @@ android_library {
         "com.google.android.material_material",
         "setupcompat",
         "setupdesign",
+	"airbnb-lottie",
         "androidx-constraintlayout_constraintlayout-solver",
         "androidx.lifecycle_lifecycle-runtime",
         "androidx.lifecycle_lifecycle-extensions",
@@ -64,7 +66,9 @@ android_library {
         "faceunlock_utils",
         "android.hardware.dumpstate-V1.0-java",
         "android.hardware.dumpstate-V1.1-java",
-        "VendorSupport-preference",
+        "kotlinx-coroutines-android",
+        "kotlinx-coroutines-core",
+	"androidx.viewpager2_viewpager2",
     ],
 
     libs: [
@@ -76,6 +80,8 @@ android_library {
     optimize: {
         proguard_flags_files: ["proguard-core.flags"],
     },
+
+    kotlincflags: ["-Xjvm-default=enable"],
 }
 
 platform_compat_config {
@@ -99,6 +105,8 @@ android_app {
     optimize: {
         proguard_flags_files: ["proguard.flags"],
     },
+
+    kotlincflags: ["-Xjvm-default=enable"],
 }
 
 android_library_import {
