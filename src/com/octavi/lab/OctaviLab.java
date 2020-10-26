@@ -17,58 +17,153 @@
 
 package com.octavi.lab;
 
-import com.android.internal.logging.nano.MetricsProto;
+import android.view.LayoutInflater;
+import android.view.ViewGroup;
 
-import android.app.Activity;
-import android.content.pm.ActivityInfo;
-import android.content.res.Configuration;
+import android.app.ActionBar;
+import android.content.Context;
+import android.content.res.Resources;
 import android.os.Bundle;
-import android.view.Surface;
-import android.preference.Preference;
+import android.os.Handler;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.LinearInterpolator;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.android.internal.logging.nano.MetricsProto;
+import com.android.settings.SettingsPreferenceFragment;
+import com.android.settingslib.Utils;
 import com.android.settings.R;
 
-import com.android.settings.SettingsPreferenceFragment;
+import com.airbnb.lottie.LottieAnimationView;
+import nl.joery.animatedbottombar.AnimatedBottomBar;
+
+import com.octavi.lab.fragments.StatusBarSettings;
+import com.octavi.lab.fragments.LockScreenSettings;
+import com.octavi.lab.fragments.ButtonSettings;
+import com.octavi.lab.fragments.SystemSettings;
+import com.octavi.lab.fragments.MiscSettings;
 
 public class OctaviLab extends SettingsPreferenceFragment {
 
     @Override
-    public void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        View view = inflater.inflate(R.layout.octavi_lab, container, false);
 
-        addPreferencesFromResource(R.xml.octavi_lab);
+        Context context = getActivity();
+        Resources res = getResources();
+
+        LottieAnimationView lottieAnimationView = view.findViewById(R.id.lottieWelcome);
+        TextView textView = view.findViewById(R.id.welcomeTextview);
+
+        AnimatedBottomBar animatedBottomBar = view.findViewById(R.id.animatedBottomBar);
+        Animation fadeIn = new AlphaAnimation(0, 1);
+        fadeIn.setInterpolator(new LinearInterpolator());
+        fadeIn.setDuration(500);
+
+        Window win = getActivity().getWindow();
+
+        win.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        win.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+        win.setNavigationBarColor(Utils.getColorAttrDefaultColor(context, android.R.attr.colorAccent));
+
+        ActionBar actionBar = getActivity().getActionBar();
+        if (actionBar != null) {
+            actionBar.setTitle("Octavi Lab");
+        }
+
+        Animation fadeOut = new AlphaAnimation(1, 0);
+        fadeOut.setInterpolator(new LinearInterpolator());
+        fadeOut.setDuration(1000);
+
+        Fragment system = new SystemSettings();
+        Fragment lockscreen = new LockScreenSettings();
+        Fragment buttons = new ButtonSettings();
+        Fragment statusbar = new StatusBarSettings();
+        Fragment misc = new MiscSettings();
+
+        Fragment fragment = (Fragment) getFragmentManager().findFragmentById(R.id.child_view_oct);
+        if (fragment == null) {
+            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+            transaction.replace(R.id.child_view_oct, system);
+            transaction.addToBackStack(null);
+            transaction.commit();
+        }
+
+        doMagic(lottieAnimationView, textView, fadeIn, fadeOut);
+
+        animatedBottomBar.setOnTabSelectListener(new AnimatedBottomBar.OnTabSelectListener() {
+            @Override
+            public void onTabSelected(int i, @Nullable AnimatedBottomBar.Tab tab, int i1, @NonNull AnimatedBottomBar.Tab tab1) {
+                switch (i1) {
+		    default:
+                    case 0:
+                        launchFragment(system);
+                        break;
+                    case 1:
+                        launchFragment(lockscreen);
+                        break;
+                    case 2:
+                        launchFragment(buttons);
+                        break;
+                    case 3:
+                        launchFragment(statusbar);
+                        break;
+                    case 4:
+                        launchFragment(misc);
+                        break;
+                }
+            }
+
+            @Override
+            public void onTabReselected(int i, @NonNull AnimatedBottomBar.Tab tab) {
+
+            }
+        });
+      return view;
     }
+
+    private void doMagic(LottieAnimationView lottieAnimationView, TextView textView, Animation fadeIn, Animation fadeOut) {
+        new Handler().postDelayed(() -> {
+            lottieAnimationView.playAnimation();
+            lottieAnimationView.setVisibility(View.VISIBLE);
+            lottieAnimationView.startAnimation(fadeIn);
+
+            textView.setVisibility(View.VISIBLE);
+            textView.startAnimation(fadeIn);
+        }, 250);
+
+        new Handler().postDelayed(() -> {
+            lottieAnimationView.startAnimation(fadeOut);
+            lottieAnimationView.setVisibility(View.GONE);
+
+            textView.startAnimation(fadeOut);
+            textView.setVisibility(View.GONE);
+            lottieAnimationView.cancelAnimation();
+        }, 2500);
+    }
+
+    private void launchFragment(Fragment fragment) {
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.child_view_oct, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
 
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.OCTAVI;
-    }
-
-    public static void lockCurrentOrientation(Activity activity) {
-        int currentRotation = activity.getWindowManager().getDefaultDisplay().getRotation();
-        int orientation = activity.getResources().getConfiguration().orientation;
-        int frozenRotation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED;
-        switch (currentRotation) {
-            case Surface.ROTATION_0:
-                frozenRotation = orientation == Configuration.ORIENTATION_LANDSCAPE
-                        ? ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
-                        : ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
-                break;
-            case Surface.ROTATION_90:
-                frozenRotation = orientation == Configuration.ORIENTATION_PORTRAIT
-                        ? ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT
-                        : ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
-                break;
-            case Surface.ROTATION_180:
-                frozenRotation = orientation == Configuration.ORIENTATION_LANDSCAPE
-                        ? ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE
-                        : ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT;
-                break;
-            case Surface.ROTATION_270:
-                frozenRotation = orientation == Configuration.ORIENTATION_PORTRAIT
-                        ? ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
-                        : ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE;
-                break;
-        }
-        activity.setRequestedOrientation(frozenRotation);
     }
 }

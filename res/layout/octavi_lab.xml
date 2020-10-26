@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+     Copyright (C) 2018 The Android Open Source Project
+     Copyright (C) 2020 OctaviOS
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/child_view_oct"
+        android:layout_width="match_parent"
+	android:visibility="gone"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="100dp"
+        android:background="@color/grey" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieWelcome"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_above="@id/animatedBottomBar"
+        android:visibility="gone"
+        app:lottie_autoPlay="true"
+        app:lottie_enableMergePathsForKitKatAndAbove="true"
+        app:lottie_fileName="welcome.json" />
+
+    <TextView
+        android:id="@+id/welcomeTextview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/animatedBottomBar"
+        android:fontFamily="@font/google_sans"
+        android:gravity="center"
+        android:text="Welcome!"
+        android:textColor="@color/pureBlack"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/child_view_oct" />
+
+    <nl.joery.animatedbottombar.AnimatedBottomBar
+        android:id="@+id/animatedBottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:abb_animationInterpolator="@android:anim/overshoot_interpolator"
+        app:abb_indicatorAppearance="round"
+        app:abb_indicatorColor="?android:attr/colorAccent"
+        app:abb_indicatorHeight="4dp"
+        app:abb_indicatorMargin="20dp"
+        app:abb_selectedIndex="0"
+        app:abb_selectedTabType="text"
+        app:abb_tabAnimation="fade"
+        app:abb_tabAnimationSelected="fade"
+        app:abb_tabColor="@color/pureBlack"
+        app:abb_tabColorSelected="?android:attr/colorAccent"
+        app:abb_tabs="@menu/bottom_bar" />
+</RelativeLayout>

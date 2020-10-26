@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:icon="@drawable/ic_lab_system"
+        android:title="System" />
+
+    <item
+        android:icon="@drawable/ic_lab_ls"
+        android:title="Lockscreen" />
+
+    <item
+        android:icon="@drawable/ic_lab_buttons"
+        android:title="Buttons" />
+
+    <item
+        android:icon="@drawable/ic_lab_statusbar"
+        android:title="Statusbar" />
+
+    <item
+        android:icon="@drawable/ic_lab_misc"
+        android:title="Misc" />
+</menu>
