@@ -33,6 +33,7 @@ import java.text.NumberFormat;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
+import com.android.settingslib.Utils;
 
 public class TopLevelStoragePreferenceController extends BasePreferenceController {
 
@@ -68,7 +69,7 @@ public class TopLevelStoragePreferenceController extends BasePreferenceControlle
             Spannable spannable = new SpannableStringBuilder(str);
 
 	    if (str.contains("%"))
-	            spannable.setSpan(new ForegroundColorSpan(mContext.getColor(R.color.colorAccentSettings)), 0, str.indexOf("%")+1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+	            spannable.setSpan(new ForegroundColorSpan(Utils.getColorAttrDefaultColor(mContext, android.R.attr.colorAccent)), 0, str.indexOf("%")+1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
             ThreadUtils.postOnMainThread(() -> {
                 preference.setSummary(spannable);
