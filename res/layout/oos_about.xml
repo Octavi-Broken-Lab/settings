@@ -3,21 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="@dimen/card_view_bottom_margin">
+    android:layout_marginBottom="20dp">
 
     <LinearLayout
         android:id="@+id/details"
+        android:layout_marginEnd="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/device_icon"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAllCaps="true"
             android:text="Octavi Stage"
             android:textColor="@color/off_black" />
 
@@ -31,6 +33,7 @@
 
         <TextView
             android:layout_width="wrap_content"
+            android:textAllCaps="true"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/card_view_bottom_margin"
             android:text="Maintainer"
@@ -48,6 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/card_view_bottom_margin"
+            android:textAllCaps="true"
             android:text="Storage"
             android:textColor="@color/off_black" />
 
@@ -64,24 +68,39 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="Processor"
+            android:textAllCaps="true"
             android:textColor="@color/off_black" />
 
-        <TextView
-            android:id="@+id/device_procc_model"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@null"
+                android:src="@drawable/snap_dragon" />
+
+            <TextView
+                android:id="@+id/device_procc_model"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:translationY="-2.5dp" />
+        </LinearLayout>
     </LinearLayout>
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottie"
-        android:layout_width="180dp"
+        android:layout_width="220dp"
         android:layout_height="match_parent"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_fileName="naruto.json"
@@ -91,22 +110,22 @@
         android:id="@+id/textDare"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/icon_end_padding"
+        android:layout_marginStart="@dimen/icon_end_padding"
         android:text="@string/dont_touch_me"
         android:textSize="16sp"
-	android:textColor="?android:attr/colorAccent"
+        android:textColor="?android:attr/colorAccent"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/device_icon"
-        android:layout_width="180dp"
+        android:layout_width="160dp"
         android:layout_height="180dp"
         android:contentDescription="@null"
         android:contextClickable="false"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

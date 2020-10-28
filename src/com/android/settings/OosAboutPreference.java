@@ -102,6 +102,36 @@ public class OosAboutPreference extends Preference {
         return map;
     }
 
+    private String getHwName(String soc) {
+
+        Map<String, String> map = new HashMap<>();
+        map.put("msm8952", "617");
+        map.put("msm8953", "625");
+        map.put("msm8953 pro", "626");
+        map.put("msm8956", "650");
+        map.put("msm8976", "652");
+        map.put("msm8956 pro", "653");
+        map.put("sm6125", "665");
+        map.put("sm6150", "675");
+        map.put("sm6350", "690");
+        map.put("msm8992", "808");
+        map.put("msm8994", "810");
+        map.put("msm8996", "820");
+        map.put("msm8998", "835");
+        map.put("sm8150", "855");
+        map.put("sm8150-AC", "855+");
+        map.put("sm8250", "865");
+        map.put("sm8250-AC", "865+");
+
+        if (map.containsKey(soc)) {
+            for (String key : map.keySet()) {
+                if (key.equals(soc))
+                    return map.get(soc);
+            }
+        } else if (soc.startsWith("sdm"))
+            return soc.substring(3);
+        return "Unknown";
+    }
     private String getCpuName() {
         int cores;
         String string = "";
@@ -125,7 +155,7 @@ public class OosAboutPreference extends Preference {
                         string = string + cores;
                         break;
                 }
-                return getCpuInfoMap().get("Hardware").replace(",", context.getString(R.string.trademark)) + "\nCoupled with " + string + " processor";
+                return String.format(Locale.ENGLISH, "Qualcomm Snapdragon%s %s\n%s processor", context.getString(R.string.trademark), getHwName(getSystemProperty("ro.board.platform").toLowerCase()), string);
             } else
                 return getCpuInfoMap().get("Hardware");
         else {
@@ -185,11 +215,7 @@ public class OosAboutPreference extends Preference {
 
         final boolean selectable = false;
 
-        statFs = new StatFs(Environment.getDataDirectory().getAbsolutePath());
-
-        double a = (statFs.getBlockSizeLong() * statFs.getBlockCountLong() / Math.pow(1024, 3));
-        double b = (statFs.getBlockSizeLong() * statFs.getAvailableBlocksLong()) / Math.pow(1024, 3);
-        double c = (statFs.getBlockSizeLong() * statFs.getFreeBlocksLong()) / Math.pow(1024, 3);
+	statFs = new StatFs(Environment.getDataDirectory().getAbsolutePath());
 
         holder.itemView.setFocusable(selectable);
         holder.itemView.setClickable(selectable);
@@ -207,8 +233,24 @@ public class OosAboutPreference extends Preference {
         setInfo("ro.octavi.status", "ro.octavi.branding.version", octStage);
         setInfo("ro.octavi.maintainer", octMaintainer);
 
+	int total = 0;
+	double totalInt = (statFs.getBlockSizeLong() * statFs.getBlockCountLong() / Math.pow(1024, 3));
         deviceProc.setText(String.format(Locale.ENGLISH, "%s", getCpuName()));
-        deviceStorage.setText(String.format(Locale.ENGLISH, "%dGB RAM + %dGB ROM", Math.round(Float.parseFloat(getMem()) / Math.pow(1024, 2)), Math.round(a + b + c)));
+        if (totalInt > 0 && totalInt < 17)
+            total = 16;
+        else if (totalInt > 16 && totalInt < 33)
+            total = 32;
+        else if (totalInt > 32 && totalInt < 65)
+            total = 64;
+        else if (totalInt > 64 && totalInt < 129)
+            total = 128;
+        else if (totalInt > 128 && totalInt < 257)
+            total = 256;
+        else if (totalInt > 256 && totalInt < 513)
+            total = 512;
+
+        deviceStorage.setText(String.format(Locale.ENGLISH, "%dGB RAM + %dGB ROM", Math.round(Float.parseFloat(getMem()) / Math.pow(1000, 2)), total));
+        deviceProc.setText(String.format(Locale.ENGLISH, "%s", getCpuName()));
 
         doMagic(deviceIcon, lottie, details, textDare);
 
