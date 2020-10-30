@@ -74,6 +74,7 @@ public class SimStatusPreferenceController extends
             final Preference multiSimPreference = createNewPreference(screen.getContext());
             multiSimPreference.setOrder(simStatusOrder + simSlotNumber);
             multiSimPreference.setKey(KEY_SIM_STATUS + simSlotNumber);
+	    multiSimPreference.setIconSpaceReserved(false);
             screen.addPreference(multiSimPreference);
             mPreferenceList.add(multiSimPreference);
         }
