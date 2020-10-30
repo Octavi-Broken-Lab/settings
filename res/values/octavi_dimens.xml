@@ -22,4 +22,6 @@
     <!-- Shortcut picker -->
     <dimen name="shortcut_picker_left_padding">70dip</dimen>
 
+    <dimen name="icon_size">30dp</dimen>
+    <dimen name="icon_end_padding">15dp</dimen>
 </resources>

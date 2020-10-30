@@ -1,5 +1,6 @@
 package com.octavi.lab;
 
+import android.content.ContentResolver;
 import android.content.Context;
 import com.android.internal.logging.nano.MetricsProto;
 import android.util.AttributeSet;
@@ -9,8 +10,8 @@ import android.provider.Settings;
 import androidx.preference.PreferenceViewHolder;
 import com.android.settings.SettingsPreferenceFragment;
 
-import com.jaygoo.widget.OnRangeChangedListener;
-import com.jaygoo.widget.RangeSeekBar;
+import hearsilent.discreteslider.DiscreteSlider;
+import com.android.settings.R;
 
 public class SeekbarPreference extends Preference  {
     Context context;
@@ -36,24 +37,28 @@ public class SeekbarPreference extends Preference  {
         holder.itemView.setClickable(selectable);
 	if (context==null)
 	context = getContext();
+	ContentResolver cr = context.getContentResolver();
+	DiscreteSlider slider = holder.itemView.findViewById(R.id.discreteSlider);
 
-        RangeSeekBar rangeSeekBar = holder.itemView.findViewById(R.id.range);
-        rangeSeekBar.setProgress(Settings.Global.getInt(context.getContentResolver(), "GLOBAL_ACTIONS_MAX_COLUMNS", 0));
+        switch (getKey().toLowerCase()) {
+            case "global_actions_max_columns":
+		slider.setProgressOffset(3);
+	        slider.setCount(8);
+		slider.setProgress(3);
+                break;
+	    case "network_traffic_autohide_threshold":
+	    default:
+                slider.setProgressOffset(0);
+		slider.setCount(10);
+                break;
+        }
 
-        rangeSeekBar.setOnRangeChangedListener(new OnRangeChangedListener() {
+	slider.setProgress(Settings.System.getInt(cr, getKey(), (int) slider.getMinProgress()));
+
+        slider.setOnValueChangedListener(new DiscreteSlider.OnValueChangedListener() {
             @Override
-            public void onRangeChanged(RangeSeekBar view, float leftValue, float rightValue, boolean isFromUser) {
-
-            }
-
-            @Override
-            public void onStartTrackingTouch(RangeSeekBar view, boolean isLeft) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(RangeSeekBar view, boolean isLeft) {
-                Settings.Global.putInt(context.getContentResolver(), "GLOBAL_ACTIONS_MAX_COLUMNS", (int) view.getLeftSeekBar().getProgress());
+            public void onValueChanged(int progress, boolean fromUser) {
+		Settings.System.putInt(cr, getKey(), progress);
             }
         });
     }

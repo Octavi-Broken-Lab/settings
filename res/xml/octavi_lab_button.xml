@@ -19,6 +19,7 @@
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
         <PreferenceCategory
+        android:layout="@layout/about_pref_cat" 
         android:key="hardware_keys"
         android:title="@string/hardware_keys_category" >
 
@@ -62,6 +63,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:layout="@layout/about_pref_cat" 
         android:key="back_key"
         android:title="@string/hardware_keys_back_key_title" >
 
@@ -85,6 +87,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:layout="@layout/about_pref_cat" 
         android:key="home_key"
         android:title="@string/hardware_keys_home_key_title" >
 
@@ -115,6 +118,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:layout="@layout/about_pref_cat" 
         android:key="app_switch_key"
         android:title="@string/hardware_keys_appswitch_key_title" >
 
@@ -140,6 +144,7 @@
 
     <PreferenceCategory
         android:key="menu_key"
+        android:layout="@layout/about_pref_cat" 
         android:title="@string/hardware_keys_menu_key_title" >
 
         <com.octavi.lab.preferences.ActionPreference
@@ -164,6 +169,7 @@
 
     <PreferenceCategory
         android:key="assist_key"
+        android:layout="@layout/about_pref_cat" 
         android:title="@string/hardware_keys_assist_key_title" >
 
         <com.octavi.lab.preferences.ActionPreference
@@ -187,19 +193,24 @@
     </PreferenceCategory>
 
         <com.octavi.lab.preferences.SystemSettingSwitchPreference
+        settings:iconSpaceReserved="false"
         android:key="allow_incall_home"
         android:title="@string/allow_incall_home_title"
         android:summary="@string/allow_incall_home_summary"
         android:defaultValue="true" />
 
         <Preference
+        android:layout="@layout/about_pref" 
         android:key="volume_key"
+	android:summary="Volume button customisation"
         android:fragment="com.octavi.lab.fragments.VolumeRockerSettings"
         android:title="@string/volume_title" />
 
         <Preference
+        android:layout="@layout/about_pref" 
         android:key="gesture_key"
         android:fragment="com.octavi.lab.fragments.GestureSettings"
+        android:summary="Torch &amp; Tap"
         android:title="@string/gesture_title" />
 
 </PreferenceScreen>

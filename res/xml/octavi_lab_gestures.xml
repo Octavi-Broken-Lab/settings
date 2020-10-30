@@ -36,6 +36,7 @@
 
      <PreferenceCategory
         android:key="double_tap_gestures_category"
+        android:layout="@layout/about_pref_cat"  
         android:title="@string/double_tap_gestures_category_title">
 
 	<com.octavi.lab.preferences.SystemSettingSwitchPreference

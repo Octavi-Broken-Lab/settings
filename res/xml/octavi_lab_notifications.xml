@@ -26,6 +26,7 @@
         android:fragment="com.octavi.lab.fragments.HeadsUpSettings" />
 
         <Preference
+        android:layout="@layout/about_pref" 
         android:key="charging_light"
         android:fragment="com.octavi.lab.fragments.BatteryLightSettings"
         android:title="@string/battery_light_settings" />

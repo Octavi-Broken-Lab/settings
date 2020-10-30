@@ -38,6 +38,7 @@
     <com.octavi.lab.preferences.SystemSettingSwitchPreference
         android:key="show_fourg"
         android:title="@string/show_fourg_title"
+        settings:iconSpaceReserved="false"
         android:summary="@string/show_fourg_summary"
         android:defaultValue="false" />
 
@@ -49,11 +50,13 @@
 
     <com.octavi.lab.preferences.SystemSettingSwitchPreference
         android:key="data_disabled_icon"
+        settings:iconSpaceReserved="false"
         android:title="@string/data_disabled_icon_title"
         android:summary="@string/data_disabled_icon_summary"
         android:defaultValue="true"/>
 
     <com.octavi.lab.preferences.SystemSettingSwitchPreference
+        settings:iconSpaceReserved="false"
         android:key="roaming_indicator_icon"
         android:title="@string/roaming_indicator_icon_title"
         android:summary="@string/roaming_indicator_icon_summary"
@@ -61,11 +64,13 @@
 
     <com.octavi.lab.preferences.SystemSettingSwitchPreference
         android:key="show_volte_icon"
+        settings:iconSpaceReserved="false"
         android:title="@string/volte_switch_title"
         android:summary="@string/volte_switch_summary"
         android:defaultValue="true" />
 
     <com.octavi.lab.preferences.SystemSettingListPreference
+         settings:iconSpaceReserved="false"
          android:key="volte_icon_style"
          android:title="@string/volte_icon_style_title"
          android:entries="@array/volte_icon_type_entries"
@@ -77,7 +82,8 @@
     <com.octavi.lab.preferences.SystemSettingListPreference
          android:key="vowifi_icon"
          android:title="@string/vowifi_icon_title"
-         android:entries="@array/vowifi_icon_entries"
+         settings:iconSpaceReserved="false"
+	 android:entries="@array/vowifi_icon_entries"
          android:entryValues="@array/vowifi_icon_values"
          android:summary="%s"
          android:defaultValue="0"/>
@@ -87,7 +93,8 @@
          android:title="@string/vowifi_icon_style_title"
          android:entries="@array/vowifi_icon_style_entries"
          android:entryValues="@array/vowifi_icon_style_values"
-         android:summary="%s"
+         settings:iconSpaceReserved="false"
+	 android:summary="%s"
          android:defaultValue="0"/>
 
 </PreferenceScreen>

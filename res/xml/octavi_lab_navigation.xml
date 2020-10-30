@@ -19,6 +19,8 @@
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
         <Preference
+        android:layout="@layout/about_pref"
+        settings:iconSpaceReserved="false"
         android:key="system_navigation_settings_preferences"
         android:title="@string/navbar_gestures_title"
         android:summary="@string/navbar_gestures_summary"
@@ -26,12 +28,14 @@
         settings:controller="com.android.settings.gestures.SystemNavigationPreferenceController" />
 
         <com.octavi.lab.preferences.SystemSettingSwitchPreference
+        settings:iconSpaceReserved="false"
         android:key="pixel_nav_animation"
         android:title="@string/pixel_navbar_anim_title"
         android:summary="@string/pixel_navbar_anim_summary"
         android:defaultValue="true" />
 
         <com.octavi.lab.preferences.SecureSettingSwitchPreference
+        settings:iconSpaceReserved="false"
         android:key="sysui_nav_bar_inverse"
         android:title="@string/navigation_bar_invert_layout_title"
         android:summary="@string/navigation_bar_invert_layout_summary"

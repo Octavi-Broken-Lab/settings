@@ -30,6 +30,7 @@
         android:defaultValue="false" />
 
     <PreferenceCategory
+        android:layout="@layout/about_pref_cat" 
         android:key="battery_light_cat"
         android:title="@string/battery_light_cat">
         <net.margaritov.preference.colorpicker.ColorPickerPreference

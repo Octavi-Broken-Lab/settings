@@ -20,17 +20,14 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings" >
 
     <Preference
-         android:layout="@layout/about_pref" 
          android:key="themes"
-         android:title="Accent"
-         android:summary="RGB accent picker"
+         android:title="@string/themes_title"
+         android:summary="@string/themes_summary"
          android:fragment="com.octavi.lab.fragments.OctaviThemes" />
 
     <Preference
-         android:layout="@layout/about_pref" 
          android:key="powermenu"
          android:title="@string/powermenu_title"
-  	 android:summary="Customise power menu"
          android:fragment="com.octavi.lab.fragments.PowermenuSettings" />
 
      <Preference

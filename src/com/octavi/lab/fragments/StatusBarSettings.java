@@ -42,14 +42,11 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         super.onCreate(icicle);
 
         addPreferencesFromResource(R.xml.octavi_lab_statusbar);
-
         PreferenceScreen prefSet = getPreferenceScreen();
-
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
-
         return false;
     }
 
