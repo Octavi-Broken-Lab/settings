@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The Android Open Source Project
+ * Copyright (C) 2019 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,21 +16,17 @@
 
 package com.android.settings.deviceinfo.firmwareversion;
 
-import com.android.settingslib.Utils;
 import android.content.Context;
 import android.os.Build;
-import android.text.Spannable;
-import android.text.SpannableStringBuilder;
-import android.text.style.ForegroundColorSpan;
+import android.text.BidiFormatter;
+
 import com.android.settings.core.BasePreferenceController;
 
-public class FirmwareVersionPreferenceController extends BasePreferenceController {
+public class SimpleBuildNumberPreferenceController extends BasePreferenceController {
 
-    Context context;
-
-    public FirmwareVersionPreferenceController(Context context, String key) {
-        super(context, key);
-	this.context=context;
+    public SimpleBuildNumberPreferenceController(Context context,
+            String preferenceKey) {
+        super(context, preferenceKey);
     }
 
     @Override
@@ -40,9 +36,6 @@ public class FirmwareVersionPreferenceController extends BasePreferenceControlle
 
     @Override
     public CharSequence getSummary() {
-	String s = Build.VERSION.RELEASE_OR_CODENAME;
-	Spannable spannable = new SpannableStringBuilder(s);
-        spannable.setSpan(new ForegroundColorSpan(Utils.getColorAttrDefaultColor(context, android.R.attr.colorAccent)), 0, s.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        return spannable;
+        return BidiFormatter.getInstance().unicodeWrap(Build.DISPLAY);
     }
 }
