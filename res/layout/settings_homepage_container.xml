@@ -65,7 +65,7 @@
         android:id="@+id/main_content_scrollable_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-	android:layout_marginBottom="30dp"
+	android:layout_marginBottom="50dp"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <LinearLayout
@@ -88,8 +88,8 @@
                 android:layout_height="48dp">
                 <TextView
                     android:id="@+id/textViewHeader"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
                     android:layout_marginStart="15dp"
                     android:text="Settings"
                     android:textColor="@color/pureBlack"
