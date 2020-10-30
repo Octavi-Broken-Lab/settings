@@ -254,6 +254,8 @@ public class OosAboutPreference extends Preference {
 
         doMagic(deviceIcon, lottie, details, textDare);
 
+	String sq = getSystemProperty("ro.octavi.branding.version");
+	if (sq.equals("OFFICIAL") || sq.equals("Official")){
         switch (getSystemProperty("ro.product.device").toLowerCase()) {
             case "x00td":
                 deviceIcon.setImageResource(R.drawable.ic_device_x00td);
@@ -325,6 +327,7 @@ public class OosAboutPreference extends Preference {
 		deviceIcon.setImageResource(R.drawable.ic_default_device);
                 break;
         }
+	} else deviceIcon.setImageResource(R.drawable.ic_default_device);
 
         holder.setDividerAllowedAbove(false);
         holder.setDividerAllowedBelow(false);
