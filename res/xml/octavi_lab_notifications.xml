@@ -20,18 +20,20 @@
 
         <!-- Heads up -->
         <Preference
+        settings:iconSpaceReserved="false"
         android:key="heads_up_notifications"
         android:title="@string/heads_up_notifications"
         android:summary="@string/heads_up_summary"
         android:fragment="com.octavi.lab.fragments.HeadsUpSettings" />
 
         <Preference
-        android:layout="@layout/about_pref" 
+        settings:iconSpaceReserved="false"
         android:key="charging_light"
         android:fragment="com.octavi.lab.fragments.BatteryLightSettings"
         android:title="@string/battery_light_settings" />
 
         <com.octavi.lab.preferences.SystemSettingSwitchPreference
+        settings:iconSpaceReserved="false"
         android:key="notification_headers"
         android:title="@string/notification_headers_title"
         android:summary="@string/notification_headers_summary"

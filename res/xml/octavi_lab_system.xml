@@ -40,11 +40,13 @@
          android:fragment="com.octavi.lab.fragments.NavbarSettings" />
 
     <Preference
+         settings:iconSpaceReserved="false"
          android:key="quicksettings"
          android:title="@string/quicksettings_title"
          android:fragment="com.octavi.lab.fragments.QuickSettings" />
 
     <PreferenceScreen
+         settings:iconSpaceReserved="false"
          android:key="ambient_display_custom"
          android:persistent="false"
          android:title="@string/ambient_display_custom_title">
@@ -55,6 +57,7 @@
     </PreferenceScreen>
 
     <com.octavi.lab.preferences.SystemSettingListPreference
+         settings:iconSpaceReserved="false"
          android:key="screenshot_type"
          android:entries="@array/screenshot_type_entries"
          android:entryValues="@array/screenshot_type_values"

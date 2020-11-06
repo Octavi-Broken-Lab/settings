@@ -19,12 +19,14 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <com.octavi.lab.preferences.SystemSettingSwitchPreference
+        settings:iconSpaceReserved="false"
         android:key="torch_long_press_power_gesture"
         android:title="@string/torch_long_press_power_gesture_title"
         android:summary="@string/torch_long_press_power_gesture_desc"
         android:defaultValue="false" />
 
     <ListPreference
+        settings:iconSpaceReserved="false"
         android:key="torch_long_press_power_timeout"
         android:dialogTitle="@string/torch_long_press_power_timeout_title"
         android:title="@string/torch_long_press_power_timeout_title"
@@ -40,11 +42,13 @@
         android:title="@string/double_tap_gestures_category_title">
 
 	<com.octavi.lab.preferences.SystemSettingSwitchPreference
+            settings:iconSpaceReserved="false"
 	    android:key="double_tap_sleep_gesture"
             android:title="@string/double_tap_sleep_gesture_title"
             android:defaultValue="false" />
 
         <com.octavi.lab.preferences.SystemSettingSwitchPreference
+            settings:iconSpaceReserved="false"
             android:key="double_tap_sleep_lockscreen"
             android:title="@string/double_tap_sleep_lockscreen_title"
             android:defaultValue="false" />

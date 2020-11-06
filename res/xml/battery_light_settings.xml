@@ -15,21 +15,25 @@
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <com.octavi.lab.preferences.SystemSettingSwitchPreference
+        settings:iconSpaceReserved="false"
         android:key="battery_light_enabled"
         android:title="@string/battery_light_enable"
         android:defaultValue="true" />
 
     <com.octavi.lab.preferences.SystemSettingSwitchPreference
+        settings:iconSpaceReserved="false"
         android:key="battery_light_allow_on_dnd"
         android:title="@string/battery_light_allow_on_dnd_title"
         android:defaultValue="false" />
 
     <com.octavi.lab.preferences.SystemSettingSwitchPreference
+        settings:iconSpaceReserved="false"
         android:key="battery_light_low_blinking"
         android:title="@string/battery_light_low_blinking_title"
         android:defaultValue="false" />
 
     <PreferenceCategory
+        settings:iconSpaceReserved="false"
         android:layout="@layout/about_pref_cat" 
         android:key="battery_light_cat"
         android:title="@string/battery_light_cat">
@@ -40,18 +44,21 @@
             settings:defaultColorValue="0xFFFF0000" />
 
         <net.margaritov.preference.colorpicker.ColorPickerPreference
+            settings:iconSpaceReserved="false"
             android:key="battery_light_medium_color"
             android:title="@string/battery_light_medium_color"
             ledPreview="true"
             settings:defaultColorValue="0xFFFFFF00" />
 
         <net.margaritov.preference.colorpicker.ColorPickerPreference
+            settings:iconSpaceReserved="false"
             android:key="battery_light_full_color"
             android:title="@string/battery_light_full_color"
             ledPreview="true"
             settings:defaultColorValue="0xFFFFFF00" />
 
         <net.margaritov.preference.colorpicker.ColorPickerPreference
+            settings:iconSpaceReserved="false"
             android:key="battery_light_reallyfull_color"
             android:title="@string/battery_light_reallyfull_color"
             ledPreview="true"
