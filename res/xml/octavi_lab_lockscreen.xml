@@ -47,6 +47,7 @@
 
     <PreferenceCategory
         android:layout="@layout/about_pref_cat" 
+        settings:allowDividerAbove="false"
         android:key="lockscreen_media_art_options"
         android:title="@string/lockscreen_media_art_options_title" >
 
@@ -78,7 +79,8 @@
         android:summary="@string/lockscreen_visualizer_enable_summary" />
 
     <PreferenceCategory
-        android:layout="@layout/about_pref_cat" 
+        android:layout="@layout/about_pref_cat"
+        settings:allowDividerAbove="false" 
         android:key="lockscreen_weather"
         android:title="@string/lockscreen_weather_category">
 

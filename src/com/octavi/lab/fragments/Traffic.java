@@ -57,7 +57,6 @@ public class Traffic extends SettingsPreferenceFragment implements OnPreferenceC
     private ListPreference mNetTrafficType;
     private ListPreference mNetTrafficLayout;
     private CustomSeekBarPreference mNetTrafficSize;
-    private CustomSeekBarPreference mThreshold;
     private SystemSettingSwitchPreference mShowArrows;
 
     @Override
@@ -94,11 +93,11 @@ public class Traffic extends SettingsPreferenceFragment implements OnPreferenceC
                 Settings.System.NETWORK_TRAFFIC_VIEW_LOCATION, 0, UserHandle.USER_CURRENT);
         mNetTrafficLocation.setOnPreferenceChangeListener(this);
 
-        int trafvalue = Settings.System.getIntForUser(resolver,
+        /*int trafvalue = Settings.System.getIntForUser(resolver,
                 Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, 1, UserHandle.USER_CURRENT);
         mThreshold = (CustomSeekBarPreference) findPreference("network_traffic_autohide_threshold");
         mThreshold.setValue(trafvalue);
-        mThreshold.setOnPreferenceChangeListener(this);
+        mThreshold.setOnPreferenceChangeListener(this);*/
         mShowArrows = (SystemSettingSwitchPreference) findPreference("network_traffic_arrow");
 
         int netMonitorEnabled = Settings.System.getIntForUser(resolver,
@@ -151,12 +150,6 @@ public class Traffic extends SettingsPreferenceFragment implements OnPreferenceC
             int index = mNetTrafficLayout.findIndexOfValue((String) objValue);
             mNetTrafficLayout.setSummary(mNetTrafficLayout.getEntries()[index]);
             return true;
-        } else if (preference == mThreshold) {
-            int val = (Integer) objValue;
-            Settings.System.putIntForUser(getContentResolver(),
-                    Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, val,
-                    UserHandle.USER_CURRENT);
-            return true;
         } else if (preference == mNetTrafficType) {
             int val = Integer.valueOf((String) objValue);
             Settings.System.putIntForUser(getContentResolver(),
@@ -177,7 +170,6 @@ public class Traffic extends SettingsPreferenceFragment implements OnPreferenceC
     public void updateTrafficLocation(int location) {
         switch(location){
             case 0:
-                mThreshold.setEnabled(false);
                 mShowArrows.setEnabled(false);
                 mNetTrafficType.setEnabled(false);
                 mNetTrafficSize.setEnabled(false);
@@ -185,7 +177,6 @@ public class Traffic extends SettingsPreferenceFragment implements OnPreferenceC
                 break;
             case 1:
             case 2:
-                mThreshold.setEnabled(true);
                 mShowArrows.setEnabled(true);
                 mNetTrafficType.setEnabled(true);
                 mNetTrafficSize.setEnabled(true);

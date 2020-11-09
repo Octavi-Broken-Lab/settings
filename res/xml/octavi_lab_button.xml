@@ -19,6 +19,7 @@
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
         <PreferenceCategory
+        settings:allowDividerAbove="false"
         android:layout="@layout/about_pref_cat" 
         android:key="hardware_keys"
         android:title="@string/hardware_keys_category" >
@@ -69,7 +70,8 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:layout="@layout/about_pref_cat" 
+        settings:allowDividerAbove="false"
+	android:layout="@layout/about_pref_cat"  
         android:key="back_key"
         android:title="@string/hardware_keys_back_key_title" >
 
@@ -97,7 +99,8 @@
 
     <PreferenceCategory
         android:layout="@layout/about_pref_cat" 
-        android:key="home_key"
+        settings:allowDividerAbove="false"
+	android:key="home_key"
         android:title="@string/hardware_keys_home_key_title" >
 
         <com.octavi.lab.preferences.ActionPreference
@@ -132,6 +135,7 @@
 
     <PreferenceCategory
         android:layout="@layout/about_pref_cat" 
+        settings:allowDividerAbove="false"
         android:key="app_switch_key"
         android:title="@string/hardware_keys_appswitch_key_title" >
 
@@ -160,6 +164,7 @@
 
     <PreferenceCategory
         android:key="menu_key"
+        settings:allowDividerAbove="false"
         android:layout="@layout/about_pref_cat" 
         android:title="@string/hardware_keys_menu_key_title" >
 
@@ -188,6 +193,7 @@
 
     <PreferenceCategory
         android:key="assist_key"
+        settings:allowDividerAbove="false"
         android:layout="@layout/about_pref_cat" 
         android:title="@string/hardware_keys_assist_key_title" >
 

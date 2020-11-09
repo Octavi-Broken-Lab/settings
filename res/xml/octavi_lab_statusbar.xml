@@ -53,6 +53,7 @@
         android:defaultValue="false" />
 
     <com.octavi.lab.preferences.SystemSettingSwitchPreference
+        settings:iconSpaceReserved="false"
         android:key="qs_datausage" 
         android:title="@string/qs_datausage_title" 
         android:summary="@string/qs_datausage_subtitle" 

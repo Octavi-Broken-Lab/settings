@@ -34,6 +34,7 @@
          android:fragment="com.octavi.lab.fragments.PowermenuSettings" />
 
      <Preference
+         android:layout="@layout/about_pref"
          android:key="navbar"
          android:title="Navigation Bar"
          android:summary="Navigation Bar Customizations"

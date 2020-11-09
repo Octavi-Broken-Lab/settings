@@ -39,7 +39,7 @@
         android:entryValues="@array/network_traffic_layout_values"
         android:persistent="false" />
 
-    <com.octavi.lab.preferences.CustomSeekBarPreference
+    <com.octavi.lab.SeekbarPreference
         android:key="network_traffic_autohide_threshold"
         android:title="@string/network_traffic_autohide_threshold_title"
         android:max="10"
