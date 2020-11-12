@@ -58,7 +58,7 @@ public class Traffic extends SettingsPreferenceFragment implements OnPreferenceC
     private ListPreference mNetTrafficType;
     private ListPreference mNetTrafficLayout;
     private CustomSeekBarPreference mNetTrafficSize;
-    private SeekbarPreference mThreshold;
+    private CustomSeekBarPreference mThreshold;
     private SystemSettingSwitchPreference mShowArrows;
 
     @Override
@@ -97,7 +97,7 @@ public class Traffic extends SettingsPreferenceFragment implements OnPreferenceC
 
         int trafvalue = Settings.System.getIntForUser(resolver,
                 Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, 1, UserHandle.USER_CURRENT);
-        mThreshold = (SeekbarPreference) findPreference("network_traffic_autohide_threshold");
+        mThreshold = (CustomSeekBarPreference) findPreference("network_traffic_autohide_threshold");
         mThreshold.setValue(trafvalue);
         mThreshold.setOnPreferenceChangeListener(this);
         mShowArrows = (SystemSettingSwitchPreference) findPreference("network_traffic_arrow");
