@@ -37,6 +37,7 @@ import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 
+import com.android.internal.util.hwkeys.ActionUtils;
 import com.octavi.lab.preferences.SystemSettingSwitchPreference;
 import com.octavi.lab.preferences.SecureSettingSwitchPreference;
 
@@ -44,14 +45,29 @@ public class NavbarSettings extends SettingsPreferenceFragment implements OnPref
 
     private static final String PIXEL_ANIMATION_NAVIGATION = "pixel_nav_animation";
     private static final String INVERT_NAVIGATION = "sysui_nav_bar_inverse";
+    private static final String NAVBAR_VISIBILITY = "navbar_visibility";
+
+    private boolean mIsNavSwitchingMode = false;
+    private Handler mHandler;
 
     private SystemSettingSwitchPreference mPixelAnimationNavigation;
     private SecureSettingSwitchPreference mInvertNavigation;
+    private SwitchPreference mNavbarVisibility;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.octavi_lab_navigation);
+
+        mNavbarVisibility = (SwitchPreference) findPreference(NAVBAR_VISIBILITY);
+
+        boolean showing = Settings.System.getInt(getContentResolver(),
+                Settings.System.FORCE_SHOW_NAVBAR,
+                ActionUtils.hasNavbarByDefault(getActivity()) ? 1 : 0) != 0;
+        updateBarVisibleAndUpdatePrefs(showing);
+        mNavbarVisibility.setOnPreferenceChangeListener(this);
+
+        mHandler = new Handler();
 
         mPixelAnimationNavigation = findPreference(PIXEL_ANIMATION_NAVIGATION);
         mInvertNavigation = findPreference(INVERT_NAVIGATION);
@@ -72,9 +88,29 @@ public class NavbarSettings extends SettingsPreferenceFragment implements OnPref
         }
     }
 
+    private void updateBarVisibleAndUpdatePrefs(boolean showing) {
+        mNavbarVisibility.setChecked(showing);
+    }
+
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-
+        if (preference.equals(mNavbarVisibility)) {
+            if (mIsNavSwitchingMode) {
+                return false;
+            }
+            mIsNavSwitchingMode = true;
+            boolean showing = ((Boolean)newValue);
+            Settings.System.putInt(getContentResolver(), Settings.System.FORCE_SHOW_NAVBAR,
+                    showing ? 1 : 0);
+            updateBarVisibleAndUpdatePrefs(showing);
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    mIsNavSwitchingMode = false;
+                }
+            }, 1500);
+            return true;
+        }
         return false;
     }
 
