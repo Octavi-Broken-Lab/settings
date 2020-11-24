@@ -40,13 +40,22 @@ import com.android.settings.R;
 public class SystemSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
     private static final String KEY_AMBIENT_DISPLAY_CUSTOM = "ambient_display_custom";
+    private static final String SCROLLINGCACHE_PREF = "pref_scrollingcache";
+    private static final String SCROLLINGCACHE_PERSIST_PROP = "persist.sys.scrollingcache";
+    private static final String SCROLLINGCACHE_DEFAULT = "2";
 
+    private ListPreference mScrollingCachePref;
     private Preference mCustomDoze;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.octavi_lab_system);
+
+        mScrollingCachePref = (ListPreference) findPreference(SCROLLINGCACHE_PREF);
+        mScrollingCachePref.setValue(SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP,
+                SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP, SCROLLINGCACHE_DEFAULT)));
+        mScrollingCachePref.setOnPreferenceChangeListener(this);
 
         mCustomDoze = (Preference) findPreference(KEY_AMBIENT_DISPLAY_CUSTOM);
         if (!getResources().getBoolean(com.android.internal.R.bool.config_alt_ambient_display)) {
@@ -56,7 +65,13 @@ public class SystemSettings extends SettingsPreferenceFragment implements OnPref
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mScrollingCachePref) {
+            if (newValue != null) {
+                SystemProperties.set(SCROLLINGCACHE_PERSIST_PROP, (String) newValue);
+            }
+            return true;
+        }
         return false;
     }
 
