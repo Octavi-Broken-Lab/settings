@@ -23,6 +23,7 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.UserHandle;
 import androidx.preference.ListPreference;
 import androidx.preference.SwitchPreference;
@@ -45,7 +46,7 @@ public class NavbarSettings extends SettingsPreferenceFragment implements OnPref
 
     private static final String PIXEL_ANIMATION_NAVIGATION = "pixel_nav_animation";
     private static final String INVERT_NAVIGATION = "sysui_nav_bar_inverse";
-    private static final String NAVBAR_VISIBILITY = "navbar_visibility";
+    private static final String NAVBAR_VISIBILITY = "navigation_bar_show_new";
 
     private boolean mIsNavSwitchingMode = false;
     private Handler mHandler;

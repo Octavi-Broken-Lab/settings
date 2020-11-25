@@ -20,13 +20,12 @@ import androidx.preference.Preference.OnPreferenceChangeListener;
 
 import com.android.settings.SettingsPreferenceFragment;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
-import com.msm.xtended.preferences.CustomSeekBarPreference;
-import com.msm.xtended.preferences.SystemSettingSeekBarPreference;
+import com.octavi.lab.preferences.CustomSeekBarPreference;
+import com.octavi.lab.preferences.SystemSettingSeekBarPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
-import com.msm.xtended.preferences.XUtils;
 
-public class AmbientDecorSettings extends SettingsPreferenceFragment
+public class AmbientStuffSettings extends SettingsPreferenceFragment
                          implements OnPreferenceChangeListener {
 
     private ColorPickerPreference mEdgeLightColorPreference;

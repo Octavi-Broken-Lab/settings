@@ -59,8 +59,7 @@
 
     <Preference
          android:key="ambient_stuff"
-         android:title="@string/ambient_stuff_title"
-         android:summary="@string/ambient_stuff_summary"
+         android:title="Ambient Stuffs"
          android:fragment="com.octavi.lab.fragments.AmbientStuffSettings" />
 
     <com.octavi.lab.preferences.SystemSettingListPreference

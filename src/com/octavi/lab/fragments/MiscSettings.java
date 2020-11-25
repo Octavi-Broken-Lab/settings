@@ -21,6 +21,8 @@ import androidx.preference.SwitchPreference;
 import android.provider.Settings;
 import com.android.settings.R;
 
+import com.octavi.lab.preferences.CustomSeekBarPreference;
+
 import java.util.Arrays;
 import java.util.HashSet;
 
@@ -64,7 +66,7 @@ public class MiscSettings extends SettingsPreferenceFragment implements
     }
 
     @Override
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mPulseBrightness) {
             int value = (Integer) newValue;
