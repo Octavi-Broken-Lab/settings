@@ -501,7 +501,7 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
 
             batteryView.setBatteryLevel(mBatteryLevel);
             batteryView.setPowerSave(mPowerManager.isPowerSaveMode());
-            batteryView.setText(formatBatteryPercentageText(mBatteryLevel));
+            timeText.setText(formatBatteryPercentageText(mBatteryLevel));
         }
     }
 
@@ -522,7 +522,7 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
                     final Integer level = (Integer) animation.getAnimatedValue();
                     batteryView.setBatteryLevel(level);
                     batteryView.setPowerSave(mPowerManager.isPowerSaveMode());
-                    batteryView.setText(formatBatteryPercentageText(level));
+                    timeTextView.setText(formatBatteryPercentageText(level));
                 }
             });
             animator.start();
