@@ -49,6 +49,7 @@ import com.android.settingslib.drawer.ProviderTile;
 import com.android.settingslib.drawer.Tile;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.utils.ThreadUtils;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -511,6 +512,11 @@ public abstract class DashboardFragment extends SettingsPreferenceFragment
                         mDashboardFeatureProvider.bindPreferenceToTileAndGetObservers(getActivity(),
                                 forceRoundedIcons, getMetricsCategory(), pref, tile, key,
                                 mPlaceholderPreferenceController.getOrder());
+		String prefStr = pref.toString();
+		if (prefStr.equals("Digital Wellbeing and parental controls Screen time, app timers, bedtime schedules") || prefStr.equals("Digital Wellbeing & parental controls Screen time, app timers, bedtime schedules")){
+		pref.setLayoutResource(R.layout.card_view_pref_top);pref.setIcon(R.drawable.ic_settings_new_wellbeing);
+		} else if (prefStr.equals("Google Services & preferences")){
+		pref.setLayoutResource(R.layout.card_view_pref_bottom);pref.setIcon(R.drawable.ic_settings_new_gms);}
                 screen.addPreference(pref);
                 registerDynamicDataObservers(observers);
                 mDashboardTilePrefKeys.put(key, observers);
