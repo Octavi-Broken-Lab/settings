@@ -35,6 +35,8 @@ import com.android.settings.support.SupportPreferenceController;
 import com.android.settingslib.core.instrumentation.Instrumentable;
 import com.android.settingslib.search.SearchIndexable;
 
+import android.util.Log;
+
 @SearchIndexable(forTarget = MOBILE)
 public class TopLevelSettings extends DashboardFragment implements
         PreferenceFragmentCompat.OnPreferenceStartFragmentCallback {
@@ -82,6 +84,7 @@ public class TopLevelSettings extends DashboardFragment implements
 
     @Override
     public boolean onPreferenceStartFragment(PreferenceFragmentCompat caller, Preference pref) {
+	Log.e("satyam", ""+pref);
         new SubSettingLauncher(getActivity())
                 .setDestination(pref.getFragment())
                 .setArguments(pref.getExtras())
