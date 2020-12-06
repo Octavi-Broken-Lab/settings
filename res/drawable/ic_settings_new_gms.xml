@@ -6,7 +6,7 @@
     android:viewportHeight="23">
 
     <path
-        android:fillColor="#4773b8"
+        android:fillColor="@color/settings_new_gms"
         android:pathData="M23.5,11 A1.5,1.5,0,0,0,21.9,9.7 L13.4,9.7 A1.4,1.4,0,0,0,12,11.1 L12,13.1
 A1.4,1.4,0,0,0,13.4,14.5 L17.8,14.5 A6.7,6.7,0,0,1,15.5,17.2 L15.5,17.2
 A6.1,6.1,0,0,1,12,18.4 A6.4,6.4,0,0,1,6.1,14.3 L6,14.3 A9.3,9.3,0,0,1,5.6,12

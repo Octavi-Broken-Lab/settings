@@ -196,5 +196,7 @@
     <color name="settings_new_sound">#a0cc3c</color>
     <color name="settings_new_support">#318ecc</color>
     <color name="settings_new_system">#e5c872</color>
-<color name="grey">#99FFFFFF</color>
+    <color name="grey">#99FFFFFF</color>
+    <color name="settings_new_gms">#69306D</color>
+
 </resources>
