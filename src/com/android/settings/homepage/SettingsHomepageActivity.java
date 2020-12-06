@@ -55,42 +55,15 @@ public class SettingsHomepageActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.settings_homepage_container);
-	Animation fadeIn = new AlphaAnimation(0, 1);
-        fadeIn.setInterpolator(new LinearInterpolator());
-        fadeIn.setDuration(500);
-
-        Animation fadeOut = new AlphaAnimation(1, 0);
-        fadeOut.setInterpolator(new LinearInterpolator());
-        fadeOut.setDuration(500);
         final View root = findViewById(R.id.settings_homepage_container);
         root.setSystemUiVisibility(
                View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
 
         setHomepageContainerPaddingTop();
 
-        //final Toolbar toolbar = findViewById(R.id.search_action_bar);
-        //FeatureFactory.getFactory(this).getSearchFeatureProvider()
-//                .initSearchToolbar(this /* activity */, toolbar, SettingsEnums.SETTINGS_HOMEPAGE);
-
-	final Toolbar toolbar = findViewById(R.id.action_bar);
-
-        TextView textView = findViewById(R.id.textViewHeader);
-
-        setActionBar(toolbar);
-	getActionBar().setElevation(0);
-	FeatureFactory.getFactory(this).getSearchFeatureProvider()
+        final Toolbar toolbar = findViewById(R.id.action_bar);
+        FeatureFactory.getFactory(this).getSearchFeatureProvider()
                 .initSearchToolbar(this /* activity */, toolbar, SettingsEnums.SETTINGS_HOMEPAGE);
-
-        AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.app_bar);
-        appBarLayout.addOnOffsetChangedListener((appBarLayout1, i) -> {
-            if (Math.abs(i) == appBarLayout1.getTotalScrollRange()) {
-                textView.setVisibility(View.VISIBLE);
-                textView.startAnimation(fadeIn);
-            } else if (i==0){
-                textView.startAnimation(fadeOut);
-                textView.setVisibility(View.GONE);
-            }
-        });
 
 //        final ImageView avatarView = findViewById(R.id.account_avatar);
 //        getLifecycle().addObserver(new AvatarViewMixin(this, avatarView));
@@ -104,13 +77,6 @@ public class SettingsHomepageActivity extends FragmentActivity {
         ((FrameLayout) findViewById(R.id.main_content))
                 .getLayoutTransition().enableTransitionType(LayoutTransition.CHANGING);
 
-        homepageSpacer = findViewById(R.id.settings_homepage_spacer);
-        homepageMainLayout = findViewById(R.id.main_content_scrollable_container);
-
-        /*if (!isHomepageSpacerEnabled() && homepageSpacer != null && homepageMainLayout != null) {
-            homepageSpacer.setVisibility(View.GONE);
-            setMargins(homepageMainLayout, 0,0,0,0);
-        }*/
     }
 
     private void showFragment(Fragment fragment, int id) {
