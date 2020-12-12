@@ -28,10 +28,23 @@ import android.widget.ImageView;
 import android.widget.Toolbar;
 import android.widget.TextView;
 
+
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
+
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
+import android.widget.EditText;
 
+import com.android.settings.Sequent;
+import com.android.settings.Direction;
+import com.android.settings.CustomAnimation;
+
+import android.view.ViewGroup;
 import androidx.annotation.VisibleForTesting;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -45,10 +58,18 @@ import com.android.settings.core.HideNonSystemOverlayMixin;
 import com.android.settings.homepage.contextualcards.ContextualCardsFragment;
 import com.android.settings.overlay.FeatureFactory;
 
+import com.android.internal.util.UserIcons;
+import com.android.settingslib.drawable.CircleFramedDrawable;
+
+import android.os.UserHandle;
+import android.os.UserManager;
 public class SettingsHomepageActivity extends FragmentActivity {
 
     View homepageSpacer;
     View homepageMainLayout;
+    UserManager mUserManager;
+    ImageView avatarView;
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,13 +80,35 @@ public class SettingsHomepageActivity extends FragmentActivity {
         root.setSystemUiVisibility(
                View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
 
-        setHomepageContainerPaddingTop();
+//        setHomepageContainerPaddingTop();
 
-        final Toolbar toolbar = findViewById(R.id.action_bar);
+        final Toolbar toolbar = root.findViewById(R.id.search_action_bar);
         FeatureFactory.getFactory(this).getSearchFeatureProvider()
                 .initSearchToolbar(this /* activity */, toolbar, SettingsEnums.SETTINGS_HOMEPAGE);
 
-//	final EditText = root.findViewById(R.id.settings_label);
+	final EditText label = root.findViewById(R.id.settings_label);
+
+	context = getApplicationContext();
+
+        mUserManager = context.getSystemService(UserManager.class);
+
+	Sequent.origin((ViewGroup)root.findViewById(R.id.shit))
+                .delay(0)
+                .offset(200)
+                .anim(context, CustomAnimation.FADE_IN_UP)
+                .flow(Direction.FORWARD).start();
+
+        avatarView = root.findViewById(R.id.account_avatar_mirror);
+        //final AvatarViewMixin avatarViewMixin = new AvatarViewMixin(this, avatarView);
+        avatarView.setImageDrawable(getCircularUserIcon(context));
+        avatarView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.setComponent(new ComponentName("com.android.settings","com.android.settings.Settings$UserSettingsActivity"));
+                startActivity(intent);
+            }
+        });
 
 //        final ImageView avatarView = findViewById(R.id.account_avatar);
 //        getLifecycle().addObserver(new AvatarViewMixin(this, avatarView));
@@ -121,4 +164,27 @@ public class SettingsHomepageActivity extends FragmentActivity {
         view.setFocusableInTouchMode(true);
         view.requestFocus();
     }
+
+    private Drawable getCircularUserIcon(Context context) {
+        Bitmap bitmapUserIcon = mUserManager.getUserIcon(UserHandle.myUserId());
+
+        if (bitmapUserIcon == null) {
+            // get default user icon.
+            final Drawable defaultUserIcon = UserIcons.getDefaultUserIcon(
+                    context.getResources(), UserHandle.myUserId(), false);
+            bitmapUserIcon = UserIcons.convertToBitmap(defaultUserIcon);
+        }
+        Drawable drawableUserIcon = new CircleFramedDrawable(bitmapUserIcon,
+                (int) context.getResources().getDimension(R.dimen.circle_avatar_size));
+
+        return drawableUserIcon;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        avatarView.setImageDrawable(getCircularUserIcon(getApplicationContext()));
+
+    }
 }
+
