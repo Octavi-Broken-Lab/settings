@@ -29,11 +29,14 @@
         android:id="@+id/main_content_scrollable_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="290dp"
-        app:layout_behavior="com.android.settings.widget.FloatingAppBarScrollingViewBehavior">
+	android:visibility="gone"
+	app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
             android:id="@+id/homepage_container"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -55,10 +58,68 @@
     </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.appbar.AppBarLayout
+        android:background="@null"
+        android:foreground="@drawable/rect5"
+        android:overScrollMode="always"
+        app:elevation="0dp"
         android:layout_width="match_parent"
         android:touchscreenBlocksFocus="false"
         android:keyboardNavigationCluster="false"
         android:layout_height="wrap_content">
-        <include layout="@layout/homepage_spacer"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/shit"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:paddingStart="24dp"
+            android:paddingTop="14dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="14dp"
+            app:layout_scrollFlags="enterAlways|scroll|snap">
+
+            <TextView
+                android:id="@+id/temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome,"
+                android:textColor="?android:attr/colorAccent"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/settings_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textStyle="bold"
+                android:paddingEnd="70dp"
+                android:singleLine="true"
+                android:text="User"
+                android:textColor="@color/black"
+                android:focusableInTouchMode="true"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/temp"
+                app:layout_constraintTop_toBottomOf="@+id/temp" />
+
+            <Toolbar
+ 		android:id="@+id/search_action_bar"                                                 
+                android:background="@android:color/transparent"
+                android:layout_width="42dp"                                                         
+                android:layout_height="42dp"                                                                                                      
+                android:navigationIcon="@drawable/ic_homepage_search"                               
+	        android:contentInsetStartWithNavigation="@dimen/search_bar_content_inset"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="@color/black"
+                app:layout_constraintBottom_toTopOf="@+id/account_avatar_mirror"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageView
+                android:id="@+id/account_avatar_mirror"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/search_action_bar" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.appbar.AppBarLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
