@@ -21,46 +21,6 @@
     android:title="@string/firmware_version"
     settings:keywords="@string/keywords_android_version">
 
-    <Preference android:layout="@layout/about_header_wave" />
+    <!-- <Preference android:layout="@layout/about_header_wave" /> -->
     <com.android.settings.OosAboutPreference/>
-
-    <!-- Device name -->
-    <com.android.settings.widget.ValidatedEditTextPreference
-        android:key="device_name"
-        android:icon="@drawable/ic_about_phone"
-        android:layout="@layout/about_preference"
-        android:title="Device nickname"
-        android:summary="@string/summary_placeholder"
-        settings:controller="com.android.settings.deviceinfo.DeviceNamePreferenceController"
-        settings:enableCopying="true"/>
-
-    <Preference
-        android:key="os_firmware_version"
-        android:icon="@drawable/ic_about_android"
-        android:title="@string/firmware_version"
-        android:summary="@string/summary_placeholder"
-        settings:enableCopying="true"
-        settings:searchable="false"
-        android:layout="@layout/about_preference_tinted"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionDetailPreferenceController"/>
-
-    <!-- Security patch -->
-    <Preference
-        android:key="security_key"
-        android:title="@string/security_patch"
-        android:icon="@drawable/ic_about_secure"
-        settings:enableCopying="true"
-        android:layout="@layout/about_preference"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.SecurityPatchLevelPreferenceController"/>
-
-    <!-- Kernel -->
-    <Preference
-        android:key="kernel_version"
-        android:title="Kernel version"
-        android:summary="@string/summary_placeholder"
-        android:layout="@layout/about_preference"
-        settings:enableCopying="false"
-        android:icon="@drawable/ic_about_build" 
-        android:selectable="false"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.KernelVersionPreferenceController"/>
 </PreferenceScreen>
