@@ -2,130 +2,346 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="240dp"
-    android:layout_marginBottom="20dp">
+    android:layout_height="match_parent">
 
     <LinearLayout
-        android:id="@+id/details"
-        android:layout_marginEnd="15dp"
-        android:layout_width="wrap_content"
+        android:id="@+id/header"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/device_icon"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAllCaps="true"
-            android:text="Octavi Stage"
-            android:textColor="@color/off_black" />
+        <View
+            android:layout_width="3dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/bar" />
 
         <TextView
-            android:id="@+id/octavi_stage"
+            android:id="@+id/octaviVer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="v1.4"
+            android:textColor="@color/pureBlack"
+            android:textSize="18sp" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:textAllCaps="true"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/card_view_bottom_margin"
-            android:text="Maintainer"
-            android:textColor="@color/off_black" />
-
-        <TextView
-            android:id="@+id/octavi_maintainer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/card_view_bottom_margin"
-            android:textAllCaps="true"
-            android:text="Storage"
-            android:textColor="@color/off_black" />
-
-        <TextView
-            android:id="@+id/device_storage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Processor"
-            android:textAllCaps="true"
-            android:textColor="@color/off_black" />
-
-        <LinearLayout
+            android:id="@+id/octaviStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:orientation="horizontal">
+            android:layout_marginBottom="5dp"
+            android:text=" OctaviOS Official"
+            android:textColor="@color/off_black"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/miniDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/rect3"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/header">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".6"
+            android:orientation="vertical"
+            android:padding="20dp">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/disp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:contentDescription="@null"
-                android:src="@drawable/snap_dragon" />
+                android:src="@drawable/disp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/device_procc_model"
+                android:id="@+id/display_about"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:translationY="-2.5dp" />
+
+                android:textColor="@color/off_black"
+                app:layout_constraintBottom_toTopOf="@+id/divider"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/disp" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="24dp"
+                android:layout_height="2dp"
+                android:background="@drawable/bar2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/cpu"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="3dp"
+                android:contentDescription="@null"
+                android:src="@drawable/soc"
+                app:layout_constraintBottom_toTopOf="@id/cpu_about"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider" />
+
+            <TextView
+                android:id="@+id/cpu_about"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textColor="@color/off_black"
+                android:translationY="2dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/device_about"
+            android:layout_width="0dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="1dp"
+            android:layout_weight=".4" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/finalDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/miniDetails">
+
+        <LinearLayout
+            android:id="@+id/leftFinalDetail"
+            android:layout_width="0dp"
+            android:layout_height="125dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight=".5"
+            android:background="@drawable/rect3"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@null"
+                android:src="@drawable/batt" />
+
+            <TextView
+                android:id="@+id/battery_about"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textColor="@color/off_black" />
+
+            <View
+                android:layout_width="28dp"
+                android:layout_height="2dp"
+                android:layout_margin="6dp"
+                android:background="@drawable/bar2" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="2.5dp"
+                android:layout_marginBottom="2.5dp"
+                android:contentDescription="@null"
+                android:src="@drawable/cam"
+                android:textColor="@color/off_black" />
+
+            <TextView
+                android:id="@+id/camera_about"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textColor="@color/off_black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/righFinalDetail"
+            android:layout_width="0dp"
+            android:layout_height="125dp"
+            android:layout_marginStart="10dp"
+            android:layout_weight=".5"
+            android:background="@drawable/rect3"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginBottom="2dp"
+                android:contentDescription="@null"
+                android:src="@drawable/cpu" />
+
+            <TextView
+                android:id="@+id/soc_about"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:singleLine="true"
+                android:textColor="@color/off_black" />
+
+            <View
+                android:layout_width="28dp"
+                android:layout_height="2dp"
+                android:layout_margin="6dp"
+                android:background="@drawable/bar2" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="2.5dp"
+                android:layout_marginBottom="2.5dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_ram" />
+
+            <TextView
+                android:id="@+id/rom_about"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+		android:textSize="13sp"
+                android:textColor="@color/off_black" />
         </LinearLayout>
     </LinearLayout>
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/lottie"
-        android:layout_width="220dp"
-        android:layout_height="match_parent"
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/rect3"
+        android:baselineAligned="false"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintTop_toBottomOf="@id/finalDetail">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".7"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Maintainer"
+                    android:textColor="@color/off_black" />
+
+                <TextView
+                    android:id="@+id/octavi_maintainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textColor="@color/pureBlack"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Device"
+                    android:textColor="@color/off_black" />
+
+                <TextView
+                    android:id="@+id/device_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textColor="@color/pureBlack"
+                    android:textSize="15sp" />
+
+                <View
+                    android:layout_marginStart="2dp"
+                    android:layout_width="15dp"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bar" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    
+                    android:text="Android security update"
+                    android:textColor="@color/off_black" />
+
+                <TextView
+                    android:id="@+id/security_update"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    
+                    android:text="Kernel version"
+                    android:textColor="@color/off_black" />
+
+                <TextView
+                    android:id="@+id/kernel_version"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight=".3"
+                android:src="@drawable/a11"
+                android:tint="?android:attr/colorAccent" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/octaviLogo"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="15dp"
+        android:alpha=".5"
+        android:background="@drawable/ic_octavi_logo"
+        android:gravity="center_horizontal"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:lottie_autoPlay="true"
-        app:lottie_fileName="naruto.json"
-        app:lottie_loop="true" />
-
-    <TextView
-        android:id="@+id/textDare"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/icon_end_padding"
-        android:text="@string/dont_touch_me"
-        android:textSize="16sp"
-        android:textColor="?android:attr/colorAccent"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/device_icon"
-        android:layout_width="160dp"
-        android:layout_height="180dp"
-        android:contentDescription="@null"
-        android:contextClickable="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
