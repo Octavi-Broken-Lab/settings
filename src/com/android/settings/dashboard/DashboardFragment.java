@@ -504,7 +504,7 @@ public abstract class DashboardFragment extends SettingsPreferenceFragment
                                 forceRoundedIcons, getMetricsCategory(), pref, tile, key,
                                 mPlaceholderPreferenceController.getOrder());
 		String prefStr = pref.toString();
-		if (prefStr.equals("Digital Wellbeing & parental controls Screen time, app timers, bedtime schedules")){
+		if (prefStr.equals("Digital Wellbeing & parental controls Screen time, app timers, bedtime schedules") || prefStr.equals("Digital Wellbeing and parental controls Screen time, app timers, bedtime schedules")){
 		pref.setLayoutResource(R.layout.card_view_pref_top);pref.setIcon(R.drawable.ic_settings_new_wellbeing);
 		} else if (prefStr.equals("Google Services & preferences")){
 		pref.setLayoutResource(R.layout.card_view_pref_middle);pref.setIcon(R.drawable.ic_settings_new_gms);
