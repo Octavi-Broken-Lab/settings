@@ -29,7 +29,7 @@ public final class PhoneData {
                 "4000",
                 "2160 x 1080, 5.9 inches",
                 "12MP + 5MP + 20MP",
-                R.drawable.rmx1921
+                R.drawable.whyred
         ));
 	//RMX1921
 	data.add(new AboutPhoneData(3,
