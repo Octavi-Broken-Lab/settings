@@ -139,9 +139,10 @@ public class OosAboutPreference extends Preference implements View.OnTouchListen
         kernel.setText(DeviceInfoUtils.getFormattedKernelVersion(context));
 	device.setText(Build.MODEL);
 
-        if (index != 0)
+        if (index != 0) {
             rom.setText(String.format(Locale.ENGLISH, "%dGB RAM + %dGB ROM", Math.round(Float.parseFloat(getMem()) / Math.pow(1000, 2)), total));
-        else rom.setText(texts[0]);
+	    if (rom.getText().length()>=14) rom.setTextSize(12);
+        } else rom.setText(texts[0]);
 
         leftMini.setOnTouchListener(this);
         rightMini.setOnTouchListener(this);
