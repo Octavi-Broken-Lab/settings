@@ -151,6 +151,26 @@ public final class PhoneData {
                 "12MP + 5MP + 20MP",
                 R.drawable.beryllium
         ));
+        //Phoenixin
+        data.add(new AboutPhoneData(15,
+                "phoenixin",
+                "6 x 2.21GHz, 2 x 1.80Ghz",
+                "Snapdragon 730G",
+                "4500",
+                "1080 x 2400, 6.67 inches",
+                "64MP + 8MP + 2MP + 2MP",
+                R.drawable.phoenix
+        ));
+        //X2
+        data.add(new AboutPhoneData(16,
+                "X2",
+                "2 x 2.2GHz, 6 x 1.8Ghz",
+                "Snapdragon 730G",
+                "4000",
+                "1080 x 2340, 6.4 inches",
+                "64MP + 8MP + 2MP + 2MP",
+                R.drawable.X2
+        ));
     }
 
     public static List<AboutPhoneData> getData() {
