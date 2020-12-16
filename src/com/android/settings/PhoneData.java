@@ -171,6 +171,16 @@ public final class PhoneData {
                 "64MP + 8MP + 2MP + 2MP",
                 R.drawable.X2
         ));
+	//daisy
+        data.add(new AboutPhoneData(17,
+                "daisy",
+                "8 x 2.0GHz",
+                "Snapdragon 625",
+                "4000",
+                "1080 x 2280, 5.84 inches",
+                "12MP + 5MP, 5MP",
+                R.drawable.daisy
+        ));
     }
 
     public static List<AboutPhoneData> getData() {
