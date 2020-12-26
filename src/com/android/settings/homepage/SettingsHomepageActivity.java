@@ -1,3 +1,4 @@
+
 /*
  * Copyright (C) 2018 The Android Open Source Project
  *
@@ -27,7 +28,6 @@ import android.provider.Settings;
 import android.widget.ImageView;
 import android.widget.Toolbar;
 import android.widget.TextView;
-
 
 import android.content.ComponentName;
 import android.content.Context;
@@ -60,6 +60,7 @@ import com.android.settings.overlay.FeatureFactory;
 
 import com.android.internal.util.UserIcons;
 import com.android.settingslib.drawable.CircleFramedDrawable;
+import java.util.ArrayList;
 
 import android.os.UserHandle;
 import android.os.UserManager;
@@ -70,6 +71,12 @@ public class SettingsHomepageActivity extends FragmentActivity {
     UserManager mUserManager;
     ImageView avatarView;
     Context context;
+    static ArrayList<String> text=new ArrayList<>();
+    static {
+        text.add("Hey, sassy!");
+	text.add("I wonder how many breakups you had");
+	text.add("Always remember that you're unique");
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,24 +88,25 @@ public class SettingsHomepageActivity extends FragmentActivity {
                View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
 
 //        setHomepageContainerPaddingTop();
-
+	TextView random = root.findViewById(R.id.random_settings);
         final Toolbar toolbar = root.findViewById(R.id.search_action_bar);
         FeatureFactory.getFactory(this).getSearchFeatureProvider()
                 .initSearchToolbar(this /* activity */, toolbar, SettingsEnums.SETTINGS_HOMEPAGE);
 
-	final EditText label = root.findViewById(R.id.settings_label);
+	final TextView label = root.findViewById(R.id.settings_label);
 
 	context = getApplicationContext();
-
+	random.setText(text.get(randomNum(0, text.size()-1)));
         mUserManager = context.getSystemService(UserManager.class);
 
-	Sequent.origin((ViewGroup)root.findViewById(R.id.shit))
+	/*Sequent.origin((ViewGroup)root.findViewById(R.id.shit))
                 .delay(0)
                 .offset(200)
                 .anim(context, CustomAnimation.FADE_IN_UP)
-                .flow(Direction.FORWARD).start();
+                .flow(Direction.FORWARD).start();*/
 
         avatarView = root.findViewById(R.id.account_avatar_mirror);
+
         //final AvatarViewMixin avatarViewMixin = new AvatarViewMixin(this, avatarView);
         avatarView.setImageDrawable(getCircularUserIcon(context));
         avatarView.setOnClickListener(new View.OnClickListener() {
@@ -113,7 +121,8 @@ public class SettingsHomepageActivity extends FragmentActivity {
 //        final ImageView avatarView = findViewById(R.id.account_avatar);
 //        getLifecycle().addObserver(new AvatarViewMixin(this, avatarView));
         getLifecycle().addObserver(new HideNonSystemOverlayMixin(this));
-
+	String name = mUserManager.getUserName();
+	label.setText(name!=null?name:"User");
 //        if (!getSystemService(ActivityManager.class).isLowRamDevice()) {
             // Only allow contextual feature on high ram devices.
 //            showFragment(new ContextualCardsFragment(), R.id.contextual_cards_content);
@@ -185,5 +194,10 @@ public class SettingsHomepageActivity extends FragmentActivity {
         super.onResume();
         avatarView.setImageDrawable(getCircularUserIcon(getApplicationContext()));
 
+    }
+
+    private int randomNum(int min , int max) {
+	int r = (max - min) + 1;
+	return (int)(Math.random() * r) + min;
     }
 }
