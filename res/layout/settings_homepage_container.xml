@@ -56,7 +56,6 @@
     <com.google.android.material.appbar.AppBarLayout
 	app:elevation="0dp"
         android:background="?android:attr/colorPrimary"
-        android:overScrollMode="always"
         android:layout_width="match_parent"
         android:touchscreenBlocksFocus="false"
         android:keyboardNavigationCluster="false"
@@ -64,48 +63,44 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/shit"
             android:layout_width="match_parent"
-            android:layout_height="140dp"
-            android:paddingStart="32dp"
+            android:layout_height="288dp"
             android:paddingTop="14dp"
-            android:paddingEnd="20dp"
             android:paddingBottom="14dp"
-            app:layout_scrollFlags="enterAlways|scroll|snap">
+            app:layout_scrollFlags="scroll|enterAlwaysCollapsed">
 
+    <LinearLayout
+	android:id="@+id/welcome007"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+	android:gravity="center"
+        android:paddingTop="88dp">
             <TextView
                 android:id="@+id/temp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="?android:attr/colorAccent"
-                android:textSize="24sp"
-                android:text="Welcome"
-                android:layout_marginTop="5dp"
-                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="48sp"
+                android:text="Hello, "
+	        android:textColor="?android:attr/textColorPrimary"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/settings_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:layout_marginTop="2.5dp"
-                android:textStyle="bold"
-                android:paddingEnd="50dp"
+	        android:textColor="?android:attr/textColorPrimary"
                 android:singleLine="true"
                 android:text="User"
-                android:textColor="@color/black"
-                android:textSize="30sp"
-                app:layout_constraintStart_toStartOf="@+id/temp"
-                app:layout_constraintTop_toBottomOf="@+id/temp" />
+                android:textSize="48sp"/>
+    </LinearLayout>
 
             <TextView
                 android:id="@+id/random_settings"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:textColor="@color/off_black"		
+                android:textSize="14sp"
                 android:layout_marginTop="2.5dp"
-		android:textAlignment="center"
-		app:layout_constraintTop_toBottomOf="@id/temp" />
+		android:gravity="center"
+		app:layout_constraintTop_toBottomOf="@id/welcome007" />
             <Toolbar
  		android:id="@+id/search_action_bar"                                                 
                 android:background="@android:color/transparent"
