@@ -181,6 +181,43 @@ public final class PhoneData {
                 "12MP + 5MP, 5MP",
                 R.drawable.daisy
         ));
+        //miatoll
+        data.add(new AboutPhoneData(18,
+                "gram",
+                "8 x 2.0 GHz",
+                "Snapdragon 720G",
+                "5000",
+                "2400 x 1080, 6.67 inches",
+                "48MP + 8MP + 5MP + 2MP",
+                R.drawable.miatoll
+        ));
+       data.add(new AboutPhoneData(19,
+                "curtana",
+                "4 x 2.3 GHz + 4 x 1.8 GHz",
+                "Snapdragon 720G",
+                "5020",
+                "2400 x 1080, 6.67 inches",
+                "48MP + 8MP + 5MP + 2MP",
+                R.drawable.miatoll
+        ));
+      data.add(new AboutPhoneData(20,
+                "excalibur",
+                "4 x 2.3 GHz + 4 x 1.8 GHz",
+                "Snapdragon 720G",
+                "5020",
+                "2400 x 1080, 6.67 inches",
+                "64MP + 8MP + 5MP + 2MP",
+                R.drawable.miatoll
+        ));
+      data.add(new AboutPhoneData(21,
+                "joyeuse",
+                "8 x 2.3 GHz",
+                "Snapdragon 720G",
+                "5020",
+                "2400 x 1080, 6.67 inches",
+                "48MP + 8MP + 5MP + 2MP",
+                R.drawable.miatoll
+        ));
     }
 
     public static List<AboutPhoneData> getData() {
