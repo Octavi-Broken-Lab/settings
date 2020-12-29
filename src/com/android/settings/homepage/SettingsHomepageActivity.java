@@ -73,9 +73,25 @@ public class SettingsHomepageActivity extends FragmentActivity {
     Context context;
     static ArrayList<String> text=new ArrayList<>();
     static {
-        text.add("Hey, sassy!");
-	text.add("I wonder how many breakups you had");
+        text.add("Thanks, for choosing Octavi!");
+	text.add("I wonder how many rejections you had");
 	text.add("Always remember that you're unique");
+        text.add("Constipated people don’t give a crap");
+        text.add("Unicorns ARE real, we call them rhinos");
+        text.add("If there is a *WILL*, there are 500 relatives");
+        text.add("Those who throw dirt only lose ground");
+        text.add("I’d like to help you out");
+        text.add("Age is a question of mind over matter");
+        text.add("I’m an excellent housekeeper");
+        text.add("Change is good, but dollars are better");
+        text.add("If you cannot convince them, confuse them");
+        text.add("This sentence is a lie");
+        text.add("Two wrongs don't make a right, for ex. your parents");
+        text.add("Stupidity is not a crime so you are free to go.");
+        text.add("I'm not insulting you. I'm describing you");
+        text.add("You're so fake, Barbie is jealous");
+        text.add("There's only one problem with your face, I can see it");
+	text.add("If I had a face like yours, I'd sue my parents");
     }
 
     @Override
