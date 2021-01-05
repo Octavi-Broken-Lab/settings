@@ -26,11 +26,15 @@
         settings:controller="com.android.settings.slices.SlicePreferenceController"/>
 
     <PreferenceCategory
+        settings:allowDividerBelow="false"
+        settings:allowDividerAbove="false"
         android:key="available_device_list"
         android:title="@string/connected_device_media_device_title"
         settings:controller="com.android.settings.connecteddevice.AvailableMediaDeviceGroupController"/>
 
     <PreferenceCategory
+        settings:allowDividerBelow="false"
+        settings:allowDividerAbove="false"
         android:key="connected_device_list"
         android:title="@string/connected_device_other_device_title"
         settings:controller="com.android.settings.connecteddevice.ConnectedDeviceGroupController"/>
@@ -53,6 +57,8 @@
         settings:controller="com.android.settings.connecteddevice.AddDevicePreferenceController"/>
 
     <PreferenceCategory
+        settings:allowDividerBelow="false"
+        settings:allowDividerAbove="false"
         android:key="previously_connected_devices"
         android:title="@string/connected_device_previously_connected_title"
         settings:controller="com.android.settings.connecteddevice.PreviouslyConnectedDevicePreferenceController">
