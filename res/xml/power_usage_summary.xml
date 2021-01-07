@@ -59,14 +59,13 @@
         android:key="smart_charging_key"
         android:title="@string/smart_charging_title"
         android:summary="@string/smart_charging_summary"
-        settings:allowDividerAbove="true" />
+        settings:iconSpaceReserved="false"/>
 
     <com.android.settings.fuelgauge.PowerGaugePreference
         android:key="last_full_charge"
         settings:iconSpaceReserved="false"
         android:title="@string/battery_last_full_charge"
-        android:selectable="false"
-        settings:allowDividerAbove="true" />
+        android:selectable="false"/>
 
     <com.android.settings.fuelgauge.PowerGaugePreference
         android:key="screen_usage"
