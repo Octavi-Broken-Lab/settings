@@ -503,10 +503,10 @@ public abstract class DashboardFragment extends SettingsPreferenceFragment
                         mDashboardFeatureProvider.bindPreferenceToTileAndGetObservers(getActivity(),
                                 forceRoundedIcons, getMetricsCategory(), pref, tile, key,
                                 mPlaceholderPreferenceController.getOrder());
-		String prefStr = pref.toString();
-		if (prefStr.equals("Digital Wellbeing and parental controls Screen time, app timers, bedtime schedules") || prefStr.equals("Digital Wellbeing & parental controls Screen time, app timers, bedtime schedules")){
+		String prefStr = pref.getKey().toString();
+		if (prefStr.equals("dashboard_tile_pref_com.google.android.apps.wellbeing.settings.TopLevelSettingsActivity")){
 		pref.setLayoutResource(R.layout.card_view_pref_top);pref.setIcon(R.drawable.ic_settings_new_wellbeing);
-		} else if (prefStr.equals("Google Services & preferences")){
+		} else if (prefStr.equals("dashboard_tile_pref_com.google.android.gms.app.settings.GoogleSettingsIALink")){
 		pref.setLayoutResource(R.layout.card_view_pref_bottom);pref.setIcon(R.drawable.ic_settings_new_gms);}
                 screen.addPreference(pref);
                 registerDynamicDataObservers(observers);
