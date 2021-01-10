@@ -218,6 +218,16 @@ public final class PhoneData {
                 "48MP + 8MP + 5MP + 2MP",
                 R.drawable.miatoll
         ));
+      //lavender
+        data.add(new AboutPhoneData(22,
+                "lavender",
+                "8 x 2.20GHz",
+                "Snapdragon 660",
+                "4000",
+                "1080 x 2340, 6.3 inches",
+                "48MP + 5MP + 13MP",
+                R.drawable.lavender
+        ));
     }
 
     public static List<AboutPhoneData> getData() {
