@@ -228,6 +228,16 @@ public final class PhoneData {
                 "48MP + 5MP + 13MP",
                 R.drawable.lavender
         ));
+        //RMX2001
+        data.add(new AboutPhoneData(23,
+                "rmx2001",
+                "6 x 2.0GHz, 2 x 2.05GHz",
+                "Mediatek Helio G90T",
+                "4300",
+                "1080 x 2400, 6.5 inches",
+                "64MP + 8MP + 2MP + 2MP, 16MP",
+                R.drawable.rmx2001
+        ));
     }
 
     public static List<AboutPhoneData> getData() {
