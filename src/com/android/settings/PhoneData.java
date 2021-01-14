@@ -277,7 +277,7 @@ public final class PhoneData {
 			"1080 x 2340, 6.4 inches",
 			"64MP + 8MP + 2MP + 2MP",
 			R.drawable.X2
-		));
+                ));
 		//X2
 		data.add(new AboutPhoneData(28,
 			"RMX1991CN",
@@ -299,7 +299,7 @@ public final class PhoneData {
                 	R.drawable.wayne
 	        ));
 		//jasmine_sprout
-		  data.add(new AboutPhoneData(24,
+		  data.add(new AboutPhoneData(30,
         	        "jasmine_sprout",
                 	"4 x 2.2GHz, 4 x 1.8GHz",
 	                "SDM 660",
@@ -308,7 +308,18 @@ public final class PhoneData {
 	                "20MP + 12MP, 20MP",
         	        R.drawable.whyred
 		));
-	}
+
+	        //Payton
+        	data.add(new AboutPhoneData(31,
+                	"payton",
+	                "4 x 2.2GHz, 4 x 1.80GHz",
+        	        "Snapgradon 630",
+                	"3000",
+	                "1080 x 1920, 5.2 inches",
+        	        "12MP + 8MP",
+                	R.drawable.payton
+	        ));
+}
     public static List<AboutPhoneData> getData() {
 	return data;
     }
