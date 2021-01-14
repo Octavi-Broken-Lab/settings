@@ -8,7 +8,6 @@ public final class PhoneData {
 	public static List<AboutPhoneData> data = new ArrayList<>();
 	static {
 		data.add(new AboutPhoneData(0));
-
 		//MIDO
 		data.add(new AboutPhoneData(1,
 			"mido",
@@ -277,7 +276,7 @@ public final class PhoneData {
 	                R.drawable.wayne
         	));
 		//X2
-		data.add(new AboutPhoneData(29,
+		data.add(new AboutPhoneData(28,
 			"RMX1991CN",
 			"2 x 2.2GHz, 6 x 1.8Ghz",
 			"Snapdragon 730G",
@@ -286,6 +285,16 @@ public final class PhoneData {
 			"64MP + 8MP + 2MP + 2MP",
 			R.drawable.X2
 		));
+        	//Payton
+	        data.add(new AboutPhoneData(29,
+        	        "payton",
+	                "4 x 2.2GHz, 4 x 1.80GHz",
+                	"Snapgradon 630",
+        	        "3000",
+	                "1080 x 1920, 5.2 inches",
+                	"12MP + 8MP",
+        	        R.drawable.payton
+	        ));
 	}
     public static List<AboutPhoneData> getData() {
 	return data;
