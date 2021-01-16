@@ -19,7 +19,6 @@ public final class PhoneData {
 			"13 MP + 5MP",
 			R.drawable.rmx1921
 		));
-
 		//whyred
 		data.add(new AboutPhoneData(2,
 			"whyred",
@@ -237,7 +236,7 @@ public final class PhoneData {
 			"64MP + 8MP + 2MP + 2MP, 16MP",
 			R.drawable.rmx2001
 		));
-		// Raphael 
+		// Raphael
 		data.add(new AboutPhoneData(24,
 			"raphael",
 			"1 x 2.84 + 3 x 2.42 GHz + 4 x 1.78",
@@ -247,7 +246,7 @@ public final class PhoneData {
 			"48MP + 8MP + 13MP, 20MP",
 			R.drawable.raphael
 		));
-		// Raphaelin      
+		// Raphaelin
 		data.add(new AboutPhoneData(25,
 			"raphaelin",
 			"1 x 2.84 + 3 x 2.42 GHz + 4 x 1.78",
@@ -267,19 +266,18 @@ public final class PhoneData {
 			"64MP + 8MP + 2MP + 2MP",
 			R.drawable.X2
 		));
-
+	        //wayne
+        	data.add(new AboutPhoneData(27,
+                	"wayne",
+	                "4 x 2.2GHz, 4 x 1.8GHz",
+        	        "Snapdragon 660",
+	                "3000",
+	                "1080 x 2160, 5.99 inches",
+	                "20MP + 12MP, 20MP",
+	                R.drawable.wayne
+        	));
 		//X2
-		data.add(new AboutPhoneData(27,
-			"RMX1992L1",
-			"2 x 2.2GHz, 6 x 1.8Ghz",
-			"Snapdragon 730G",
-			"4000",
-			"1080 x 2340, 6.4 inches",
-			"64MP + 8MP + 2MP + 2MP",
-			R.drawable.X2
-		));
-		//X2
-		data.add(new AboutPhoneData(28,
+		data.add(new AboutPhoneData(29,
 			"RMX1991CN",
 			"2 x 2.2GHz, 6 x 1.8Ghz",
 			"Snapdragon 730G",
