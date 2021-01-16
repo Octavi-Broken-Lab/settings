@@ -288,6 +288,17 @@ public final class PhoneData {
 			"64MP + 8MP + 2MP + 2MP",
 			R.drawable.X2
 		));
+	        //wayne
+        	data.add(new AboutPhoneData(29,
+                	"wayne",
+	                "4 x 2.2GHz, 4 x 1.8GHz",
+        	        "Snapdragon 660",
+                	"3000",
+	                "1080 x 2160, 5.99 inches",
+        	        "20MP + 12MP, 20MP",
+                	R.drawable.wayne
+        ));
+
 	}
     public static List<AboutPhoneData> getData() {
 	return data;
