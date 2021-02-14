@@ -105,7 +105,7 @@
     <color name="contextual_card_background">#f5f5f5</color>
     <!-- End of dashboard/homepage icon background colors -->
 
-    <color name="switchbar_background_color">@*android:color/material_grey_600</color>
+    <color name="switchbar_background_color">#52000000</color>
     <color name="switchbar_switch_track_tint">#BFFFFFFF</color>
     <color name="switchbar_switch_thumb_tint">@android:color/white</color>
 
