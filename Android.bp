@@ -68,6 +68,7 @@ android_library {
         "android.hardware.dumpstate-V1.1-java",
         "kotlinx-coroutines-android",
         "kotlinx-coroutines-core",
+        "VendorSupport-preference",
 	"androidx.viewpager2_viewpager2",
     ],
 
