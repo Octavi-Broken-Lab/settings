@@ -278,4 +278,7 @@
         <attr name="wlv_titleCenterStrokeColor" format="color"/>
         <attr name="wlv_titleCenterStrokeWidth" format="dimension"/>
     </declare-styleable>
+
+    <attr name="customPreferenceStyle" format="reference" />
+
 </resources>
