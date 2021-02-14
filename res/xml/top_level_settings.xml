@@ -26,6 +26,8 @@
                 android:order="6"
                 android:layout="@layout/divider"/-->
 
+                <Preference android:layout="@layout/divider" android:order="-115"/>
+
 		<Preference
 		    android:layout="@layout/card_view_pref_top"
 		    android:icon="@drawable/ic_settings_new_network"
