@@ -318,7 +318,7 @@ public final class PhoneData {
 	                "1080 x 1920, 5.2 inches",
         	        "12MP + 8MP",
                 	R.drawable.payton
-	        )};
+	        ));
 }
     public static List<AboutPhoneData> getData() {
 	return data;
