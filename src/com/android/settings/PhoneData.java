@@ -297,8 +297,17 @@ public final class PhoneData {
 	                "1080 x 2160, 5.99 inches",
         	        "20MP + 12MP, 20MP",
                 	R.drawable.wayne
-        ));
-
+	        ));
+		//jasmine_sprout
+		  data.add(new AboutPhoneData(24,
+        	        "jasmine_sprout",
+                	"4 x 2.2GHz, 4 x 1.8GHz",
+	                "SDM 660",
+        	        "3000",
+                	"1080 x 2160, 5.99 inches",
+	                "20MP + 12MP, 20MP",
+        	        R.drawable.whyred
+		));
 	}
     public static List<AboutPhoneData> getData() {
 	return data;
