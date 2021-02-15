@@ -97,7 +97,7 @@
         settings:controller="com.android.settings.notification.LinkedVolumesPreferenceController"/>
 
     <!-- Increasing ring -->
-    <com.octavi.support.preferences.SystemSettingSwitchPreference
+    <com.octavi.lab.preferences.SystemSettingSwitchPreference
         android:key="increasing_ring"
         android:title="@string/increasing_ring_volume_option_title"
         android:defaultValue="false"
@@ -146,7 +146,7 @@
         android:visibility="gone">
 
         <!-- Custom ringtone vibration pattern 1 -->
-        <com.octavi.support.preferences.CustomSeekBarPreference
+        <com.octavi.lab.preferences.CustomSeekBarPreference
             android:key="custom_vibration_pattern1"
             android:order="-123"
             android:max="1000"
@@ -156,7 +156,7 @@
             android:dependency="vibrate_for_calls"/>
 
         <!-- Custom ringtone vibration pattern 2 -->
-        <com.octavi.support.preferences.CustomSeekBarPreference
+        <com.octavi.lab.preferences.CustomSeekBarPreference
             android:key="custom_vibration_pattern2"
             android:order="-122"
             android:max="1000"
@@ -166,7 +166,7 @@
             android:dependency="vibrate_for_calls"/>
 
         <!-- Custom ringtone vibration pattern 3 -->
-        <com.octavi.support.preferences.CustomSeekBarPreference
+        <com.octavi.lab.preferences.CustomSeekBarPreference
             android:key="custom_vibration_pattern3"
             android:order="-121"
             android:max="1000"
