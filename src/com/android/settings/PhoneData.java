@@ -319,7 +319,17 @@ public final class PhoneData {
         	        "12MP + 8MP",
                 	R.drawable.payton
 	        ));
-}
+                //Z01R
+                data.add(new AboutPhoneData(32,
+                        "z01r",
+                        "4 x 2.7GHz, 4 x 1.7GHz",
+                        "Snapdragon 845",
+                        "3300",
+                        "1080 x 2246, 6.2 inches",
+                        "12MP + 8MP, 8MP",
+                        R.drawable.Z01R
+               ));
+    }
     public static List<AboutPhoneData> getData() {
 	return data;
     }
