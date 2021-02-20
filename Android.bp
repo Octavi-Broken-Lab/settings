@@ -32,7 +32,7 @@ android_library {
            "OctaviLab/src/**/*.kt",
     ],
 
-    aaptflags: ["--extra-packages com.octavi.lab"],
+    aaptflags: ["--extra-packages com.octavi.lab" , "--extra-packages com.factor.bouncy",],
 
     resource_dirs: ["res",
                     "OctaviLab/res",
@@ -72,6 +72,7 @@ android_library {
 	"androidx.viewpager2_viewpager2",
         "faceunlock_framework",
 	"dynamic-animation",
+        "bouncy",
     ],
 
     libs: [
@@ -120,5 +121,11 @@ android_library_import {
 android_library_import {
     name: "dynamic-animation",
     aars: ["libs/dynamicanimation-1.0.0.aar"],
+    sdk_version: "current",
+}
+
+android_library_import {
+    name: "bouncy",
+    aars: ["libs/bouncy-release.aar"],
     sdk_version: "current",
 }
