@@ -329,6 +329,16 @@ public final class PhoneData {
                         "12MP + 8MP, 8MP",
                         R.drawable.Z01R
                ));
+		//le_x2
+        	data.add(new AboutPhoneData(33,
+	                "le_x2",
+                	"2 x 2.15GHz, 2 x 1.6Ghz",
+        	        "Snapdragon 820",
+		        "3200",
+                	"1440 x 2560, 5.7 inches",
+        	        "21MP + 8MP",
+	                R.drawable.le_x2
+	    ));
     }
     public static List<AboutPhoneData> getData() {
 	return data;
