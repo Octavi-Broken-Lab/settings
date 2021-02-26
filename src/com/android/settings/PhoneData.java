@@ -338,8 +338,19 @@ public final class PhoneData {
                 	"1440 x 2560, 5.7 inches",
         	        "21MP + 8MP",
 	                R.drawable.le_x2
-	    ));
-    }
+               ));
+	        //land
+	        data.add(new AboutPhoneData(34,
+	               "land",
+	                "4 x 1.4GHz, 4 x 1.1GHz",
+        	        "Snapgradon 430",
+                	"4000",
+	                "720 x 1280, 5.0 inches",
+        	        "13MP",
+                	R.drawable.land
+	        ));
+
+}
     public static List<AboutPhoneData> getData() {
 	return data;
     }
