@@ -378,6 +378,25 @@ public final class PhoneData {
 			"1080x2400, 6.67' inches",
 			"64+8+5+2+16MP",
                         R.drawable.sweet
+               //surya
+		data.add(new AboutPhoneData(38,
+			"surya",
+			"2 x 2.3 GHz + 6 x 1.8 Ghz",
+			"Snapdragon 732G",
+			"5160",
+			"2400 x 1080, 6.67 inches",
+			"64MP + 13MP + 2MP + 2MP",
+			R.drawable.surya
+		));
+                //karna
+                data.add(new AboutPhoneData(39,
+                        "karna",
+                        "2 x 2.3 GHz + 6 x 1.8 Ghz",
+                        "Snapdragon 732G",
+                        "6000",
+                        "2400 x 1080, 6.67 inches",
+                        "64MP + 13MP + 2MP + 2MP",
+                        R.drawable.surya
                 ));
 }
     public static List<AboutPhoneData> getData() {
