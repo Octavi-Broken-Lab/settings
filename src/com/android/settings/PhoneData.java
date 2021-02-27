@@ -398,6 +398,16 @@ public final class PhoneData {
                         "64MP + 13MP + 2MP + 2MP",
                         R.drawable.surya
                 ));
+              //ysl
+		data.add(new AboutPhoneData(40,
+			"ysl",
+			"8 x 2.0GHz",
+			"Snapdragon 625",
+			"3080",
+			"1440 x 720, 5.99 inches",
+			"12MP + 5MP, 16MP",
+			R.drawable.ysl
+		));
 }
     public static List<AboutPhoneData> getData() {
 	return data;
