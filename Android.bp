@@ -69,6 +69,7 @@ android_library {
         "kotlinx-coroutines-android",
         "kotlinx-coroutines-core",
 	"androidx.viewpager2_viewpager2",
+        "VendorSupport-preference",
     ],
 
     libs: [
