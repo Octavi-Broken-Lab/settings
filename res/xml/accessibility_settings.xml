@@ -23,6 +23,7 @@
 
     <Preference
         android:layout="@layout/octavi_header"
+        settings:allowDividerBelow="false"
         android:title="@string/top_accessibility_title"
         android:selectable="false"/>
 
