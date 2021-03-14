@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2019 Potato Open Sauce Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Octavi Stage in About phone -->
+    <string name="octavi_stage_title">طور نظام تشغيل أوكتاڤي</string>
+    <!-- Build types, now with translations -->
+    <string name="build_type">نوع النسخة</string>
+    <string name="octavi_official">رسمي</string>
+    <string name="octavi_unofficial">غير رسمي</string>
+    <!-- Device Model -->
+    <string name="octavi_device_model">طراز الجهاز</string>
+    <!-- Fingerprint location message - default -->
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_front" product="default">حدد موقع حساس البصمة في مقدمة هاتفك.</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_left" product="default">حدد موقع حساس البصمة في مؤخرة جهازك.</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_right" product="default">حدد موقع حساس البصمة على يمين جهازك.</string>
+    <!-- Fingerprint location message - generic -->
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_front" product="device">حدد موقع حساس البصمة في مقدمة جهازك.</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_left" product="device">حدد موقع حساس البصمة على يسار جهازك.</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_right" product="device">حدد موقع حساس البصمة على يمين جهازك.</string>
+    <!-- Fingerprint location message - tablet -->
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_front" product="tablet">حدد موقع حساس البصمة في مقدمة جهازك اللوحي.</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_left" product="tablet">حدد موقع حساس البصمة على يسار جهازك اللوحي.</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_right" product="tablet">حدد موقع حساس البصمة على يمين جهازك اللوحي.</string>
+    <!-- Battery stats reset -->
+    <string name="battery_stats_reset">إعادة تعيين الإحصائيات</string>
+    <string name="battery_stats_message">سيتم محو تاريخ إحصائيات البطارية</string>
+    <!-- Phone Specs -->
+    <string name="specs_title">مواصفات الهاتف</string>
+    <!-- App details: open play store link if app is user installed -->
+    <string name="app_play_store">متجر Play</string>
+    <!-- Manage applications, package string displayed in app snippet -->
+    <string name="packagename_text"><xliff:g id="package_name">%1$s</xliff:g></string>
+    <!-- Octavi Lab -->
+    <string name="octavi_lab_dash_title">Octavi Lab</string>
+    <string name="octavi_lab_summary">مختبر التعديلات</string>
+    <!-- Battery temp -->
+    <string name="battery_temp_title">حرارة البطارية</string>
+    <!-- Charging vibration -->
+    <string name="charging_sounds_nos_title">صوت وصل الشحن</string>
+    <string name="charging_vibro_title">الإهتزاز عند وصل الشحن</string>
+    <!-- Screenshot sound -->
+    <string name="screenshot_sound_title">صوت لقطة الشاشة</string>
+    <!-- Clock style -->
+    <string name="clock_style_title">Clock style</string>
+    <string name="clock_style_summary">تخصيص ساعة شاشة القفل</string>
+    <!-- Battery health -->
+    <string name="battery_health_title">صحة البطارية</string>
+    <string name="battery_health_summary">مراقبة صحة البطارية في جهازك</string>
+    <string name="current_battery_capacity">السعة الحالية للبطارية</string>
+    <string name="current_battery_capacity_summary">سعة البطارية الحالية مقاسة بالنواة</string>
+    <string name="designed_battery_capacity">السعة المصممة للبطارية</string>
+    <string name="designed_battery_capacity_summary">سعة البطارية التي صممت من قبل المصنع</string>
+    <string name="battery_charge_cycles">تم إكتمال دورات الشحن</string>
+    <!-- Notch: Full screen apps -->
+    <string name="display_cutout_force_fullscreen_title">تطبيقات تملأ الشاشة</string>
+    <string name="display_cutout_force_fullscreen_summary">فرض التطبيقات على تجاهل مكان قطع الشاشة</string>
+    <!-- Advanced powermenu -->
+    <string name="global_actions_title">Power menu</string>
+    <!-- Custom light color -->
+    <string name="custom_light_title">لون الضوء</string>
+    <string name="custom_light_on_time_title">وقت تشغيل الضوء أثناء نبض الليد (مث)</string>
+    <string name="custom_light_off_time_title">وقت إطفاء الضوء أثناء نبض الليد (مث)\"</string>
+    <string name="value_equals_default">إفتراضي</string>
+    <!-- Scramble pin -->
+    <string name="unlock_scramble_pin_layout_title">ترتيب مبعثر</string>
+    <string name="unlock_scramble_pin_layout_summary">بعثرة أرقام الPIN عند فتح الجهاز</string>
+    <!-- Quick unlock -->
+    <string name="unlock_quick_unlock_control_title">فتح سريع</string>
+    <string name="unlock_quick_unlock_control_summary">فتح تلقائي عند إدخال كلمة السر او رمز الPIN الصحيح</string>
+    <!-- Misc gesture settings -->
+    <string name="back_gesture_haptic_title">الإستجابة الإهتزازية</string>
+    <string name="back_gesture_haptic_summary">تفعيل الإهتزاز عند إيماء الرجوع</string>
+    <string name="weather_title">Weather</string>
+    <!-- Navbar length -->
+    <string name="navbar_length">طول شريط الإيماء</string>
+    <string name="hidden_label">خفي</string>
+    <string name="long_label">طويل</string>
+    <!-- Title for connected TWS device group [CHAR LIMIT=none]-->
+    <string name="connected_tws_device_saved_title">السماعات اللاسلكية المحفوظة</string>
+    <!-- Volume link notification -->
+    <string name="volume_link_notification_title">ربط صوت الإشعارات &amp; الرنين</string>
+    <!-- Lock screen pattern size -->
+    <string name="lock_settings_picker_pattern_size_message">اختر حجم النمط</string>
+    <!-- Whether a visible red line will be drawn after the user has drawn the unlock pattern incorrectly -->
+    <string name="lockpattern_settings_enable_error_path_title">إظهار الخطأ بالنمط</string>
+    <!-- Whether the dots will be drawn when using the lockscreen pattern -->
+    <string name="lockpattern_settings_enable_dots_title">إظهار نقاط النمط</string>
+    <!-- Per-app data restrictions -->
+    <string name="data_usage_app_restrict_all">السماح بالوصول للشبكة</string>
+    <string name="data_usage_app_restrict_all_summary">تفعيل إستخدام الشبكة</string>
+    <string name="data_usage_app_restrict_mobile">بيانات الهاتف</string>
+    <string name="data_usage_app_restrict_mobile_summary">تفعيل استخدام بيانات الهاتف</string>
+    <string name="data_usage_app_restrict_vpn">بيانات الـVPN</string>
+    <string name="data_usage_app_restrict_vpn_summary">تفعيل إستخدام بيانات الVPN</string>
+    <string name="data_usage_app_restrict_wifi">بيانات ال واي\u2011فاي</string>
+    <string name="data_usage_app_restrict_wifi_summary">تفعيل إستخدام بيانات الواي\u2011فاي</string>
+    <!-- Search keywords -->
+    <string name="keywords_notification_log">الإشعارات، سجل الإشعارات</string>
+    <!-- Adaptive Playback -->
+    <string name="adaptive_playback_screen_title">التشغيل التأقلمي</string>
+    <string name="adaptive_playback_disabled_summary">مطفأ</string>
+    <string name="adaptive_playback_timeout_title">استخدام مهلة من</string>
+    <string name="adaptive_playback_timeout_none">بدون مهلة</string>
+    <string name="adaptive_playback_timeout_none_summary">مشغل (بدون مهلة)</string>
+    <string name="adaptive_playback_timeout_30_secs">30 ثانية</string>
+    <string name="adaptive_playback_timeout_30_secs_summary">مشغل (30 ثانية)</string>
+    <string name="adaptive_playback_timeout_1_min">دقيقة</string>
+    <string name="adaptive_playback_timeout_1_min_summary">مشغل (دقيقة)</string>
+    <string name="adaptive_playback_timeout_2_min">دقيقتان</string>
+    <string name="adaptive_playback_timeout_2_min_summary">مشغل (دقيقتان)</string>
+    <string name="adaptive_playback_timeout_5_min">5 minutes</string>
+    <string name="adaptive_playback_timeout_5_min_summary">مشغل (5 دقائق)</string>
+    <string name="adaptive_playback_timeout_10_min">10 minutes</string>
+    <string name="adaptive_playback_timeout_10_min_summary">مشغل (10 دقائق)</string>
+    <string name="adaptive_playback_explainer">التشغيل التأقلمي سوف يوقف الوسائط تلقائياً عندما يُكتم الصوت و سوف يستأنف التشغيل عندما يعود الصوت ضمن الوقت المحدد.</string>
+    <!-- Back gesture height -->
+    <string name="back_height_low_label">مكتمل</string>
+    <string name="back_height_high_label">الأسفل</string>
+    <string name="back_options_dialog_title">الخيارات</string>
+    <string name="back_height_message">ارتفاع الشاشة المستخدم كمنطقة ملموسة للإيماء الرجوع.</string>
+    <!-- Back Gestures -->
+    <string name="smallest_tick_label">مطفأ</string>
+    <string name="greatest_tick_label">نصف الشاشة</string>
+    <string name="gesture_back_deadzone_label">المنطقة الميتة</string>
+    <string name="back_sensitivity_dialog_message_cust">\nإستخدم شريط التعديل الأول و الثاني لتخصيص حساسية إيماء الرجوع, آخر شريط تعديل يُستخدم لتعيين منطقة ميتة في أعلى الشاشة حيث لا يمكن إستخدام الإيماءات, لتجنب التعارض مع إيماءات التطبيقات.</string>
+    <!-- Back gesture animation -->
+    <string name="back_gesture_arrow_message">تأثير إيماء الرجوع</string>
+    <string name="back_gesture_arrow_summary">إظهار سهم متحرك لإيماء الرجوع.</string>
+    <!-- Min refresh rate -->
+    <string name="min_refresh_rate_title">معدل تحديث الشاشة الأدنى</string>
+    <!-- Volume Steps -->
+    <string name="volume_steps_title">درجات الصوت</string>
+    <string name="volume_steps_summary">عدد خطوات درجة الصوت</string>
+    <string name="volume_steps_alarm_title">درجات الصوت: المنبه</string>
+    <string name="volume_steps_dtmf_title">درجات الصوت: مفاتيح الهاتف</string>
+    <string name="volume_steps_music_title">درجات الصوت: الموسيقى</string>
+    <string name="volume_steps_notification_title">درجات الصوت: الإشعارات</string>
+    <string name="volume_steps_ring_title">درجات الصوت: الرنين</string>
+    <string name="volume_steps_system_title">درجات الصوت: النظام</string>
+    <string name="volume_steps_voice_call_title">درجات الصوت: صوت المكالمة</string>
+    <string name="volume_steps_reset">Reset</string>
+    <!-- Running services toggle -->
+    <string name="background_processes_settings_title">العمليات الخلفية</string>
+    <!-- Pocket judge -->
+    <string name="pocket_judge_title">مستشعر الجيب</string>
+    <string name="pocket_judge_summary">توقيف الشاشة و أزرار الإدخال عندما يكون الجهاز في الجيب</string>
+    <!-- Smart charging -->
+    <string name="smart_charging_title">الشحن الذكي</string>
+    <string name="smart_charging_summary">تعيين الحد الأعلى لمستوى الشحن</string>
+    <string name="smart_charging_switch_title">إستخدام الشحن الذكي</string>
+    <string name="smart_charging_level_title">مستوى الإيقاف</string>
+    <string name="smart_charging_resume_level_title">مستوى البدء</string>
+    <string name="smart_charging_reset_stats_title">إعادة تعيين إحصاءات البطارية</string>
+    <string name="smart_charging_reset_stats_summary">إعادة تعيين إحصاءات البطارية بعد وصول حد الشحن المحدد من قبل المستخدم</string>
+    <string name="smart_charging_footer">يسمح لك الشحن الذكي ان تحدد مستوى الشحن الأقصى لتمدد عمر بطاريتك</string>
+    <!-- Refresh rate -->
+    <string name="refresh_rate_title">معدل تحديث الشاشة</string>
+    <string name="refresh_rate_summary_auto">تلقائي / رفع معدل تحديث شاشتك تلقائيا لبعض محتوى الشاشة من 60 الى 90 هرتز</string>
+    <string name="refresh_rate_summary_60">60 هرتز / معدل التحديث ثابت على 60 هرتز لكافة المحتوى</string>
+    <string name="refresh_rate_summary_90">90 هرتز / معدل التحديث ثابت على 90 هرتز لكافة المحتوى. زيادة في إستخدام البطارية</string>
+    <string name="auto_refresh_rate">تلقائي</string>
+    <!-- Clipboard toast toggle -->
+    <string name="show_clipboard_toast">إظهار تنبيهات عند الوصول الى الحافظة</string>
+    <string name="show_clipboard_toast_summary">إظهار إشعار مصغر عندما يحاول أي تطبيق الوصول للحافظة</string>
+    <!-- Vibration patterns -->
+    <string name="vibration_pattern_title">أسلوب إهتزاز نغمة الرنين</string>
+    <string name="pattern_dzzz_dzzz">دززز-دززز</string>
+    <string name="pattern_dzzz_da">دززز-دا</string>
+    <string name="pattern_mm_mm_mm">مم-مم-مم</string>
+    <string name="pattern_da_da_dzzz">دا-دا-دززز</string>
+    <string name="pattern_da_dzzz_da">دا-دززز-دا</string>
+    <string name="pattern_custom">مخصص</string>
+    <string name="custom_vibration_pattern_title">نمط مخصص</string>
+    <!-- Increasing ring tone volume -->
+    <string name="increasing_ring_volume_option_title">تزايد صوت الرنين</string>
+    <string name="increasing_ring_min_volume_title">مستوى صوت البدء</string>
+    <string name="increasing_ring_ramp_up_time_title">زمن التدرج</string>
+    <!-- Navbar radius -->
+    <string name="navbar_radius">طول شريط الإيماء</string>
+    <string name="small_label">1 منزلة عشرية</string>
+    <string name="big_label">4 منزلة عشرية</string>
+    <!-- Swipe up for face unlock -->
+    <string name="security_settings_face_require_swipe">اسحب للأعلى لفتح القفل</string>
+    <string name="security_settings_face_require_swipe_summary">اسحب للأعلى بشاشة القفل لفك القفل بالوجه</string>
+    <!-- Incall vibrate options -->
+    <string name="incall_vibrate_connect_title">الإهتزاز عند الإتصال</string>
+    <string name="incall_vibrate_call_wait_title">الإهتزاز عند إنتظار المكالمة</string>
+    <string name="incall_vibrate_disconnect_title">الإهتزاز عند قطع الإتصال</string>
+    <string name="trademark">&#8482;</string>
+</resources>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2019 Potato Open Sauce Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Octavi Stage in About phone -->
+    <string name="octavi_stage_title">سطح اکتاوی او اس</string>
+    <!-- Build types, now with translations -->
+    <string name="build_type">نوع رام</string>
+    <string name="octavi_official">رسمی</string>
+    <string name="octavi_unofficial">غیر رسمی</string>
+    <!-- Device Model -->
+    <string name="octavi_device_model">مدل دستگاه</string>
+    <!-- Fingerprint location message - default -->
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_front" product="default">سنسور اثر انگشت را بر روی صفحه لمس کنید</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_left" product="default">سنسور اثر انگشت گوشی خود را در سمت چپ گوشی لمس کنید</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_right" product="default">سنسور اثر انگشت گوشی خود را در سمت راست گوشی لمس کنید</string>
+    <!-- Fingerprint location message - generic -->
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_front" product="device">سنسور اثر انگشت را بر روی صفحه لمس کنید</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_left" product="device">سنسور اثر انگشت گوشی خود را در سمت چپ دستگاه لمس کنید.</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_right" product="device">سنسور اثر انگشت گوشی خود را در سمت راست دستگاه لمس کنید.</string>
+    <!-- Fingerprint location message - tablet -->
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_front" product="tablet">سنسور اثر انگشت را بر روی صفحه لمس کنید</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_left" product="tablet">سنسور اثر انگشت خود را در سمت چپ تبلت لمس کنید</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_right" product="tablet">سنسور اثر انگشت را در کناره سمت راست تبلت خود لمس کنید</string>
+    <!-- Battery stats reset -->
+    <string name="battery_stats_reset">تنظيم مجدد آمار باتری</string>
+    <string name="battery_stats_message">تاریخچه استفاده از باتری در حال حذف شدن هستند</string>
+    <!-- Phone Specs -->
+    <string name="specs_title">ویژگی های اختصاصی گوشی</string>
+    <!-- App details: open play store link if app is user installed -->
+    <string name="app_play_store">گوگل پلی</string>
+    <!-- Manage applications, package string displayed in app snippet -->
+    <string name="packagename_text"><xliff:g id="package_name">%1$s</xliff:g></string>
+    <!-- Octavi Lab -->
+    <string name="octavi_lab_dash_title">شخصی سازی اختصاصی رام اکتاوی</string>
+    <string name="octavi_lab_summary">آزمایشگاه اختصاصی سفارشی سازی رام</string>
+    <!-- Battery temp -->
+    <string name="battery_temp_title">دمای باتری</string>
+    <!-- Charging vibration -->
+    <string name="charging_sounds_nos_title">صداهای شارژ</string>
+    <string name="charging_vibro_title">ویبره هنگام شارژ</string>
+    <!-- Screenshot sound -->
+    <string name="screenshot_sound_title">صدای عکس صفحه</string>
+    <!-- Clock style -->
+    <string name="clock_style_title">حالت ساعت</string>
+    <string name="clock_style_summary">شخصی‌سازی ساعت صفحه‌ی قفل</string>
+    <!-- Battery health -->
+    <string name="battery_health_title">سلامت باتری</string>
+    <string name="battery_health_summary">سلامت باتری دستگاه شما را برسی میکند</string>
+    <string name="current_battery_capacity">ظرفیت حال حاضر باتری</string>
+    <string name="current_battery_capacity_summary">ظرفیت حال حاضر باتری (اندازه گیری توسط کرنل)</string>
+    <string name="designed_battery_capacity">ظرفیت باتری اصلی دستگاه</string>
+    <string name="designed_battery_capacity_summary">ظرفیت باتری ای که شرکت سازنده برای این گوشی در نظر گرفته</string>
+    <string name="battery_charge_cycles">سیکل شارژ کردن کامل شد</string>
+    <!-- Notch: Full screen apps -->
+    <string name="display_cutout_force_fullscreen_title">برنامه های تمام صفحه</string>
+    <string name="display_cutout_force_fullscreen_summary">مجبور کردن برنامه ها به نادیده گرفتن فضای ناچ</string>
+    <!-- Advanced powermenu -->
+    <string name="global_actions_title">منوی پاور</string>
+    <!-- Custom light color -->
+    <string name="custom_light_title">رنگ نور</string>
+    <string name="custom_light_on_time_title">زمان روشن بودن چراغ ledدر هر پالس ( میلی ثانیه)</string>
+    <string name="custom_light_off_time_title">زمان خاموش بودن چراغ ledدر هر پالس ( میلی ثانیه)\"</string>
+    <string name="value_equals_default">پیش فرض</string>
+    <!-- Scramble pin -->
+    <string name="unlock_scramble_pin_layout_title">چینش درهم</string>
+    <string name="unlock_scramble_pin_layout_summary">چینش درهم اعداد هنگام باز کردن قفل دستگاه</string>
+    <!-- Quick unlock -->
+    <string name="unlock_quick_unlock_control_title">بازگشایی سریع قفل</string>
+    <string name="unlock_quick_unlock_control_summary">هنگامی که پین/رمز عبور درست وارد شود، به صورت خودکار باز شود(بدون نیاز به زدن دکمه تایید)</string>
+    <!-- Misc gesture settings -->
+    <string name="back_gesture_haptic_title">بازخورد لمسی</string>
+    <string name="back_gesture_haptic_summary">فعال کردن بازخورد لمسی هنگام لمس برگشت</string>
+    <string name="weather_title">آب و هوا</string>
+    <!-- Navbar length -->
+    <string name="navbar_length">طول gesture bar</string>
+    <string name="hidden_label">پنهان</string>
+    <string name="long_label">بلند</string>
+    <!-- Title for connected TWS device group [CHAR LIMIT=none]-->
+    <string name="connected_tws_device_saved_title">ایر بادز های ذخیره‌شده</string>
+    <!-- Volume link notification -->
+    <string name="volume_link_notification_title">یکی شدن میزان صدای زنگ و اعلان</string>
+    <!-- Lock screen pattern size -->
+    <string name="lock_settings_picker_pattern_size_message">اندازه‌ی الگو را انتخاب کنید</string>
+    <!-- Whether a visible red line will be drawn after the user has drawn the unlock pattern incorrectly -->
+    <string name="lockpattern_settings_enable_error_path_title">نمایش خطای کشیده شدن الگو</string>
+    <!-- Whether the dots will be drawn when using the lockscreen pattern -->
+    <string name="lockpattern_settings_enable_dots_title">نمایش نقطه ها در حالت قفل الگویی</string>
+    <!-- Per-app data restrictions -->
+    <string name="data_usage_app_restrict_all">اجازه‌ی دسترسی به شبکه اینترنت</string>
+    <string name="data_usage_app_restrict_all_summary">فعال‌کردن استفاده از شبکه</string>
+    <string name="data_usage_app_restrict_mobile">اینترنت دیتا</string>
+    <string name="data_usage_app_restrict_mobile_summary">استفاده از داده تلفن همراه را فعال کنید</string>
+    <string name="data_usage_app_restrict_vpn">داده‌ وی پی ان</string>
+    <string name="data_usage_app_restrict_vpn_summary">فعال کردن استفاده از داده وی پی ان</string>
+    <string name="data_usage_app_restrict_wifi">داده وای فای</string>
+    <string name="data_usage_app_restrict_wifi_summary">استفاده از داده وای فای را فعال کنید</string>
+    <!-- Search keywords -->
+    <string name="keywords_notification_log">اعلان‌ها، اعلان‌های ثبت‌شده</string>
+    <!-- Adaptive Playback -->
+    <string name="adaptive_playback_screen_title">Adaptive playback</string>
+    <string name="adaptive_playback_disabled_summary">خاموش</string>
+    <string name="adaptive_playback_timeout_title">استفاده مقدار زمان</string>
+    <string name="adaptive_playback_timeout_none">بدون تنظیم زمان</string>
+    <string name="adaptive_playback_timeout_none_summary">روشن(بدون وقفه)</string>
+    <string name="adaptive_playback_timeout_30_secs">۳۰ ثانیه</string>
+    <string name="adaptive_playback_timeout_30_secs_summary">روشن(۳۰ثانیه)</string>
+    <string name="adaptive_playback_timeout_1_min">۱ دقیقه</string>
+    <string name="adaptive_playback_timeout_1_min_summary">روشن(۱ دقیقه)</string>
+    <string name="adaptive_playback_timeout_2_min">۲ دقیقه</string>
+    <string name="adaptive_playback_timeout_2_min_summary">روشن(۲دقیقه)</string>
+    <string name="adaptive_playback_timeout_5_min">۵ دقیقه</string>
+    <string name="adaptive_playback_timeout_5_min_summary">روشن(۵دقیقه)</string>
+    <string name="adaptive_playback_timeout_10_min">۱۰ دقیقه</string>
+    <string name="adaptive_playback_timeout_10_min_summary">روشن(۱۰دقیقه)</string>
+    <string name="adaptive_playback_explainer">Adaptive playback automatically pauses media when the volume is muted and will resume automatically when volume is restored within the set time.</string>
+    <!-- Back gesture height -->
+    <string name="back_height_low_label">کامل</string>
+    <string name="back_height_high_label">پایین</string>
+    <string name="back_options_dialog_title">گزینه ها</string>
+    <string name="back_height_message">مقدار ارتفاع صفحه نمایش که به عنوان منطقه قابل لمس برای حرکت بازگشت استفاده می شود.</string>
+    <!-- Back Gestures -->
+    <string name="smallest_tick_label">خاموش</string>
+    <string name="greatest_tick_label">نصف صفحه</string>
+    <string name="gesture_back_deadzone_label">منطقه غیر قابل لمس</string>
+    <string name="back_sensitivity_dialog_message_cust">\nUse the first and second seekbar to configure back swipe sensitivity, the last seekbar to set a dead area on top of the screen where the swipe cannot be triggered, to avoid conflicts with in-app gestures.</string>
+    <!-- Back gesture animation -->
+    <string name="back_gesture_arrow_message">انیمیشن ژست حرکت عقب</string>
+    <string name="back_gesture_arrow_summary">نشان دادن انیمیشن برای پیکان ژست عقب گرد</string>
+    <!-- Min refresh rate -->
+    <string name="min_refresh_rate_title">حداقل میزان نرخ تازه سازی صفحه</string>
+    <!-- Volume Steps -->
+    <string name="volume_steps_title">سطح های افزایش صدا</string>
+    <string name="volume_steps_summary">تنظیم تعداد سطح برای افزایش صدا</string>
+    <string name="volume_steps_alarm_title">میزان سطح صدا: هشدار صوتی</string>
+    <string name="volume_steps_dtmf_title">میزان سطح صدا: DTMF</string>
+    <string name="volume_steps_music_title">میزان سطح صدا: موزیک</string>
+    <string name="volume_steps_notification_title">تعداد سطح صدا: اعلانات</string>
+    <string name="volume_steps_ring_title">تنظیم حساسیت تغییر میزان صدا: صدای زنگ</string>
+    <string name="volume_steps_system_title">تنظیم حساسیت تغییر میزان صدا: صدای سیستم</string>
+    <string name="volume_steps_voice_call_title">تنظیم حساسیت تغییر میزان صدا: تماس صوتی</string>
+    <string name="volume_steps_reset">تنظیم مجدد</string>
+    <!-- Running services toggle -->
+    <string name="background_processes_settings_title">پردازش های پس‌زمینه</string>
+    <!-- Pocket judge -->
+    <string name="pocket_judge_title">تشخیص قرارگیری گوشی در جیب</string>
+    <string name="pocket_judge_summary">قطع عملکرد صفحه نمایش و دکمه‌های ورودی هنگامی که دستگاه در جیب است</string>
+    <!-- Smart charging -->
+    <string name="smart_charging_title">شارژ هوشمند</string>
+    <string name="smart_charging_summary">تنظیم حداکثر مقدار شارژ</string>
+    <string name="smart_charging_switch_title">استفاده از شارژ هوشمند</string>
+    <string name="smart_charging_level_title">مقدار توقف شارژ</string>
+    <string name="smart_charging_resume_level_title">مقدار شروع شارژ</string>
+    <string name="smart_charging_reset_stats_title">تنظیم مجدد آمار کارکرد باتری</string>
+    <string name="smart_charging_reset_stats_summary">تنظیم مجدد آمار کارکرد باتری بعد از رسیدن به مقدار شارژ تعیین شده</string>
+    <string name="smart_charging_footer">شارژ هوشمند این امکان را به شما میدهد تا برای مقدار شارژ باتری خود حد تعیین کنید. این قابلیت عمر باتری شما را افزایش می‌دهد</string>
+    <!-- Refresh rate -->
+    <string name="refresh_rate_title">نرخ تازه سازی صفحه نمایش</string>
+    <string name="refresh_rate_summary_auto">اتوماتیک / بین 60 الی 90 هرتز متغییر است</string>
+    <string name="refresh_rate_summary_60">60 هرتز / برای تمامی محتوا روی 60 هرتز قفل شده است</string>
+    <string name="refresh_rate_summary_90">90 هرتز / برای تمامی محتوا روی 90 هرتز قفل شده است</string>
+    <string name="auto_refresh_rate">خودکار</string>
+    <!-- Clipboard toast toggle -->
+    <string name="show_clipboard_toast">نمایش دسترسی به کلیپ بورد(متن های کپی شده)</string>
+    <string name="show_clipboard_toast_summary">پیام کوچک سیستمی ای هنگامی که یک برنامه تلاش میکند به کلیپ بورد دسترسی پیدا کند نشان داده شود</string>
+    <!-- Vibration patterns -->
+    <string name="vibration_pattern_title">الگوی لرزش در هنگام زنگ خوردن</string>
+    <string name="pattern_dzzz_dzzz">dzzz-dzzz</string>
+    <string name="pattern_dzzz_da">dzzz-da</string>
+    <string name="pattern_mm_mm_mm">mm-mm-mm</string>
+    <string name="pattern_da_da_dzzz">da-da-dzzz</string>
+    <string name="pattern_da_dzzz_da">da-dzzz-da</string>
+    <string name="pattern_custom">سفارشی</string>
+    <string name="custom_vibration_pattern_title">الگوی دلخواه</string>
+    <!-- Increasing ring tone volume -->
+    <string name="increasing_ring_volume_option_title">صدای صعودی زنگ</string>
+    <string name="increasing_ring_min_volume_title">میزان صدا هنگام شروع</string>
+    <string name="increasing_ring_ramp_up_time_title">زمان افزایش صدا</string>
+    <!-- Navbar radius -->
+    <string name="navbar_radius">Gesture bar Radius</string>
+    <string name="small_label">1 dp</string>
+    <string name="big_label">4 dp</string>
+    <!-- Swipe up for face unlock -->
+    <string name="security_settings_face_require_swipe">برای باز کردن قفل به سمت بالا بکشید</string>
+    <string name="security_settings_face_require_swipe_summary">برای استفاده از قفل چهره بر روی صفحه قفل به بالا بکشید</string>
+    <!-- Incall vibrate options -->
+    <string name="incall_vibrate_connect_title">لرزش در هنگام شروع اتصال</string>
+    <string name="incall_vibrate_call_wait_title">لرزش هنگام انتظار تماس</string>
+    <string name="incall_vibrate_disconnect_title">لرزش در هنگام قطع تماس</string>
+    <string name="trademark">&#8482;</string>
+</resources>
