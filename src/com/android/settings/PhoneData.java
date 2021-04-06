@@ -359,6 +359,16 @@ public final class PhoneData {
         	        "48 MP + 13 MP + 8 MP",
                 	R.drawable.grus
 	        ));
+                //deen
+	        data.add(new AboutPhoneData(36,
+	                "deen",
+	                "8 x 2.0GHz",
+        	        "Snapgradon 625",
+                	"3000",
+	                "720 x 1520, 5.90 inches",
+        	        "13MP + 2MP, 8MP",
+                	R.drawable.deen
+	        ));
 }
     public static List<AboutPhoneData> getData() {
 	return data;
