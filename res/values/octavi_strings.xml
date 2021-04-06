@@ -245,10 +245,6 @@
     <string name="small_label">1 dp</string>
     <string name="big_label">4 dp</string>
 
-    <!-- Swipe up for face unlock -->
-    <string name="security_settings_face_require_swipe">Swipe up to unlock</string>
-    <string name="security_settings_face_require_swipe_summary">Swipe up on the lockscreen to use face unlock</string>
-
     <!-- Incall vibrate options -->
     <string name="incall_vibrate_connect_title">Vibrate on connect</string>
     <string name="incall_vibrate_call_wait_title">Vibrate on call waiting</string>
