@@ -349,7 +349,16 @@ public final class PhoneData {
         	        "13MP",
                 	R.drawable.land
 	        ));
-
+		//grus
+	        data.add(new AboutPhoneData(35,
+	               "grus",
+	                "2 x 2.3 GHz, 6 x 1.7 GHz",
+        	        "Snapgradon 710",
+                	"3070",
+	                "1080 x 2340, 5.97 inches",
+        	        "48 MP + 13 MP + 8 MP",
+                	R.drawable.grus
+	        ));
 }
     public static List<AboutPhoneData> getData() {
 	return data;
