@@ -66,8 +66,6 @@ import android.os.UserHandle;
 import android.os.UserManager;
 public class SettingsHomepageActivity extends FragmentActivity {
 
-    View homepageSpacer;
-    View homepageMainLayout;
     UserManager mUserManager;
     ImageView avatarView;
     Context context;
@@ -160,11 +158,6 @@ public class SettingsHomepageActivity extends FragmentActivity {
             fragmentTransaction.show(showFragment);
         }
         fragmentTransaction.commit();
-    }
-
-    private boolean isHomepageSpacerEnabled() {
-         return Settings.System.getInt(this.getContentResolver(),
-        Settings.System.SETTINGS_SPACER, 1) != 0;
     }
 
     private static void setMargins (View v, int l, int t, int r, int b) {
