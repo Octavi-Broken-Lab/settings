@@ -25,11 +25,17 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <androidx.core.widget.NestedScrollView
+    <com.factor.bouncy.BouncyNestedScrollView
+        android:animateLayoutChanges="true"
+        android:overScrollMode="always"
 	android:background="?android:attr/colorPrimary"
         android:id="@+id/main_content_scrollable_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:damping_ratio="DAMPING_RATIO_MEDIUM_BOUNCY"
+        app:fling_animation_size=".7"
+        app:overscroll_animation_size=".7"
+        app:stiffness="STIFFNESS_LOW"
 	app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
@@ -51,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:animateLayoutChanges="true" />
         </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+    </com.factor.bouncy.BouncyNestedScrollView>
 
     <com.google.android.material.appbar.AppBarLayout
 	app:elevation="0dp"

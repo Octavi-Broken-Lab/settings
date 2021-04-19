@@ -40,6 +40,8 @@ import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.widget.EditText;
 
+import androidx.preference.Preference;
+
 import com.android.settings.Sequent;
 import com.android.settings.Direction;
 import com.android.settings.CustomAnimation;
@@ -64,6 +66,11 @@ import java.util.ArrayList;
 
 import android.os.UserHandle;
 import android.os.UserManager;
+
+import android.animation.ValueAnimator;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.widget.LinearLayout;
+
 public class SettingsHomepageActivity extends FragmentActivity {
 
     UserManager mUserManager;
@@ -112,6 +119,7 @@ public class SettingsHomepageActivity extends FragmentActivity {
 	context = getApplicationContext();
 	random.setText(text.get(randomNum(0, text.size()-1)));
         mUserManager = context.getSystemService(UserManager.class);
+	
 
 	/*Sequent.origin((ViewGroup)root.findViewById(R.id.shit))
                 .delay(0)
@@ -131,6 +139,19 @@ public class SettingsHomepageActivity extends FragmentActivity {
                 startActivity(intent);
             }
         });
+	LinearLayout lin = findViewById(R.id.homepage_container);
+        for (int i = 0; i < lin.getChildCount(); i++) {
+            if (lin.getChildAt(i) instanceof View) {
+                View a = lin.getChildAt(i);
+                a.setAlpha(0f);
+                ValueAnimator animator = ValueAnimator.ofFloat(0, 1);
+                animator.setDuration((long) (500 * (i + 1) * .3));
+                animator.setStartDelay((long) (100 * (i + 1) * 1.25));
+                animator.setInterpolator(new AccelerateDecelerateInterpolator());
+                animator.addUpdateListener(animation -> a.setAlpha(((Float) animation.getAnimatedValue())));
+                animator.start();
+            }
+        }
 
 //        final ImageView avatarView = findViewById(R.id.account_avatar);
 //        getLifecycle().addObserver(new AvatarViewMixin(this, avatarView));

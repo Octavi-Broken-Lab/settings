@@ -32,7 +32,7 @@ android_library {
            "OctaviLab/src/**/*.kt",
     ],
 
-    aaptflags: ["--extra-packages com.octavi.lab"],
+    aaptflags: ["--extra-packages com.octavi.lab" , "--extra-packages com.factor.bouncy",],
 
     resource_dirs: ["res",
                     "OctaviLab/res",
@@ -71,6 +71,7 @@ android_library {
         "kotlinx-coroutines-core",
 	"androidx.viewpager2_viewpager2",
         "faceunlock_framework",
+	"bouncy",
     ],
 
     libs: [
@@ -114,4 +115,10 @@ android_app {
 android_library_import {
     name: "contextualcards",
     aars: ["libs/contextualcards.aar"],
+}
+
+android_library_import {
+    name: "bouncy",
+    aars: ["libs/bouncy-release.aar"],
+    sdk_version: "current",
 }
