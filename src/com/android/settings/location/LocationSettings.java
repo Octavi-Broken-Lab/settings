@@ -70,10 +70,6 @@ public class LocationSettings extends DashboardFragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         final SettingsActivity activity = (SettingsActivity) getActivity();
-	if (getActivity().getActionBar()!=null){
-	Log.e("satyam" , ""+getActivity().getActionBar().getTitle());
-	getActivity().getActionBar().setTitle("");
-	}
         final SwitchBar switchBar = activity.getSwitchBar();
         switchBar.setSwitchBarText(R.string.location_settings_master_switch_title,
                 R.string.location_settings_master_switch_title);
