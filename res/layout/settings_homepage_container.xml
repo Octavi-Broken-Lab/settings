@@ -60,73 +60,89 @@
     </com.factor.bouncy.BouncyNestedScrollView>
 
     <com.google.android.material.appbar.AppBarLayout
-	app:elevation="0dp"
+        android:id="@+id/appbarRoot"
+        app:elevation="0dp"
+        android:touchscreenBlocksFocus="false"
         android:background="?android:attr/colorPrimary"
         android:layout_width="match_parent"
-        android:touchscreenBlocksFocus="false"
-        android:keyboardNavigationCluster="false"
-        android:layout_height="wrap_content">
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/shit"
-            android:layout_width="match_parent"
-            android:layout_height="288dp"
-            android:paddingTop="14dp"
-            android:paddingBottom="14dp"
-            app:layout_scrollFlags="scroll|enterAlwaysCollapsed">
-
-    <LinearLayout
-	android:id="@+id/welcome007"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-	android:gravity="center"
-        android:paddingTop="88dp">
-            <TextView
-                android:id="@+id/temp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="48sp"
-                android:text="Hello, "
-	        android:textColor="?android:attr/colorAccent"
-                app:layout_constraintTop_toTopOf="parent" />
+        android:fitsSystemWindows="true"
+        app:liftOnScroll="true">
 
-            <TextView
-                android:id="@+id/settings_label"
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="324dp"
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed">
+
+            <LinearLayout
+                android:id="@+id/welcome007"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-	        android:textColor="?android:attr/textColorPrimary"
-                android:singleLine="true"
-		android:maxLength="6"
-                android:text="User"
-                android:textSize="48sp"/>
-    </LinearLayout>
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:layout_gravity="center"
+                app:layout_collapseMode="pin">
+
+                <TextView
+                    android:id="@+id/temp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hello, "
+                    android:textColor="?android:attr/colorAccent"
+                    android:textSize="26sp"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/settings_label"
+                    android:layout_width="wrap_content"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="User"
+                    android:textSize="26sp" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/random_settings"
+                android:text="@string/bottom_sheet_behavior"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:gravity="center"
                 android:textSize="14sp"
-                android:layout_marginTop="2.5dp"
-		android:gravity="center"
-		app:layout_constraintTop_toBottomOf="@id/welcome007" />
-            <Toolbar
- 		android:id="@+id/search_action_bar"                                                 
-                android:background="@android:color/transparent"
-                android:layout_width="42dp"                                                         
-                android:layout_height="42dp"                                                                                                      
-                android:navigationIcon="@drawable/ic_homepage_search"                               
-	        android:contentInsetStartWithNavigation="@dimen/search_bar_content_inset"
-		android:layout_marginEnd="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/account_avatar_mirror" />
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="46dp"
+                android:singleLine="true" />
 
-            <ImageView
-                android:id="@+id/account_avatar_mirror"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_marginEnd="15dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/search_action_bar" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="bottom"
+                android:visibility="invisible" />
+
+            <LinearLayout
+                android:id="@+id/common_con"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_marginEnd="10dp"
+                android:orientation="horizontal">
+
+                <Toolbar
+                    android:id="@+id/search_action_bar"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@android:color/transparent"
+                    android:navigationIcon="@drawable/ic_homepage_search"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/account_avatar_mirror" />
+
+                <ImageView
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/account_avatar_mirror"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"/>
+            </LinearLayout>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

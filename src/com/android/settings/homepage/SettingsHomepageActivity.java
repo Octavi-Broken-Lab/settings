@@ -21,6 +21,9 @@ import android.animation.LayoutTransition;
 import android.app.ActivityManager;
 import android.app.settings.SettingsEnums;
 import android.os.Bundle;
+
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.OvershootInterpolator;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -30,6 +33,7 @@ import android.widget.Toolbar;
 import android.widget.TextView;
 
 import android.content.ComponentName;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -41,7 +45,7 @@ import android.view.animation.LinearInterpolator;
 import android.widget.EditText;
 
 import androidx.preference.Preference;
-
+import android.widget.LinearLayout;
 import com.android.settings.Sequent;
 import com.android.settings.Direction;
 import com.android.settings.CustomAnimation;
@@ -70,12 +74,18 @@ import android.os.UserManager;
 import android.animation.ValueAnimator;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.LinearLayout;
-
+import com.google.android.material.appbar.AppBarLayout;
 public class SettingsHomepageActivity extends FragmentActivity {
 
     UserManager mUserManager;
     ImageView avatarView;
     Context context;
+
+    TextView random;
+    TextView label;
+    TextView title;
+
+
     static ArrayList<String> text=new ArrayList<>();
     static {
         text.add("Thanks, for choosing Octavi!");
@@ -103,23 +113,62 @@ public class SettingsHomepageActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        context = getApplicationContext();
+        final ContentResolver contentResolver = context.getContentResolver();
+
         setContentView(R.layout.settings_homepage_container);
         final View root = findViewById(R.id.settings_homepage_container);
         root.setSystemUiVisibility(
                View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
 
 //        setHomepageContainerPaddingTop();
-	TextView random = root.findViewById(R.id.random_settings);
+	LinearLayout commonCon = root.findViewById(R.id.common_con);
+	LinearLayout layoutWel = root.findViewById(R.id.welcome007);
         final Toolbar toolbar = root.findViewById(R.id.search_action_bar);
+        random = root.findViewById(R.id.random_settings);
+        label = root.findViewById(R.id.settings_label);
+        title = root.findViewById(R.id.settings_title);
+        avatarView = root.findViewById(R.id.account_avatar_mirror);
+
+       /*if (Settings.System.getInt(context.getContentResolver(),
+            Settings.System.SETTINGS_HEADER, 0) ==0) {
+       		random.setVisibility(View.VISIBLE);
+	        label.setVisibility(View.VISIBLE);
+	        title.setVisibility(View.GONE);
+             } else {
+		random.setVisibility(View.GONE);
+	        label.setVisibility(View.GONE);
+	        title.setVisibility(View.VISIBLE);
+              }*/
+
         FeatureFactory.getFactory(this).getSearchFeatureProvider()
                 .initSearchToolbar(this /* activity */, toolbar, SettingsEnums.SETTINGS_HOMEPAGE);
 
-	final TextView label = root.findViewById(R.id.settings_label);
-
-	context = getApplicationContext();
 	random.setText(text.get(randomNum(0, text.size()-1)));
         mUserManager = context.getSystemService(UserManager.class);
-	
+
+	AppBarLayout appBarLayout = root.findViewById(R.id.appbarRoot);
+	appBarLayout.addOnOffsetChangedListener((appBarLayout1, i) -> {
+            float abs = ((float) Math.abs(i)) / ((float) appBarLayout1.getTotalScrollRange());
+            //Log.d("EEE", "onOffsetChanged: " + abs);
+            float f = 2.0f - abs;
+            float f2 = 1.0f - abs;
+            //Main title
+            layoutWel.setScaleX(f);
+            layoutWel.setScaleY(f);
+            layoutWel.setTranslationX(-context.getResources().getDimensionPixelSize(R.dimen.start_margin) * abs);
+
+            //random text
+            if (f2 == 1.0)
+                random.animate().setDuration(500).setInterpolator(new OvershootInterpolator()).alpha(1f).start();
+            else if (f2 < 1.0 && f2 >= 0.7) random.animate().setInterpolator(new AccelerateDecelerateInterpolator()).alpha(0f).setDuration(100).start();
+
+            random.setScaleY(f2);
+            random.setTranslationY(context.getResources().getDimensionPixelSize(R.dimen.top_margin_random) * f2);
+
+            //Avatar view
+            commonCon.setTranslationX(context.getResources().getDimensionPixelSize(R.dimen.top_matrans_dimen) * f2);
+        });
 
 	/*Sequent.origin((ViewGroup)root.findViewById(R.id.shit))
                 .delay(0)
@@ -127,7 +176,6 @@ public class SettingsHomepageActivity extends FragmentActivity {
                 .anim(context, CustomAnimation.FADE_IN_UP)
                 .flow(Direction.FORWARD).start();*/
 
-        avatarView = root.findViewById(R.id.account_avatar_mirror);
 
         //final AvatarViewMixin avatarViewMixin = new AvatarViewMixin(this, avatarView);
         avatarView.setImageDrawable(getCircularUserIcon(context));
