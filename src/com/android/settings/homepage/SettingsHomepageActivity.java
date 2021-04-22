@@ -18,6 +18,7 @@
 package com.android.settings.homepage;
 
 import android.animation.LayoutTransition;
+import android.animation.ObjectAnimator;
 import android.app.ActivityManager;
 import android.app.settings.SettingsEnums;
 import android.os.Bundle;
@@ -64,6 +65,8 @@ import com.android.settings.core.HideNonSystemOverlayMixin;
 import com.android.settings.homepage.contextualcards.ContextualCardsFragment;
 import com.android.settings.overlay.FeatureFactory;
 
+import com.factor.bouncy.BouncyNestedScrollView;
+import com.factor.bouncy.util.Bouncy;
 import com.android.internal.util.UserIcons;
 import com.android.settingslib.drawable.CircleFramedDrawable;
 import java.util.ArrayList;
@@ -122,6 +125,13 @@ public class SettingsHomepageActivity extends FragmentActivity {
                View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
 
 //        setHomepageContainerPaddingTop();
+	BouncyNestedScrollView nestedScrollView = root.findViewById(R.id.main_content_scrollable_container);
+	nestedScrollView.setStiffness(Bouncy.STIFFNESS_MEDIUM);
+        nestedScrollView.setDampingRatio(Bouncy.DAMPING_RATIO_LOW_BOUNCY);
+        nestedScrollView.setSmoothScrollingEnabled(true);
+        nestedScrollView.setFlingAnimationSize(.7f);
+        nestedScrollView.setOverscrollAnimationSize(.7f);
+
 	LinearLayout commonCon = root.findViewById(R.id.common_con);
 	LinearLayout layoutWel = root.findViewById(R.id.welcome007);
         final Toolbar toolbar = root.findViewById(R.id.search_action_bar);
@@ -147,27 +157,42 @@ public class SettingsHomepageActivity extends FragmentActivity {
 	random.setText(text.get(randomNum(0, text.size()-1)));
         mUserManager = context.getSystemService(UserManager.class);
 
+        LinearLayout lin = root.findViewById(R.id.homepage_container);
+        for (int i = 0; i < lin.getChildCount(); i++) {
+                View a = lin.getChildAt(i);
+                a.setAlpha(0f);
+                ValueAnimator animator = ValueAnimator.ofFloat(0, 1);
+                animator.setDuration((long) (500 * (i + 1) * .3));
+                animator.setStartDelay((long) (100 * (i + 1) * 1.25));
+                animator.setInterpolator(new AccelerateDecelerateInterpolator());
+                animator.addUpdateListener(animation -> a.setAlpha(((Float) animation.getAnimatedValue())));
+                animator.start();
+        }
+
 	AppBarLayout appBarLayout = root.findViewById(R.id.appbarRoot);
-	appBarLayout.addOnOffsetChangedListener((appBarLayout1, i) -> {
+        appBarLayout.addOnOffsetChangedListener((appBarLayout1, i) -> {
+
             float abs = ((float) Math.abs(i)) / ((float) appBarLayout1.getTotalScrollRange());
-            //Log.d("EEE", "onOffsetChanged: " + abs);
             float f = 2.0f - abs;
             float f2 = 1.0f - abs;
+
             //Main title
             layoutWel.setScaleX(f);
             layoutWel.setScaleY(f);
-            layoutWel.setTranslationX(-context.getResources().getDimensionPixelSize(R.dimen.start_margin) * abs);
+            //Log.d("EAA", "onOffsetChanged: " + f2);
+            layoutWel.setTranslationX(-getApplicationContext().getResources().getDimensionPixelSize(R.dimen.start_margin) * abs);
 
             //random text
             if (f2 == 1.0)
-                random.animate().setDuration(500).setInterpolator(new OvershootInterpolator()).alpha(1f).start();
-            else if (f2 < 1.0 && f2 >= 0.7) random.animate().setInterpolator(new AccelerateDecelerateInterpolator()).alpha(0f).setDuration(100).start();
+                ObjectAnimator.ofFloat(random, View.ALPHA, 1f).setDuration(500).start();
+            else
+                random.setAlpha(0f);
 
             random.setScaleY(f2);
-            random.setTranslationY(context.getResources().getDimensionPixelSize(R.dimen.top_margin_random) * f2);
+            random.setTranslationY(getApplicationContext().getResources().getDimensionPixelSize(R.dimen.top_margin_random) * f2);
 
             //Avatar view
-            commonCon.setTranslationX(context.getResources().getDimensionPixelSize(R.dimen.top_matrans_dimen) * f2);
+                commonCon.setTranslationX(getApplicationContext().getResources().getDimensionPixelSize(R.dimen.top_matrans_dimen) * abs);
         });
 
 	/*Sequent.origin((ViewGroup)root.findViewById(R.id.shit))
@@ -187,19 +212,6 @@ public class SettingsHomepageActivity extends FragmentActivity {
                 startActivity(intent);
             }
         });
-	LinearLayout lin = findViewById(R.id.homepage_container);
-        for (int i = 0; i < lin.getChildCount(); i++) {
-            if (lin.getChildAt(i) instanceof View) {
-                View a = lin.getChildAt(i);
-                a.setAlpha(0f);
-                ValueAnimator animator = ValueAnimator.ofFloat(0, 1);
-                animator.setDuration((long) (500 * (i + 1) * .3));
-                animator.setStartDelay((long) (100 * (i + 1) * 1.25));
-                animator.setInterpolator(new AccelerateDecelerateInterpolator());
-                animator.addUpdateListener(animation -> a.setAlpha(((Float) animation.getAnimatedValue())));
-                animator.start();
-            }
-        }
 
 //        final ImageView avatarView = findViewById(R.id.account_avatar);
 //        getLifecycle().addObserver(new AvatarViewMixin(this, avatarView));

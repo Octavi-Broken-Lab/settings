@@ -26,17 +26,13 @@
     android:fitsSystemWindows="true">
 
     <com.factor.bouncy.BouncyNestedScrollView
-        android:animateLayoutChanges="true"
-        android:overScrollMode="always"
-	android:background="?android:attr/colorPrimary"
         android:id="@+id/main_content_scrollable_container"
+        android:fitsSystemWindows="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:damping_ratio="DAMPING_RATIO_MEDIUM_BOUNCY"
-        app:fling_animation_size=".7"
-        app:overscroll_animation_size=".7"
-        app:stiffness="STIFFNESS_LOW"
-	app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:animateLayoutChanges="true"
+        android:overScrollMode="always"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
             android:id="@+id/homepage_container"
@@ -59,12 +55,14 @@
         </LinearLayout>
     </com.factor.bouncy.BouncyNestedScrollView>
 
+
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbarRoot"
         app:elevation="0dp"
+        app:layout_collapseMode="pin"
         android:touchscreenBlocksFocus="false"
-        android:background="?android:attr/colorPrimary"
         android:layout_width="match_parent"
+        android:background="?android:attr/colorPrimary"
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
         app:liftOnScroll="true">
@@ -72,7 +70,9 @@
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="324dp"
-            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed">
+            android:fitsSystemWindows="true"
+            android:minHeight="60dp"
+            app:layout_scrollFlags="snap|exitUntilCollapsed|scroll">
 
             <LinearLayout
                 android:id="@+id/welcome007"
@@ -84,13 +84,13 @@
                 app:layout_collapseMode="pin">
 
                 <TextView
+                    app:layout_collapseMode="pin"
                     android:id="@+id/temp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Hello, "
                     android:textColor="?android:attr/colorAccent"
-                    android:textSize="26sp"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:textSize="28sp" />
 
                 <TextView
                     android:id="@+id/settings_label"
@@ -99,7 +99,7 @@
                     android:layout_height="wrap_content"
                     android:singleLine="true"
                     android:text="User"
-                    android:textSize="26sp" />
+                    android:textSize="28sp" />
             </LinearLayout>
 
             <TextView
@@ -107,15 +107,14 @@
                 android:text="@string/bottom_sheet_behavior"
                 android:layout_width="match_parent"
                 android:gravity="center"
-                android:textSize="14sp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="46dp"
+                android:layout_marginTop="38dp"
                 android:singleLine="true" />
 
             <Toolbar
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="70dp"
                 android:layout_gravity="bottom"
                 android:visibility="invisible" />
 
@@ -130,12 +129,10 @@
                 <Toolbar
                     android:id="@+id/search_action_bar"
                     android:layout_width="42dp"
+                    android:navigationIcon="@drawable/ic_homepage_search"
                     android:layout_height="42dp"
                     android:layout_marginEnd="8dp"
-                    android:background="@android:color/transparent"
-                    android:navigationIcon="@drawable/ic_homepage_search"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/account_avatar_mirror" />
+                    android:background="@android:color/transparent"/>
 
                 <ImageView
                     android:layout_gravity="center_vertical"
