@@ -64,8 +64,6 @@ import com.android.settings.core.HideNonSystemOverlayMixin;
 import com.android.settings.homepage.contextualcards.ContextualCardsFragment;
 import com.android.settings.overlay.FeatureFactory;
 
-import com.factor.bouncy.BouncyNestedScrollView;
-import com.factor.bouncy.util.Bouncy;
 import com.android.internal.util.UserIcons;
 import com.android.settingslib.drawable.CircleFramedDrawable;
 import java.util.ArrayList;
@@ -121,13 +119,6 @@ public class SettingsHomepageActivity extends FragmentActivity {
                View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
 
 //        setHomepageContainerPaddingTop();
-	BouncyNestedScrollView nestedScrollView = root.findViewById(R.id.main_content_scrollable_container);
-	nestedScrollView.setStiffness(Bouncy.STIFFNESS_MEDIUM);
-        nestedScrollView.setDampingRatio(Bouncy.DAMPING_RATIO_LOW_BOUNCY);
-        nestedScrollView.setSmoothScrollingEnabled(true);
-        nestedScrollView.setFlingAnimationSize(.7f);
-        nestedScrollView.setOverscrollAnimationSize(.7f);
-
 	LinearLayout commonCon = root.findViewById(R.id.common_con);
 	LinearLayout layoutWel = root.findViewById(R.id.welcome007);
         final Toolbar toolbar = root.findViewById(R.id.search_action_bar);
