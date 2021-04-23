@@ -32,11 +32,16 @@ android_library {
            "OctaviLab/src/**/*.kt",
     ],
 
-    aaptflags: ["--extra-packages com.octavi.lab" , "--extra-packages com.factor.bouncy",],
+    aaptflags: ["--extra-packages com.octavi.lab"],
 
     resource_dirs: ["res",
+<<<<<<< HEAD
                     "OctaviLab/res",
                     "TouchGestures/res",
+=======
+                    "OctaviLab/res"
+                    "TouchGestures/res"
+>>>>>>> parent of 3d5aa70abb... settings : add bouncy scroll
     ],
 
     static_libs: [
@@ -71,8 +76,11 @@ android_library {
         "kotlinx-coroutines-core",
 	"androidx.viewpager2_viewpager2",
         "faceunlock_framework",
+<<<<<<< HEAD
 	"bouncy",
 	"dynamic-animation",
+=======
+>>>>>>> parent of 3d5aa70abb... settings : add bouncy scroll
     ],
 
     libs: [
@@ -117,6 +125,7 @@ android_library_import {
     name: "contextualcards",
     aars: ["libs/contextualcards.aar"],
 }
+<<<<<<< HEAD
 
 android_library_import {
     name: "bouncy",
@@ -131,3 +140,5 @@ android_library_import {
 }
 
 
+=======
+>>>>>>> parent of 3d5aa70abb... settings : add bouncy scroll
