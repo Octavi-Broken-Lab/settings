@@ -94,7 +94,7 @@ public class OosAboutPreference extends Preference implements View.OnTouchListen
             total = 512;
 
         View root = holder.itemView;
-        int index = findIndex(SystemProperties.get("ro.product.device").toLowerCase());
+        int index = findIndex(SystemProperties.get("ro.product.device"));
 
         TextView display = null, cpu = null, battery = null, soc = null, cam = null, img = null,
                 device, deviceSec, octaviVer, octaviStatus,
