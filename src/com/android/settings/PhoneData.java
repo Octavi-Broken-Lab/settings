@@ -369,6 +369,16 @@ public final class PhoneData {
         	        "13MP + 2MP, 8MP",
                 	R.drawable.deen
 	        ));
+                //sweet
+                data.add(new AboutPhoneData(37,
+                        "sweet",
+			"2x2.3GHz,6x1.8GHz",
+			"Snapdragon 732G",
+			"5020Mah",
+			"1080x2400, 6.67' inches",
+			"64+8+5+2+16MP",
+                        R.drawable.sweet
+                ));
 }
     public static List<AboutPhoneData> getData() {
 	return data;
