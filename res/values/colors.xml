@@ -176,6 +176,7 @@
     <color name="colorAccentSettings">@*android:color/accent_device_default_light</color>
     <color name="about_card_view_bg">#1A8F8F8F</color>
     <color name="card_view_bg">#1A8F8F8F</color>
+    <color name="contextual_card_view_bg">#0a000000</color>
     <color name="black">#171717</color>
     <color name="off_black">#90171717</color>
 
