@@ -189,4 +189,6 @@
 		    settings:controller="com.android.settings.support.SupportPreferenceController"/>
 
             <Preference android:order="-5" android:layout="@layout/divider"/>
+            <Preference android:order="0" android:layout="@layout/minheight"/>
+
 </PreferenceScreen>
