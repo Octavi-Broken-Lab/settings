@@ -282,6 +282,7 @@ public abstract class BasePreferenceController extends AbstractPreferenceControl
             final Preference preference = screen.findPreference(getPreferenceKey());
             if (preference != null) {
                 preference.setEnabled(false);
+		preference.setIconSpaceReserved(false);
             }
         }
     }

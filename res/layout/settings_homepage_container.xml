@@ -25,7 +25,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <androidx.core.widget.NestedScrollView
+    <com.factor.bouncy.BouncyNestedScrollView
 	android:background="?android:attr/colorPrimary"
         android:id="@+id/main_content_scrollable_container"
         android:layout_width="match_parent"
@@ -51,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:animateLayoutChanges="true" />
         </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+    </com.factor.bouncy.BouncyNestedScrollView>
 
 
     <com.google.android.material.appbar.AppBarLayout
@@ -95,6 +95,7 @@
                     android:layout_width="wrap_content"
                     android:textColor="?android:attr/textColorPrimary"
                     android:layout_height="wrap_content"
+		    android:maxLength="7" 
                     android:singleLine="true"
                     android:text="User"
                     android:textSize="28sp" />
