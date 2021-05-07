@@ -409,6 +409,43 @@ public final class PhoneData {
 			"12MP + 5MP, 16MP",
 			R.drawable.ysl
 		));
+		//GSIs
+		data.add(new AboutPhoneData(41,
+                        "phhgsi_arm64_ab",
+                        "4x1.74GHz, 4x2.31 GHz",
+                        "Sexynos 6900",
+                        "4000",
+                        "1080x2400, 6.47' inches",
+                        "48+12+5+2MP",
+                        R.drawable.phhgsi
+                ));
+		data.add(new AboutPhoneData(42,
+                        "phhgsi_arm64_a",
+                        "4x1.74GHz, 4x2.31 GHz",
+                        "Sexynos 6900",
+                        "4000",
+                        "1080x2400, 6.47' inches",
+                        "48+12+5+2MP",
+                        R.drawable.phhgsi
+                ));
+               data.add(new AboutPhoneData(43,
+                        "phhgsi_a64_ab",
+                        "4x1.74GHz, 4x2.31 GHz",
+                        "Snappy 999+",
+                        "3200",
+                        "1080x1920, 5.5' inches",
+                        "12MP",
+                        R.drawable.phhgsiarm
+                ));
+               data.add(new AboutPhoneData(44,
+                        "phhgsi_a64_a",
+                        "4x1.74GHz, 4x2.31 GHz",
+                        "Snappy 999+",
+                        "3200",
+                        "1080x1920, 5.5' inches",
+                        "12MP",
+                        R.drawable.phhgsiarm
+                )); //EndGSIs
 }
     public static List<AboutPhoneData> getData() {
 	return data;
