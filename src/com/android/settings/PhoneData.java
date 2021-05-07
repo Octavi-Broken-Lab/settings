@@ -237,23 +237,23 @@ public final class PhoneData {
 			"64MP + 8MP + 2MP + 2MP, 16MP",
 			R.drawable.rmx2001
 		));
-		// Raphael 
+		// Raphael
 		data.add(new AboutPhoneData(24,
 			"raphael",
 			"1 x 2.84 + 3 x 2.42 GHz + 4 x 1.78",
 			"Snapdragon 855 (7 nm)",
 			"4000",
-			"1080 x 2340 ,6.39 inches",
+			"1080 x 2340, 6.39 inches",
 			"48MP + 8MP + 13MP, 20MP",
 			R.drawable.raphael
 		));
-		// Raphaelin      
+		// Raphaelin
 		data.add(new AboutPhoneData(25,
 			"raphaelin",
 			"1 x 2.84 + 3 x 2.42 GHz + 4 x 1.78",
 			"Snapdragon 855 (7 nm)",
 			"4000",
-			"1080 x 2340 ,6.39 inches",
+			"1080 x 2340, 6.39 inches",
 			"48MP + 8MP + 13MP, 20MP",
 			R.drawable.raphael
 		));
@@ -375,9 +375,10 @@ public final class PhoneData {
 			"2x2.3GHz,6x1.8GHz",
 			"Snapdragon 732G",
 			"5020Mah",
-			"1080x2400, 6.67' inches",
+			"1080x2400, 6.67 inches",
 			"64+8+5+2+16MP",
                         R.drawable.sweet
+	        ));
                //surya
 		data.add(new AboutPhoneData(38,
 			"surya",
