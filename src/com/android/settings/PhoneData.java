@@ -446,6 +446,34 @@ public final class PhoneData {
                         "12MP",
                         R.drawable.phhgsiarm
                 )); //EndGSIs
+		//gauguin
+                data.add(new AboutPhoneData(45,
+                        "gauguin",
+                        "2 x 2.2 GHz, 6 x 1.8 GHz",
+                        "Snapdragon 750G",
+                        "4820",
+                        "1080 x 2400, 6.67 inchles",
+                        "64 MP + 16 MP + 8 MP + 2 MP",
+                        R.drawable.gauguin
+                ));
+                data.add(new AboutPhoneData(46,
+                        "gauguininpro",
+                        "2 x 2.2 GHz, 6 x 1.8 GHz",
+                        "Snapdragon 750G",
+                        "4820",
+                        "1080 x 2400, 6.67 inchles",
+                        "108 MP + 16 MP + 8 MP + 2 MP",
+                        R.drawable.gauguin
+                ));
+                data.add(new AboutPhoneData(47,
+                        "gauguinpro",
+                        "2 x 2.2 GHz, 6 x 1.8 GHz",
+                        "Snapdragon 750G",
+                        "4820",
+                        "1080 x 2400, 6.67 inchles",
+                        "108 MP + 16 MP + 8 MP + 2 MP",
+                        R.drawable.gauguin
+                )); 
 }
     public static List<AboutPhoneData> getData() {
 	return data;
