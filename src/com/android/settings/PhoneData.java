@@ -378,6 +378,7 @@ public final class PhoneData {
 			"1080x2400, 6.67' inches",
 			"64+8+5+2+16MP",
                         R.drawable.sweet
+                ));
                //surya
 		data.add(new AboutPhoneData(38,
 			"surya",
