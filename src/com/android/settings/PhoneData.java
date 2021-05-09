@@ -237,23 +237,23 @@ public final class PhoneData {
 			"64MP + 8MP + 2MP + 2MP, 16MP",
 			R.drawable.rmx2001
 		));
-		// Raphael 
+		// Raphael
 		data.add(new AboutPhoneData(24,
 			"raphael",
 			"1 x 2.84 + 3 x 2.42 GHz + 4 x 1.78",
 			"Snapdragon 855 (7 nm)",
 			"4000",
-			"1080 x 2340 ,6.39 inches",
+			"1080 x 2340, 6.39 inches",
 			"48MP + 8MP + 13MP, 20MP",
 			R.drawable.raphael
 		));
-		// Raphaelin      
+		// Raphaelin
 		data.add(new AboutPhoneData(25,
 			"raphaelin",
 			"1 x 2.84 + 3 x 2.42 GHz + 4 x 1.78",
 			"Snapdragon 855 (7 nm)",
 			"4000",
-			"1080 x 2340 ,6.39 inches",
+			"1080 x 2340, 6.39 inches",
 			"48MP + 8MP + 13MP, 20MP",
 			R.drawable.raphael
 		));
@@ -375,10 +375,10 @@ public final class PhoneData {
 			"2x2.3GHz,6x1.8GHz",
 			"Snapdragon 732G",
 			"5020Mah",
-			"1080x2400, 6.67' inches",
+			"1080x2400, 6.67 inches",
 			"64+8+5+2+16MP",
                         R.drawable.sweet
-                ));
+	        ));
                //surya
 		data.add(new AboutPhoneData(38,
 			"surya",
@@ -409,6 +409,71 @@ public final class PhoneData {
 			"12MP + 5MP, 16MP",
 			R.drawable.ysl
 		));
+		//GSIs
+		data.add(new AboutPhoneData(41,
+                        "phhgsi_arm64_ab",
+                        "4x1.74GHz, 4x2.31 GHz",
+                        "Sexynos 6900",
+                        "4000",
+                        "1080x2400, 6.47' inches",
+                        "48+12+5+2MP",
+                        R.drawable.phhgsi
+                ));
+		data.add(new AboutPhoneData(42,
+                        "phhgsi_arm64_a",
+                        "4x1.74GHz, 4x2.31 GHz",
+                        "Sexynos 6900",
+                        "4000",
+                        "1080x2400, 6.47' inches",
+                        "48+12+5+2MP",
+                        R.drawable.phhgsi
+                ));
+               data.add(new AboutPhoneData(43,
+                        "phhgsi_a64_ab",
+                        "4x1.74GHz, 4x2.31 GHz",
+                        "Snappy 999+",
+                        "3200",
+                        "1080x1920, 5.5' inches",
+                        "12MP",
+                        R.drawable.phhgsiarm
+                ));
+               data.add(new AboutPhoneData(44,
+                        "phhgsi_a64_a",
+                        "4x1.74GHz, 4x2.31 GHz",
+                        "Snappy 999+",
+                        "3200",
+                        "1080x1920, 5.5' inches",
+                        "12MP",
+                        R.drawable.phhgsiarm
+                )); //EndGSIs
+		//gauguin
+                data.add(new AboutPhoneData(45,
+                        "gauguin",
+                        "2 x 2.2 GHz, 6 x 1.8 GHz",
+                        "Snapdragon 750G",
+                        "4820",
+                        "1080 x 2400, 6.67 inchles",
+                        "64 MP + 16 MP + 8 MP + 2 MP",
+                        R.drawable.gauguin
+                ));
+                data.add(new AboutPhoneData(46,
+                        "gauguininpro",
+                        "2 x 2.2 GHz, 6 x 1.8 GHz",
+                        "Snapdragon 750G",
+                        "4820",
+                        "1080 x 2400, 6.67 inchles",
+                        "108 MP + 16 MP + 8 MP + 2 MP",
+                        R.drawable.gauguin
+                ));
+                data.add(new AboutPhoneData(47,
+                        "gauguinpro",
+                        "2 x 2.2 GHz, 6 x 1.8 GHz",
+                        "Snapdragon 750G",
+                        "4820",
+                        "1080 x 2400, 6.67 inchles",
+                        "108 MP + 16 MP + 8 MP + 2 MP",
+                        R.drawable.gauguin
+                )); 
 }
     public static List<AboutPhoneData> getData() {
 	return data;
