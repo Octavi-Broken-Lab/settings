@@ -376,7 +376,7 @@ public final class PhoneData {
 			"Snapdragon 732G",
 			"5020Mah",
 			"1080x2400, 6.67 inches",
-			"64+8+5+2+16MP",
+			"108MP + 8MP + 5MP + 2MP, 16MP",
                         R.drawable.sweet
 	        ));
                //surya
@@ -473,7 +473,27 @@ public final class PhoneData {
                         "1080 x 2400, 6.67 inchles",
                         "108 MP + 16 MP + 8 MP + 2 MP",
                         R.drawable.gauguin
-                )); 
+                ));
+		//sweetin
+		data.add(new AboutPhoneData(48,
+                        "sweetin",
+			"2x2.3GHz,6x1.8GHz",
+			"Snapdragon 732G",
+			"5020Mah",
+			"1080x2400, 6.67 inches",
+			"64MP + 8MP + 5MP + 2MP, 16MP",
+                        R.drawable.sweet
+		));
+		//sweetin
+		data.add(new AboutPhoneData(49,
+                        "sweetin",
+			"2x2.3GHz,6x1.8GHz",
+			"Snapdragon 732G",
+			"5020Mah",
+			"1080x2400, 6.67 inches",
+			"108MP + 8MP + 5MP + 2MP, 16MP",
+                        R.drawable.sweet
+		));			    
 }
     public static List<AboutPhoneData> getData() {
 	return data;
