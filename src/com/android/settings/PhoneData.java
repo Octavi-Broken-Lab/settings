@@ -486,7 +486,7 @@ public final class PhoneData {
 		));
 		//sweetin
 		data.add(new AboutPhoneData(49,
-                        "sweetin",
+                        "sweetinpro",
 			"2x2.3GHz,6x1.8GHz",
 			"Snapdragon 732G",
 			"5020Mah",
