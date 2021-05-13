@@ -114,6 +114,7 @@ public class SettingsHomepageActivity extends FragmentActivity {
         final ContentResolver contentResolver = context.getContentResolver();
 
         setContentView(R.layout.settings_homepage_container);
+
         final View root = findViewById(R.id.settings_homepage_container);
         root.setSystemUiVisibility(
                View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
@@ -145,6 +146,12 @@ public class SettingsHomepageActivity extends FragmentActivity {
         mUserManager = context.getSystemService(UserManager.class);
 
 	AppBarLayout appBarLayout = root.findViewById(R.id.appbarRoot);
+        AppBarLayout appBarAosp = root.findViewById(R.id.appbarAosp);
+
+        int icon_pos = Settings.System.getInt(contentResolver, Settings.System.ICON_LEFT_ENABLED, 0);
+
+        if (icon_pos == 0) {
+	appBarAosp.setVisibility(View.GONE);
         appBarLayout.addOnOffsetChangedListener((appBarLayout1, i) -> {
 
             float abs = ((float) Math.abs(i)) / ((float) appBarLayout1.getTotalScrollRange());
@@ -167,8 +174,11 @@ public class SettingsHomepageActivity extends FragmentActivity {
             random.setTranslationY(getApplicationContext().getResources().getDimensionPixelSize(R.dimen.top_margin_random) * f2);
 
             //Avatar view
-                commonCon.setTranslationX(getApplicationContext().getResources().getDimensionPixelSize(R.dimen.top_matrans_dimen) * abs);
-        });
+                commonCon.setTranslationX(getApplicationContext().getResources().getDimensionPixelSize(R.dimen.top_matrans_dimen) * abs);  });
+	} else if (icon_pos == 1) {
+        appBarLayout.setVisibility(View.GONE);
+        appBarAosp.setVisibility(View.VISIBLE);
+	}
 
 	/*Sequent.origin((ViewGroup)root.findViewById(R.id.shit))
                 .delay(0)

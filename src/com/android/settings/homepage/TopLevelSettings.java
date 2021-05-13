@@ -22,6 +22,7 @@ import static com.android.settingslib.search.SearchIndexable.MOBILE;
 import android.app.settings.SettingsEnums;
 import android.content.Context;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
 
 import androidx.fragment.app.Fragment;
@@ -54,7 +55,13 @@ public class TopLevelSettings extends DashboardFragment implements
 
     @Override
     protected int getPreferenceScreenResId() {
+
+        final int enabled = Settings.System.getInt(getContext().getContentResolver(),
+                Settings.System.ICON_LEFT_ENABLED, 0);
+	if (enabled != 1)
         return R.xml.top_level_settings;
+	else
+	return R.xml.top_level_settings_left;
     }
 
     @Override

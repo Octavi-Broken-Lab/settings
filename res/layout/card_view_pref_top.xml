@@ -26,6 +26,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
+	    android:singleLine="true"
             android:id="@android:id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -33,6 +34,7 @@
             android:textSize="16sp" />
 
         <TextView
+	    android:singleLine="true"
             android:id="@android:id/summary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

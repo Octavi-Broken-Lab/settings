@@ -20,6 +20,7 @@ import android.app.settings.SettingsEnums;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.ArrayMap;
 import android.util.FeatureFlagUtils;
@@ -69,6 +70,7 @@ public abstract class DashboardFragment extends SettingsPreferenceFragment
         BasePreferenceController.UiBlockListener {
     public static final String CATEGORY = "category";
     private static final String TAG = "DashboardFragment";
+    private Context mContext;
 
     @VisibleForTesting
     final ArrayMap<String, List<DynamicDataObserver>> mDashboardTilePrefKeys = new ArrayMap<>();
@@ -513,10 +515,29 @@ public abstract class DashboardFragment extends SettingsPreferenceFragment
                                 forceRoundedIcons, getMetricsCategory(), pref, tile, key,
                                 mPlaceholderPreferenceController.getOrder());
 		String prefStr = pref.getKey().toString();
+
+		int icon_pos = Settings.System.getInt(getContext().getContentResolver(),
+        	Settings.System.ICON_LEFT_ENABLED, 0);
+
+	        if (icon_pos == 0) {
+
 		if (prefStr.equals("dashboard_tile_pref_com.google.android.apps.wellbeing.settings.TopLevelSettingsActivity")){
 		pref.setLayoutResource(R.layout.card_view_pref_top);pref.setIcon(R.drawable.ic_settings_new_wellbeing);
 		} else if (prefStr.equals("dashboard_tile_pref_com.google.android.gms.app.settings.GoogleSettingsIALink")){
 		pref.setLayoutResource(R.layout.card_view_pref_bottom);pref.setIcon(R.drawable.ic_settings_new_gms);}
+
+		}
+
+		/**
+		else if (icon_pos == 1) {
+
+                if (prefStr.equals("dashboard_tile_pref_com.google.android.apps.wellbeing.settings.TopLevelSettingsActivity")){
+                pref.setLayoutResource(R.layout.card_view_pref_top_left);pref.setIcon(R.drawable.ic_settings_new_wellbeing);
+                } else if (prefStr.equals("dashboard_tile_pref_com.google.android.gms.app.settings.GoogleSettingsIALink")){
+                pref.setLayoutResource(R.layout.card_view_pref_bottom_left);pref.setIcon(R.drawable.ic_settings_new_gms);}
+
+                }**/
+
                 screen.addPreference(pref);
                 registerDynamicDataObservers(observers);
                 mDashboardTilePrefKeys.put(key, observers);
