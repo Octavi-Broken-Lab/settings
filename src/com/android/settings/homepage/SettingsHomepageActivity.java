@@ -119,10 +119,9 @@ public class SettingsHomepageActivity extends FragmentActivity {
         root.setSystemUiVisibility(
                View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
 
-//        setHomepageContainerPaddingTop();
+        setHomepageContainerPaddingTop();
 	LinearLayout commonCon = root.findViewById(R.id.common_con);
 	LinearLayout layoutWel = root.findViewById(R.id.welcome007);
-        final Toolbar toolbar = root.findViewById(R.id.search_action_bar);
         random = root.findViewById(R.id.random_settings);
         label = root.findViewById(R.id.settings_label);
         title = root.findViewById(R.id.settings_title);
@@ -139,16 +138,22 @@ public class SettingsHomepageActivity extends FragmentActivity {
 	        title.setVisibility(View.VISIBLE);
               }*/
 
+        int icon_pos = Settings.System.getInt(contentResolver, Settings.System.ICON_LEFT_ENABLED, 0);
+        if (icon_pos == 0) {
+        final Toolbar toolbar = root.findViewById(R.id.search_action_bar);
         FeatureFactory.getFactory(this).getSearchFeatureProvider()
                 .initSearchToolbar(this /* activity */, toolbar, SettingsEnums.SETTINGS_HOMEPAGE);
+        } else if (icon_pos == 1) {
+        final Toolbar toolbar = root.findViewById(R.id.search_action_bar_aosp);
+        FeatureFactory.getFactory(this).getSearchFeatureProvider()
+                .initSearchToolbar(this /* activity */, toolbar, SettingsEnums.SETTINGS_HOMEPAGE);
+        }
 
 	random.setText(text.get(randomNum(0, text.size()-1)));
         mUserManager = context.getSystemService(UserManager.class);
 
 	AppBarLayout appBarLayout = root.findViewById(R.id.appbarRoot);
         AppBarLayout appBarAosp = root.findViewById(R.id.appbarAosp);
-
-        int icon_pos = Settings.System.getInt(contentResolver, Settings.System.ICON_LEFT_ENABLED, 0);
 
         if (icon_pos == 0) {
 	appBarAosp.setVisibility(View.GONE);

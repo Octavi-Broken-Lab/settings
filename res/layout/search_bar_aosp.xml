@@ -18,13 +18,13 @@
 <com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/search_bar"
+    android:id="@+id/search_bar_aosp"
     style="@style/SearchBarStyle"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:layout_scrollFlags="scroll|enterAlways">
     <Toolbar
-        android:id="@+id/search_action_bar"
+        android:id="@+id/search_action_bar_aosp"
         android:layout_width="match_parent"
         android:layout_height="@dimen/search_bar_height"
         android:layout_marginStart="-2dp"
