@@ -139,15 +139,15 @@ public class SettingsHomepageOctaviActivity extends FragmentActivity {
               }*/
 
         int icon_pos = Settings.System.getInt(contentResolver, Settings.System.ICON_LEFT_ENABLED, 0);
-        if (icon_pos == 0) {
+//        if (icon_pos == 0) {
         final Toolbar toolbar = root.findViewById(R.id.search_action_bar);
         FeatureFactory.getFactory(this).getSearchFeatureProvider()
                 .initSearchToolbar(this /* activity */, toolbar, SettingsEnums.SETTINGS_HOMEPAGE);
-        } else if (icon_pos == 1) {
-        final Toolbar toolbar = root.findViewById(R.id.search_action_bar_aosp);
-        FeatureFactory.getFactory(this).getSearchFeatureProvider()
-                .initSearchToolbar(this /* activity */, toolbar, SettingsEnums.SETTINGS_HOMEPAGE);
-        }
+//        } else if (icon_pos == 1) {
+//        final Toolbar toolbar = root.findViewById(R.id.search_action_bar_aosp);
+//        FeatureFactory.getFactory(this).getSearchFeatureProvider()
+//                .initSearchToolbar(this /* activity */, toolbar, SettingsEnums.SETTINGS_HOMEPAGE);
+//        }
 
 	random.setText(text.get(randomNum(0, text.size()-1)));
         mUserManager = context.getSystemService(UserManager.class);
@@ -155,8 +155,8 @@ public class SettingsHomepageOctaviActivity extends FragmentActivity {
 	AppBarLayout appBarLayout = root.findViewById(R.id.appbarRoot);
         AppBarLayout appBarAosp = root.findViewById(R.id.appbarAosp);
 
-        if (icon_pos == 0) {
-	appBarAosp.setVisibility(View.GONE);
+//        if (icon_pos == 0) {
+//	appBarAosp.setVisibility(View.GONE);
         appBarLayout.addOnOffsetChangedListener((appBarLayout1, i) -> {
 
             float abs = ((float) Math.abs(i)) / ((float) appBarLayout1.getTotalScrollRange());
@@ -180,10 +180,10 @@ public class SettingsHomepageOctaviActivity extends FragmentActivity {
 
             //Avatar view
                 commonCon.setTranslationX(getApplicationContext().getResources().getDimensionPixelSize(R.dimen.top_matrans_dimen) * abs);  });
-	} else if (icon_pos == 1) {
+/**	} else if (icon_pos == 1) {
         appBarLayout.setVisibility(View.GONE);
         appBarAosp.setVisibility(View.VISIBLE);
-	}
+	}**/
 
 	/*Sequent.origin((ViewGroup)root.findViewById(R.id.shit))
                 .delay(0)

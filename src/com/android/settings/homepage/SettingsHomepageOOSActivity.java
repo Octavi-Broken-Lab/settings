@@ -24,6 +24,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.Toolbar;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
@@ -34,7 +35,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.appcompat.widget.Toolbar;
 
 import com.android.settings.R;
 import com.android.settings.accounts.AvatarViewMixin;
@@ -46,7 +46,7 @@ public class SettingsHomepageOOSActivity extends FragmentActivity implements App
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setTheme(R.style.ForcedHomepageTheme);
+//        setTheme(R.style.ForcedHomepageTheme);
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.settings_homepage_container_oos);

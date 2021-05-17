@@ -59,9 +59,9 @@ public class TopLevelSettings extends DashboardFragment implements
         final int enabled = Settings.System.getInt(getContext().getContentResolver(),
                 Settings.System.ICON_LEFT_ENABLED, 0);
 	if (enabled != 1)
-        return R.xml.top_level_settings;
+        return R.xml.top_level_settings_octavi;
 	else
-	return R.xml.top_level_settings_left;
+	return R.xml.top_level_settings_oos;
     }
 
     @Override
@@ -118,8 +118,19 @@ public class TopLevelSettings extends DashboardFragment implements
                 .getBoolean(R.bool.config_force_rounded_icon_TopLevelSettings);
     }
 
+
+/**    public static int getTopLevelID() {
+        final int enabled = Settings.System.getInt(getApplicationContext().getContentResolver(),
+                Settings.System.ICON_LEFT_ENABLED, 0);
+        if (enabled != 1)
+        return R.xml.top_level_settings_octavi;
+        else
+        return R.xml.top_level_settings_oos;
+    }**/
+
+
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.top_level_settings) {
+            new BaseSearchIndexProvider(R.xml.top_level_settings_octavi) {
 
                 @Override
                 protected boolean isPageSearchEnabled(Context context) {

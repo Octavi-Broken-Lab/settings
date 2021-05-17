@@ -19,7 +19,9 @@ package com.android.settings.homepage;
 import android.content.Intent;
 import android.os.Bundle;
 import com.android.settings.R;
+import android.content.Context;
 import androidx.fragment.app.FragmentActivity;
+import android.provider.Settings;
 
 public class SettingsHomepageActivity extends FragmentActivity {
 
@@ -29,7 +31,7 @@ public class SettingsHomepageActivity extends FragmentActivity {
         super.onCreate(bundle);
         //setContentView(R.layout.activity_start);
 
-        int icon_pos = Settings.System.getInt(contentResolver, Settings.System.ICON_LEFT_ENABLED, 0);
+        int icon_pos = Settings.System.getInt(getApplicationContext().getContentResolver(), Settings.System.ICON_LEFT_ENABLED, 0);
 
         if (icon_pos == 0) {
             startActivity(new Intent(SettingsHomepageActivity.this, SettingsHomepageOctaviActivity.class));

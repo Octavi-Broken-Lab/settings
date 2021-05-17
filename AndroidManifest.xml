@@ -3479,6 +3479,19 @@
                 android:value="com.octavi.lab.OctaviLab" />
         </activity>
 
+        <!-- OOS -->
+        <activity
+            android:name=".homepage.SettingsHomepageOOSActivity"
+            android:label="@string/settings_label_launcher"
+            android:theme="@style/Theme.Settings.Home">
+        </activity>
+        <!-- OctaviUI -->
+        <activity
+            android:name=".homepage.SettingsHomepageOctaviActivity"
+            android:label="@string/settings_label_launcher"
+            android:theme="@style/Theme.Settings.Home">
+        </activity>
+
         <!-- Global Actions -->
         <activity android:name="Settings$PowermenuSettingsActivity"
                   android:label="@string/global_actions_title"

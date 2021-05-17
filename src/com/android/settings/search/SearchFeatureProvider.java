@@ -27,6 +27,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toolbar;
 
 import com.android.settings.R;
@@ -64,6 +65,38 @@ public interface SearchFeatureProvider {
     /**
      * Initializes the search toolbar.
      */
+    default void initSearchToolbar(Activity activity, ImageView imageview, int pageId) {
+        if (activity == null || imageview == null) {
+            return;
+        }
+
+        if (!WizardManagerHelper.isDeviceProvisioned(activity)
+                || !Utils.isPackageEnabled(activity, getSettingsIntelligencePkgName(activity))
+                || WizardManagerHelper.isAnySetupWizard(activity.getIntent())) {
+            final ViewGroup parent = (ViewGroup) imageview.getParent();
+            if (parent != null) {
+                parent.setVisibility(View.GONE);
+            }
+            return;
+        }
+
+        imageview.setOnClickListener(tb -> {
+            final Context context = activity.getApplicationContext();
+            final Intent intent = buildSearchIntent(context, pageId);
+
+            if (activity.getPackageManager().queryIntentActivities(intent,
+                    PackageManager.MATCH_DEFAULT_ONLY).isEmpty()) {
+                return;
+            }
+
+            FeatureFactory.getFactory(context).getSlicesFeatureProvider()
+                    .indexSliceDataAsync(context);
+            FeatureFactory.getFactory(context).getMetricsFeatureProvider()
+                    .action(context, SettingsEnums.ACTION_SEARCH_RESULTS);
+            activity.startActivityForResult(intent, REQUEST_CODE);
+        });
+    }
+
     default void initSearchToolbar(Activity activity, Toolbar toolbar, int pageId) {
         if (activity == null || toolbar == null) {
             return;
