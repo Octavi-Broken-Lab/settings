@@ -24,7 +24,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.Toolbar;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
@@ -35,6 +34,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.appcompat.widget.Toolbar;
 
 import com.android.settings.R;
 import com.android.settings.accounts.AvatarViewMixin;
@@ -57,16 +57,16 @@ public class SettingsHomepageOOSActivity extends FragmentActivity implements App
         // setHomepageContainerPaddingTop();
 
 
-        CollapsingToolbarLayout toolBarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout_oos);
+        CollapsingToolbarLayout toolBarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
         toolBarLayout.setTitle(getResources().getText(R.string.settings_label));
         toolBarLayout.setCollapsedTitleTextColor(Utils.getColorAccentDefaultColor(this));
         toolBarLayout.setExpandedTitleColor(Utils.getColorAccentDefaultColor(this));
         toolBarLayout.setExpandedTitleTextAppearance(R.style.ExpandedAppBar);
 
-        AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.app_bar_oos);
+        AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.app_bar);
         appBarLayout.addOnOffsetChangedListener(this);
 
-        final ImageView imageview = findViewById(R.id.search_action_bar_oos);
+        final ImageView imageview = findViewById(R.id.search_action_bar);
         FeatureFactory.getFactory(this).getSearchFeatureProvider()
                 .initSearchToolbar(this /* activity */, imageview, SettingsEnums.SETTINGS_HOMEPAGE);
 
@@ -78,7 +78,7 @@ public class SettingsHomepageOOSActivity extends FragmentActivity implements App
     @Override
     public void onOffsetChanged(AppBarLayout appBarLayout, int offset)
     {
-        ImageView ivSearch = (ImageView) findViewById(R.id.search_action_bar_oos);
+        ImageView ivSearch = (ImageView) findViewById(R.id.search_action_bar);
         float ivScale;
         if (offset == 0)
         {

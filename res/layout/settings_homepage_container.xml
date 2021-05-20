@@ -142,13 +142,4 @@
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appbarAosp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:touchscreenBlocksFocus="false"
-        android:keyboardNavigationCluster="false">
-        <include layout="@layout/search_bar_aosp"/>
-    </com.google.android.material.appbar.AppBarLayout>
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

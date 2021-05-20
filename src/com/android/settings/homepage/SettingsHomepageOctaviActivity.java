@@ -153,7 +153,7 @@ public class SettingsHomepageOctaviActivity extends FragmentActivity {
         mUserManager = context.getSystemService(UserManager.class);
 
 	AppBarLayout appBarLayout = root.findViewById(R.id.appbarRoot);
-        AppBarLayout appBarAosp = root.findViewById(R.id.appbarAosp);
+//        AppBarLayout appBarAosp = root.findViewById(R.id.appbarAosp);
 
 //        if (icon_pos == 0) {
 //	appBarAosp.setVisibility(View.GONE);
