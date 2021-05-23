@@ -493,7 +493,27 @@ public final class PhoneData {
 			"1080x2400, 6.67 inches",
 			"108MP + 8MP + 5MP + 2MP, 16MP",
                         R.drawable.sweet
-		));			    
+		));
+                //dumpling
+                data.add(new AboutPhoneData(50,
+			"dumpling",
+			"4 x 2.45 GHz, 4 x 1.9 GHz",
+			"Snapdragon 835",
+			"3300",
+			"1080 x 2160, 6.01 inches",
+			"R: 16 MP + 20MP, F: 16MP",
+			R.drawable.dumpling
+                ));
+		//sakura
+		data.add(new AboutPhoneData(51,
+			"sakura",
+			"8 x 2.0GHz",
+			"Snapdragon 625",
+			"4000",
+			"1080 x 2280, 5.84 inches",
+			"12MP + 5MP, 5MP",
+			R.drawable.sakura
+		));
 }
     public static List<AboutPhoneData> getData() {
 	return data;
