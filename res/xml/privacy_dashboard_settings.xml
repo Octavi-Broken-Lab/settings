@@ -18,9 +18,7 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res-auto"
-    android:key="privacy_dashboard_page"
-    android:title="@string/privacy_dashboard_title">
-
+    android:key="privacy_dashboard_page">
 
     <Preference
         android:layout="@layout/octavi_header"
@@ -33,7 +31,8 @@
         android:key="work_policy_info"
         android:title="@string/work_policy_privacy_settings"
         android:summary="@string/work_policy_privacy_settings_summary"
-        settings:allowDividerAbove="true"
+        settings:allowDividerAbove="false"
+        settings:iconSpaceReserved="false"         
         settings:controller="com.android.settings.privacy.WorkPolicyInfoPreferenceController"/>
 
     <!-- Connected work and personal apps -->
@@ -42,13 +41,15 @@
         android:title="@string/interact_across_profiles_title"
         android:fragment="com.android.settings.applications.specialaccess.interactacrossprofiles.InteractAcrossProfilesSettings"
         settings:searchable="false"
+        settings:iconSpaceReserved="false"         
         settings:controller="com.android.settings.applications.specialaccess.interactacrossprofiles.InteractAcrossProfilesController" />
 
     <!-- Accessibility usage -->
     <Preference
         android:key="privacy_accessibility_usage"
         android:title="@string/accessibility_usage_title"
-        settings:allowDividerAbove="true"
+        settings:allowDividerAbove="false"
+        settings:iconSpaceReserved="false"         
         settings:controller="com.android.settings.privacy.AccessibilityUsagePreferenceController">
         <intent android:action="android.intent.action.REVIEW_ACCESSIBILITY_SERVICES"/>
     </Preference>
@@ -58,7 +59,8 @@
         android:key="privacy_manage_perms"
         android:title="@string/app_permissions"
         android:summary="@string/runtime_permissions_summary_control_app_access"
-        settings:allowDividerAbove="true"
+        settings:allowDividerAbove="false"
+        settings:iconSpaceReserved="false"         
         settings:searchable="false">
         <intent android:action="android.intent.action.MANAGE_PERMISSIONS"/>
     </Preference>
@@ -68,6 +70,7 @@
         android:key="show_password"
         android:title="@string/show_password"
         android:summary="@string/show_password_summary"
+        settings:iconSpaceReserved="false"         
         settings:controller="com.android.settings.security.ShowPasswordPreferenceController"/>
 
     <!-- On lock screen notifications -->
@@ -75,6 +78,7 @@
         android:key="privacy_lock_screen_notifications"
         android:title="@string/lock_screen_notifications_title"
         android:summary="@string/summary_placeholder"
+        settings:iconSpaceReserved="false"         
         settings:searchable="false"/>
 
     <!-- Clipboard access toast notification -->
@@ -82,6 +86,7 @@
         android:key="show_clipboard_toast"
         android:title="@string/show_clipboard_toast"
         android:summary="@string/show_clipboard_toast_summary"
+        settings:iconSpaceReserved="false"         
         android:defaultValue="false" />
 
     <!-- Privacy Service -->
@@ -105,6 +110,7 @@
             android:title="@string/locked_work_profile_notification_title"
             android:summary="@string/summary_placeholder"
             android:order="999"
+            settings:iconSpaceReserved="false"         
             settings:searchable="false"/>
     </PreferenceCategory>
 
@@ -119,12 +125,14 @@
         android:key="content_capture"
         android:title="@string/content_capture"
         android:summary="@string/content_capture_summary"
+        settings:iconSpaceReserved="false"         
         settings:controller="com.android.settings.privacy.EnableContentCapturePreferenceController"/>
 
     <com.android.settings.widget.MasterSwitchPreference
         android:key="content_capture_custom_settings"
         android:title="@string/content_capture"
         android:summary="@string/content_capture_summary"
+        settings:iconSpaceReserved="false"         
         settings:controller="com.android.settings.privacy.EnableContentCaptureWithServiceSettingsPreferenceController">
     </com.android.settings.widget.MasterSwitchPreference>
 

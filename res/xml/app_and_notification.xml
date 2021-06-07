@@ -18,8 +18,7 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res-auto"
-    android:key="apps_and_notification_screen"
-    android:title="@string/app_and_notification_dashboard_title">
+    android:key="apps_and_notification_screen">
     <!-- the initial count should include the dynamic tiles -->
 
     <Preference
@@ -57,8 +56,7 @@
         android:order="-550"
         settings:controller="com.android.settings.notification.ConversationListSummaryPreferenceController"
         settings:iconSpaceReserved="false" 
-        android:fragment="com.android.settings.notification.app.ConversationListSettings"
-    />
+        android:fragment="com.android.settings.notification.app.ConversationListSettings"/>
 
     <Preference
         android:key="configure_notification_settings"

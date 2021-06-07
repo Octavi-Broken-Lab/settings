@@ -207,6 +207,7 @@
         android:order="1200"> <!-- Incremented by 100 from last order (i.e. 1100) -->
 
         <Preference
+            settings:iconSpaceReserved="false" 
             android:key="clock_style"
             android:title="@string/clock_style_title"
             android:summary="@string/clock_style_summary">
