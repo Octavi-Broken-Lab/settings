@@ -181,15 +181,6 @@
         settings:iconSpaceReserved="false" />
 
     <Preference
-        android:key="media_controls_summary"
-        android:title="@string/media_controls_title"
-        android:fragment="com.android.settings.sound.MediaControlsSettings"
-        android:order="-100"
-        settings:controller="com.android.settings.sound.MediaControlsParentPreferenceController"
-        settings:iconSpaceReserved="false" 
-        settings:keywords="@string/keywords_media_controls"/>
-
-    <Preference
         android:key="gesture_prevent_ringing_sound"
         android:title="@string/gesture_prevent_ringing_sound_title"
         android:order="-107"
