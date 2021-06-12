@@ -154,7 +154,6 @@ public class StorageSettings extends SettingsPreferenceFragment implements Index
     private synchronized void refresh() {
         final Context context = getPrefContext();
 
-        getPreferenceScreen().removeAll();
         mInternalCategory.removeAll();
         mExternalCategory.removeAll();
 
