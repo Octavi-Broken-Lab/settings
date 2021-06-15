@@ -163,7 +163,6 @@ import com.android.settings.wifi.savedaccesspoints2.SavedAccessPointsWifiSetting
 import com.android.settings.wifi.tether.WifiTetherSettings;
 
 import com.octavi.lab.OctaviLab;
-import com.octavi.lab.fragments.PowermenuSettings;
 import com.octavi.lab.OmniJawsSettings;
 import com.octavi.lab.fragments.GamingMode;
 
@@ -317,7 +316,6 @@ public class SettingsGateway {
             InteractAcrossProfilesDetails.class.getName(),
             MediaControlsSettings.class.getName(),
             OctaviLab.class.getName(),
-            PowermenuSettings.class.getName(),
             OmniJawsSettings.class.getName(),
             RunningServices.class.getName(),
             GamingMode.class.getName()
@@ -361,7 +359,6 @@ public class SettingsGateway {
             Settings.ModuleLicensesActivity.class.getName(),
             UserBackupSettingsActivity.class.getName(),
             Settings.OctaviLabActivity.class.getName(),
-            Settings.PowermenuSettingsActivity.class.getName(),
             Settings.OmniJawsSettingsActivity.class.getName(),
             Settings.DevRunningServicesActivity.class.getName(),
             Settings.GamingModeActivity.class.getName()

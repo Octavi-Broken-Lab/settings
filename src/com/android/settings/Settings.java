@@ -243,8 +243,6 @@ public class Settings extends SettingsActivity {
      */
     public static class MediaControlsSettingsActivity extends SettingsActivity {}
 
-    public static class PowermenuSettingsActivity extends SettingsActivity { /* empty */ }
-
     public static class OmniJawsSettingsActivity extends SettingsActivity { /* empty */ }
 
     // Gaming Mode
