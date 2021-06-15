@@ -20,7 +20,7 @@ import android.app.settings.SettingsEnums;
 import android.content.Context;
 import android.location.SettingInjectorService;
 import android.os.Bundle;
-import android.view.Gravity;
+
 import androidx.preference.Preference;
 import androidx.preference.PreferenceGroup;
 
@@ -35,7 +35,7 @@ import com.android.settingslib.search.SearchIndexable;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import android.util.Log;
+
 /**
  * System location settings (Settings &gt; Location). The screen has three parts:
  * <ul>
@@ -75,7 +75,6 @@ public class LocationSettings extends DashboardFragment {
                 R.string.location_settings_master_switch_title);
         mSwitchBarController = new LocationSwitchBarController(activity, switchBar,
                 getSettingsLifecycle());
-	switchBar.setGravity(Gravity.BOTTOM);
         switchBar.show();
     }
 

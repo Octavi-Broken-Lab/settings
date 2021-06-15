@@ -238,21 +238,6 @@
     <string name="incall_vibrate_call_wait_title">Vibrate on call waiting</string>
     <string name="incall_vibrate_disconnect_title">Vibrate on disconnect</string>
 
-    <!-- MIUI Like Headers -->
-    <string name="top_about_title">About phone</string>
-    <string name="top_accounts_title">Accounts</string>
-    <string name="top_apps_title">Apps and Notifications</string>
-    <string name="top_battery_title">Battery</string>
-    <string name="top_connected_title">Connected Devices</string>
-    <string name="top_display_title">Display</string>
-    <string name="top_privacy_title">Privacy</string>
-    <string name="top_security_title">Biometrics and security</string>
-    <string name="top_sound_title">Sounds and vibration</string>
-    <string name="top_storage_title">Storage</string>
-    <string name="top_system_title">System</string>
-    <string name="top_accessibility_title">Accessibility</string>
-    <string name="top_network_title">Network and Internet</string>
-
     <!-- App Lock -->
     <string name="applock_title">App locker</string>
     <string name="applock_locked">Locked</string>

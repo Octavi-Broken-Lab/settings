@@ -19,11 +19,6 @@
     xmlns:settings="http://schemas.android.com/apk/res-auto"
     android:key="connected_devices_screen">
 
-    <Preference
-        android:layout="@layout/octavi_header"
-        android:title="@string/top_connected_title"
-        android:selectable="false"/>
-
     <com.android.settings.slices.SlicePreference
         android:key="bt_nearby_slice"
         android:title="@string/summary_placeholder"

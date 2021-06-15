@@ -20,12 +20,6 @@
     android:key="accessibility_settings_screen"
     android:persistent="false">
 
-    <Preference
-        android:layout="@layout/octavi_header"
-        settings:allowDividerBelow="false"
-        android:title="@string/top_accessibility_title"
-        android:selectable="false"/>
-
     <PreferenceCategory
         android:key="user_installed_services_category"
         android:persistent="false"

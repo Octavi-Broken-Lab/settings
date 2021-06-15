@@ -20,12 +20,6 @@
     android:key="user_and_account_settings_screen"
     settings:keywords="@string/keywords_accounts">
 
-    <Preference
-        android:layout="@layout/octavi_header"
-        settings:allowDividerBelow="false"
-        android:title="@string/top_accounts_title"
-        android:selectable="false"/>
-
     <PreferenceCategory
         android:key="dashboard_tile_placeholder"
         android:order="30"/>
