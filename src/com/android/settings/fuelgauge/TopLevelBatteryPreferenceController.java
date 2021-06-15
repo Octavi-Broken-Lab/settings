@@ -24,6 +24,7 @@ import androidx.preference.PreferenceScreen;
 
 import com.android.settings.R;
 import com.android.settings.core.BasePreferenceController;
+import com.android.settings.overlay.FeatureFactory;
 import com.android.settingslib.core.lifecycle.LifecycleObserver;
 import com.android.settingslib.core.lifecycle.events.OnStart;
 import com.android.settingslib.core.lifecycle.events.OnStop;
@@ -34,13 +35,15 @@ import android.text.style.ForegroundColorSpan;
 import com.android.settingslib.Utils;
 
 public class TopLevelBatteryPreferenceController extends BasePreferenceController implements
-        LifecycleObserver, OnStart, OnStop {
+        LifecycleObserver, OnStart, OnStop, BatteryPreferenceController {
 
     @VisibleForTesting
-    boolean mIsBatteryPresent = true;
+    protected boolean mIsBatteryPresent = true;
     private final BatteryBroadcastReceiver mBatteryBroadcastReceiver;
     private Preference mPreference;
     private BatteryInfo mBatteryInfo;
+    private BatteryStatusFeatureProvider mBatteryStatusFeatureProvider;
+    private String mBatteryStatusLabel;
 
     public TopLevelBatteryPreferenceController(Context context, String preferenceKey) {
         super(context, preferenceKey);
@@ -54,6 +57,9 @@ public class TopLevelBatteryPreferenceController extends BasePreferenceControlle
                 updateState(mPreference);
             }, true /* shortString */);
         });
+
+        mBatteryStatusFeatureProvider = FeatureFactory.getFactory(context)
+                .getBatteryStatusFeatureProvider(context);
     }
 
     @Override
@@ -80,24 +86,40 @@ public class TopLevelBatteryPreferenceController extends BasePreferenceControlle
 
     @Override
     public CharSequence getSummary() {
+        return getSummary(true /* batteryStatusUpdate */);
+    }
+
+    private CharSequence getSummary(boolean batteryStatusUpdate) {
         // Display help message if battery is not present.
         if (!mIsBatteryPresent) {
             return mContext.getText(R.string.battery_missing_message);
         }
-        return getDashboardLabel(mContext, mBatteryInfo);
+        return getDashboardLabel(mContext, mBatteryInfo, batteryStatusUpdate);
     }
 
-    static CharSequence getDashboardLabel(Context context, BatteryInfo info) {
+    protected CharSequence getDashboardLabel(Context context, BatteryInfo info,
+            boolean batteryStatusUpdate) {
         if (info == null || context == null) {
             return null;
         }
+
+        if (batteryStatusUpdate) {
+            if (!mBatteryStatusFeatureProvider.triggerBatteryStatusUpdate(this, info)) {
+                mBatteryStatusLabel = null; // will generateLabel()
+            }
+        }
+
+        return (mBatteryStatusLabel == null) ? generateLabel(info) : mBatteryStatusLabel;
+    }
+
+    private CharSequence generateLabel(BatteryInfo info) {
         CharSequence label;
         if (!info.discharging && info.chargeLabel != null) {
-            label = info.chargeLabel;
+            return info.chargeLabel;
         } else if (info.remainingLabel == null) {
-            label = info.batteryPercentString;
+            return info.batteryPercentString;
         } else {
-            label = context.getString(R.string.power_remaining_settings_home_page,
+            return mContext.getString(R.string.power_remaining_settings_home_page,
                     info.batteryPercentString,
                     info.remainingLabel);
         }
@@ -106,5 +128,20 @@ public class TopLevelBatteryPreferenceController extends BasePreferenceControlle
  	if (label.toString().contains("%"))
 	        spannable.setSpan(new ForegroundColorSpan(Utils.getColorAttrDefaultColor(context, android.R.attr.colorAccent)), 0, label.toString().indexOf("%")+1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         return spannable;
+    }
+
+    /**
+     * Callback which receives text for the label.
+     */
+    public void updateBatteryStatus(String label, BatteryInfo info) {
+        mBatteryStatusLabel = label; // Null if adaptive charging is not active
+
+        if (mPreference != null) {
+            // Do not triggerBatteryStatusUpdate(), otherwise there will be an infinite loop
+            final CharSequence summary = getSummary(false /* batteryStatusUpdate */);
+            if (summary != null) {
+                mPreference.setSummary(summary);
+            }
+        }
     }
 }
