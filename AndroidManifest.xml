@@ -107,6 +107,8 @@
     <uses-permission android:name="android.permission.READ_DREAM_STATE" />
     <uses-permission android:name="android.permission.READ_DREAM_SUPPRESSION" />
 
+    <protected-broadcast android:name="com.android.systemui.doze.pulse" />
+
     <!-- LineageHardware -->
     <uses-permission android:name="lineageos.permission.HARDWARE_ABSTRACTION_ACCESS" />
 
@@ -3495,7 +3497,15 @@
                 <action android:name="android.intent.action.GAMING_MODE_TURN_ON" />
             </intent-filter>
         </receiver>
-		
+	<receiver android:name="com.octavi.lab.fragments.OctaviBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+               <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.octavi.lab.fragments.OctaviAmbientService"
+                android:permission="OctaviAmbientService">
+        </service>	
 	<!-- Face unlock -->
         <activity android:name="com.android.settings.custom.biometrics.face.FaceEnrollActivity"
             android:permission="com.android.settings.FACE_UNLOCK"
