@@ -370,4 +370,12 @@
     <string name="back_swipe_extended_title">Extended swipe action</string>
     <string name="back_swipe_extended_summary">Trigger action on wider swipe (more than half of display size), or a L swipe (vertically longer enough)</string>
 
+    <!-- categories -->
+    <string name="display_screen_category">Screen</string>
+    <string name="display_customisation_title">Display Customisation</string>
+    <string name="display_wake_title">Wake Options</string>
+    <string name="display_brightness_title">Brightness Options</string>
+    <string name="volume_adjustment_category_title">Volume Adjustments</string>
+    <string name="ringtone_category_title">Ringtone</string>
+    <string name="vibrations_category_title">Vibrations and Silence</string>
 </resources>

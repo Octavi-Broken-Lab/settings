@@ -110,8 +110,7 @@
 
     <PreferenceCategory
         android:order="40"
-        android:key="security_settings_device_admin_category"
-        android:layout="@layout/preference_category_no_label">
+        android:key="security_settings_device_admin_category">
 
         <Preference
             android:key="manage_device_admin"
