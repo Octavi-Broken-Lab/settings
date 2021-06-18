@@ -26,6 +26,12 @@
         android:persistent="false"
         android:title="@string/user_installed_services_category_title"/>
 
+    <PreferenceCategory
+        settings:allowDividerBelow="false"
+        android:key="screen_reader_category"
+        android:persistent="false"
+        android:title="@string/screen_reader_category_title">
+
         <Preference
             android:fragment="com.android.settings.tts.TextToSpeechSettings"
             android:key="tts_settings_preference"
@@ -33,6 +39,8 @@
             android:title="@string/tts_settings_title"
             settings:iconSpaceReserved="false"         
             settings:controller="com.android.settings.language.TtsPreferenceController"/>
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="display_category"
