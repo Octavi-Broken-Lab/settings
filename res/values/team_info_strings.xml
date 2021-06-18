@@ -31,6 +31,60 @@
     <string name="dev_6">Biilou &amp; Audrey</string>
     <string name="dev6_description">Project Moderator</string>
 
-    <string name="dev_7">Rahul Mishra</string>
-    <string name="dev7_description">Redmi Note 5 Pro/nWhyred</string>
+    <string name="device_alioth">Sukeerat Goindi</string>
+    <string name="device_alioth_description">Xiaomi Poco F3 / Xiaomi Mi 11X / Redmi K40 \nAlioth</string>
+
+    <string name="device_fajita">Susanoo</string>
+    <string name="device_fajita_description">OnePlus 6T\nFajita</string>
+
+    <string name="device_grus">RDS_07</string>
+    <string name="device_grus_description">Xiaomi Mi 9 SE\nGrus</string>
+	
+    <string name="device_miatoll">itsXRP</string>
+    <string name="device_miatoll_description">MIATOLL</string>
+	
+    <string name="device_mido">Sagar Rokade</string>
+    <string name="device_mido_description">Redmi Note 4\nMido</string>
+
+    <string name="device_oneplus3">Royal</string>
+    <string name="device_oneplus3_description">Oneplus 3/t \noneplus3</string>
+
+    <string name="device_beryllium">Rucio Thomas</string>
+    <string name="device_beryllium_description">Poco F1\nBeryllium</string>
+
+    <string name="device_phoenix">Redcliff</string>
+    <string name="device_phoenix_description">Poco X2\nPhoenix</string>
+	
+    <string name="device_raphael">Naveen Johnson</string>
+    <string name="device_raphael_description">Redmi K20 Pro / Mi 9T Pro</string>
+
+    <string name="device_RMX1831">Aakash_Panchal</string>
+    <string name="device_RMX1831_description">Realme U1</string>
+	
+    <string name="device_RMX2001">Sharan Pai</string>
+    <string name="device_RMX2001_description">Realme 6\nRMX2001</string>
+
+    <string name="device_sakura">Geo Emmanuel</string>
+    <string name="device_sakura_description">Redmi 6 Pro\nSakura</string>
+	
+    <string name="device_surya">Tushar Bharti</string>
+    <string name="device_surya_description">Poco X3\nSurya/Karna</string>
+	
+    <string name="device_tissot">Reharsh</string>
+    <string name="device_tissot_description">Mi A1</string>
+	
+    <string name="device_tucana">Erik Drozina</string>
+    <string name="device_tucana_description">Xiaomi Mi Note 10\nTucana</string>
+	
+    <string name="device_violet">K A R T H I K</string>
+    <string name="device_violet_description">Redmi Note 7 Pro\nViolet</string>
+	
+    <string name="device_whyred">Rahul Mishra</string>
+    <string name="device_whyred_description">Redmi Note 5 Pro\nWhyred</string>
+
+    <string name="device_ysl">Tushar Bharti</string>
+    <string name="device_ysl_description">Redmi S2/Y2\nysl</string>
+	
+    <string name="device_Z01R">Ayan</string>
+    <string name="device_Z01R_description">Asus 5Z\nZ01R</string>
 </resources>

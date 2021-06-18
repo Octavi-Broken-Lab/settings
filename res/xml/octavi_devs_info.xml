@@ -95,13 +95,140 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             android:key="maintainer"
             android:title="@string/maintainers_header" >
 
-        <Preference
-            android:title="@string/dev_7"
-            android:summary="@string/dev7_description"
-            android:icon="@drawable/ic_devs_phone">
+       <Preference
+            android:title="@string/device_Z01R"
+            android:summary="@string/device_Z01R_description">
         <intent
             android:action="android.intent.action.VIEW"
-            android:data="http://forum.xda-developers.com/member.php?u=7060642" />
+            android:data="https://t.me/ayanm09" />
+        </Preference>
+
+        <Preference
+            android:title="@string/device_oneplus3"
+            android:summary="@string/device_oneplus3_description">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/Royals5464" />
+        </Preference>
+
+        <Preference
+            android:title="@string/device_fajita"
+            android:summary="@string/device_fajita_description">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/Susan0o0" />
+        </Preference>
+
+        <Preference
+            android:title="@string/device_beryllium"
+            android:summary="@string/device_beryllium_description">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/RucioTozzy" />
+        </Preference>
+
+        <Preference
+            android:title="@string/device_phoenix"
+            android:summary="@string/device_phoenix_description">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/RedcliffOP" />
+        </Preference>
+
+	<Preference
+            android:title="@string/device_surya"
+            android:summary="@string/device_surya_description">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/lostark13" />
+        </Preference>
+
+        <Preference
+            android:title="@string/device_RMX2001"
+            android:summary="@string/device_RMX2001_description">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/Octavi_RMX2001" />
+        </Preference>
+		
+        <Preference
+            android:title="@string/device_sakura"
+            android:summary="@string/device_sakura_description">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/mysto_o" />
+        </Preference>
+		
+        <Preference
+            android:title="@string/device_raphael"
+            android:summary="@string/device_raphael_description">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/naveenjohnson" />
+        </Preference>
+
+        <Preference
+            android:title="@string/device_mido"
+            android:summary="@string/device_mido_description">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/Sagarrokade006" />
+        </Preference>
+		
+	<Preference
+            android:title="@string/device_whyred"
+            android:summary="@string/device_whyred_description">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/beingmishra" />
+        </Preference>
+
+	<Preference
+            android:title="@string/device_violet"
+            android:summary="@string/device_violet_description">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/karthik558" />
+        </Preference>
+
+	<Preference
+            android:title="@string/device_ysl"
+            android:summary="@string/device_ysl_description">                   
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/lostark13" />
+        </Preference>
+
+        <Preference
+            android:title="@string/device_tissot"
+            android:summary="@string/device_tissot_description">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/Reharsh" />
+        </Preference>
+
+        <Preference
+            android:title="@string/device_grus"
+            android:summary="@string/device_grus_description">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/RDS_07" />
+        </Preference>
+
+        <Preference
+            android:title="@string/device_tucana"
+            android:summary="@string/device_tucana_description">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/erikdrozina" />
+        </Preference>
+		
+        <Preference
+            android:title="@string/device_alioth"
+            android:summary="@string/device_alioth_description">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/irongfly" />
         </Preference>
 
 </PreferenceCategory>
