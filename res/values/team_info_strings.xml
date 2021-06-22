@@ -73,11 +73,23 @@
     <string name="device_tissot">Reharsh</string>
     <string name="device_tissot_description">Mi A1</string>
 	
+    <string name="device_dipper">TonyJoaca</string>
+    <string name="device_dipper_description">Mi 8</string>
+
     <string name="device_tucana">Erik Drozina</string>
     <string name="device_tucana_description">Xiaomi Mi Note 10\nTucana</string>
 	
+    <string name="device_lavender">CHRISl7</string>
+    <string name="device_lavender_description">Redmi Note 7/7s\nLavender</string>
+
     <string name="device_violet">K A R T H I K</string>
     <string name="device_violet_description">Redmi Note 7 Pro\nViolet</string>
+
+    <string name="device_ginkgo">Justine Ryan De Guia</string>
+    <string name="device_ginkgo_description">Redmi Note 8\nGinkgo</string>
+
+    <string name="device_x2">CrisBalGreece</string>
+    <string name="device_x2_description">LeEco LeMax2\nX2</string>
 	
     <string name="device_whyred">Rahul Mishra</string>
     <string name="device_whyred_description">Redmi Note 5 Pro\nWhyred</string>
@@ -87,4 +99,19 @@
 	
     <string name="device_Z01R">Ayan</string>
     <string name="device_Z01R_description">Asus 5Z\nZ01R</string>
+
+    <string name="device_excalibur">mrjarvis698</string>
+    <string name="device_excalibur_description">Xiaomi Redmi Note 9 PRO MAX\nExcalibur</string>
+
+    <string name="device_gauguin">Priyanshu Gupta</string>
+    <string name="device_gauguin_description">Redmi Note 9 Pro 5G, Mi 10i &amp; Mi 10T Lite\nGauguin</string>
+
+    <string name="device_sweet">Pratyaksh Bharadwaj</string>
+    <string name="device_sweet_description">Redmi Note 10 Pro, Redmi Note 10 Pro Max\nSweet/Sweetin</string>
+
+    <string name="device_sanders">Mayur Varde</string>
+    <string name="device_sanders_description">Moto G5S Plus\nsanders</string>
+
+    <string name="device_X00TD">Paras Dhiman</string>
+    <string name="device_X00TD_description">Asus ZenFone Max Pro M1\nsanders</string>
 </resources>
