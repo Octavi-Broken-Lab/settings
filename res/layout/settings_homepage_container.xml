@@ -97,6 +97,7 @@
                     android:textColor="?android:attr/textColorPrimary"
                     android:layout_height="wrap_content"
                     android:singleLine="true"
+		    android:maxLength="6" 
                     android:text="User"
                     android:textSize="28sp" />
             </LinearLayout>
