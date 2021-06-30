@@ -23,19 +23,22 @@
     <com.android.settings.wifi.tether.WifiTetherSsidPreference
         android:key="wifi_tether_network_name"
         android:title="@string/wifi_hotspot_name_title"
-        android:summary="@string/summary_placeholder"/>
+        android:summary="@string/summary_placeholder"
+        settings:iconSpaceReserved="false" />
 
     <ListPreference
         android:key="wifi_tether_security"
         android:title="@string/wifi_security"
         android:summary="@string/summary_placeholder"
         android:entries="@array/wifi_tether_security"
-        android:entryValues="@array/wifi_tether_security_values"/>
+        android:entryValues="@array/wifi_tether_security_values"
+        settings:iconSpaceReserved="false" />
 
     <com.android.settings.widget.ValidatedEditTextPreference
         android:key="wifi_tether_network_password"
         android:persistent="false"
-        android:title="@string/wifi_hotspot_password_title"/>
+        android:title="@string/wifi_hotspot_password_title"
+        settings:iconSpaceReserved="false" />
 
     <ListPreference
         android:key="wifi_tether_network_ap_band"

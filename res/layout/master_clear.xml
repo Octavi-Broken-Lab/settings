@@ -25,7 +25,7 @@
     android:icon="@drawable/ic_delete_accent"
     app:sucHeaderText="@string/master_clear_title">
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/master_clear_scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -132,5 +132,5 @@
             <include layout="@layout/reset_esim_checkbox"/>
 
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 </com.google.android.setupdesign.GlifLayout>
