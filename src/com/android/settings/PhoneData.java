@@ -514,6 +514,16 @@ public final class PhoneData {
 			"12MP + 5MP, 5MP",
 			R.drawable.sakura
 		));
+		//tucana
+	        data.add(new AboutPhoneData(52,
+		        "tucana",
+			"2 x 2.2 GHz, 6 x 1.8 GHz",
+			"Snapdragon 730G",
+		        "5260",
+		        "1080 x 2340, 6.47 inches",
+		        "108MP+12MP+8MP+20MP+2MP, 32MP",
+		        R.drawable.tucana
+	       ));
 }
     public static List<AboutPhoneData> getData() {
 	return data;
