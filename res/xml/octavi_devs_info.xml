@@ -109,6 +109,14 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             android:data="https://t.me/Ken_kaneki_69" />
         </Preference>
  
+	<Preference
+            android:title="@string/device_sanders"
+            android:summary="@string/device_sanders_description">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/marshmello_61" />
+        </Preference>
+
         <Preference
             android:title="@string/device_oneplus3"
             android:summary="@string/device_oneplus3_description">
@@ -133,6 +141,14 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             android:data="https://t.me/RucioTozzy" />
         </Preference>
 
+	<Preference
+            android:title="@string/device_lmi"
+            android:summary="@string/device_lmi_description">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/soumyo19" />
+        </Preference>
+
         <Preference
             android:title="@string/device_phoenix"
             android:summary="@string/device_phoenix_description">
@@ -142,12 +158,36 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         </Preference>
 
 		
-		<Preference
+	<Preference
             android:title="@string/device_surya"
             android:summary="@string/device_surya_description">
         <intent
             android:action="android.intent.action.VIEW"
             android:data="https://t.me/lostark13" />
+        </Preference>
+
+	<Preference
+            android:title="@string/device_CPH1859"
+            android:summary="@string/device_CPH1859_description">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/I_am_pronoob" />
+        </Preference>
+
+	<Preference
+            android:title="@string/device_RMX1831"
+            android:summary="@string/device_RMX1831_description">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/aakash_noob" />
+        </Preference>
+
+	<Preference
+            android:title="@string/device_RMX851"
+            android:summary="@string/device_RMX1851_description">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/V3NK4135H" />
         </Preference>
 
         <Preference
@@ -166,6 +206,14 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             android:data="https://t.me/mysto_o" />
         </Preference>
 		
+	<Preference
+            android:title="@string/device_davinci"
+            android:summary="@string/device_davinci_description">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/spkal" />
+        </Preference>
+
         <Preference
             android:title="@string/device_raphael"
             android:summary="@string/device_raphael_description">
@@ -262,6 +310,14 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             android:data="https://t.me/Reharsh" />
         </Preference>
 
+	<Preference
+            android:title="@string/device_daisy"
+            android:summary="@string/device_daisy_description">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/GitDaisy" />
+        </Preference>
+
         <Preference
             android:title="@string/device_dipper"
             android:summary="@string/device_dipper_description">
@@ -292,6 +348,14 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <intent
             android:action="android.intent.action.VIEW"
             android:data="https://t.me/irongfly" />
+        </Preference>
+
+	<Preference
+            android:title="@string/device_GSI"
+            android:summary="@string/device_GSI_description">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/yilliee" />
         </Preference>
 </PreferenceCategory>
 

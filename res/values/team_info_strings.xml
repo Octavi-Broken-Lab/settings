@@ -58,9 +58,6 @@
     <string name="device_raphael">Naveen Johnson</string>
     <string name="device_raphael_description">Redmi K20 Pro / Mi 9T Pro</string>
 
-    <string name="device_RMX1831">Aakash_Panchal</string>
-    <string name="device_RMX1831_description">Realme U1</string>
-	
     <string name="device_RMX2001">Sharan Pai</string>
     <string name="device_RMX2001_description">Realme 6\nRMX2001</string>
 
@@ -114,4 +111,25 @@
 
     <string name="device_X00TD">Paras Dhiman</string>
     <string name="device_X00TD_description">Asus ZenFone Max Pro M1\nsanders</string>
+
+    <string name="device_sweet">Pratyaksh Bharadwaj</string>
+    <string name="device_sweet_description">Redmi Note 10 Pro/Max\nsweet</string>
+
+    <string name="device_RMX1851">TheTablaster</string>
+    <string name="device_RMX1851_description">RMX1851</string>
+
+    <string name="device_GSI">Yillié</string>
+    <string name="device_GSI_description">Generic System Image\nGSI</string>
+
+    <string name="device_davinci">Spkal01</string>
+    <string name="device_davinci_description">Mi 9t/ K20\ndavinci</string>
+
+    <string name="device_RMX1831">Aakash Panchal</string>
+    <string name="device_RMX1831_description">Realme U1\nRMX1831</string>
+
+    <string name="device_CPH1859">ProNoob</string>
+    <string name="device_CPH1859_description">Realme 1\nCPH1859</string>
+
+    <string name="device_daisy">Szymon</string>
+    <string name="device_daisy_description">Xiaomi Mi A2 Lite\ndaisy</string>
 </resources>
