@@ -58,6 +58,8 @@ android_library {
         "androidx.lifecycle_lifecycle-extensions",
         "guava",
         "jsr305",
+	"jsoup-html",
+	"speed-test",
         "settings-contextual-card-protos-lite",
         "settings-log-bridge-protos-lite",
         "contextualcards",
@@ -121,4 +123,15 @@ android_library_import {
     name: "dynamic-animation",
     aars: ["libs/dynamicanimation-1.0.0.aar"],
     sdk_version: "current",
+}
+
+java_library {                                                                                                             
+    name: "jsoup-html",                                                                                        
+    srcs: ["libs/jsoup-html.jar"],                                                                                                                                  
+    installable: true,
+}
+java_library {                                                                                                                        
+    name: "speed-test",                                                                                                                                                  
+    srcs: ["libs/speed-test.jar"],                                                                           
+    installable: true,
 }

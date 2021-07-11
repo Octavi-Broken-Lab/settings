@@ -172,6 +172,16 @@
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
 
+        <receiver
+            android:name=".UpdateCheckerReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+		<action android:name="hello_ocatvi" />
+            </intent-filter>
+        </receiver>
+
         <receiver android:name=".SettingsInitialize">
             <intent-filter>
                 <action android:name="android.intent.action.USER_INITIALIZE"/>
