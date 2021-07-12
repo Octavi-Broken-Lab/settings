@@ -127,13 +127,14 @@ android_library_import {
     sdk_version: "current",
 }
 
-java_library {                                                                                                             
+java_import {                                                                                                             
     name: "jsoup-html",                                                                                        
-    srcs: ["libs/jsoup-html.jar"],                                                                                                                                  
-    installable: true,
+    jars: ["libs/jsoup-html.jar"],                                                                                                                                  
+    sdk_version: "current",
 }
-java_library {                                                                                                                        
+
+java_import {                                                                                                                        
     name: "speed-test",                                                                                                                                                  
-    srcs: ["libs/speed-test.jar"],                                                                           
-    installable: true,
+    jars: ["libs/speed-test.jar"],                                                                           
+    sdk_version: "current",
 }

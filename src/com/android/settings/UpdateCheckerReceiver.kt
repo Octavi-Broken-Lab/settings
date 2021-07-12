@@ -59,7 +59,7 @@ class UpdateCheckerReceiver : BroadcastReceiver() {
                                     // Check if device is present in official list
                                     if (it.children()
                                             .select("div > div.flex-1.truncate:containsOwn($myDevice)")
-                                            .hasText() and SystemProperties.getLong(PROP_BUILD_DATE, 0) > 0
+                                            .hasText() and (SystemProperties.getLong(PROP_BUILD_DATE, 0) > 0)
                                     ) {
                                         try {
                                             val doc =
@@ -154,7 +154,7 @@ class UpdateCheckerReceiver : BroadcastReceiver() {
             }
         }
 
-        if (Intent.ACTION_BOOT_COMPLETED == intent.action or "hello_octavi" == intent.action) {
+        if (Intent.ACTION_BOOT_COMPLETED == intent.action) {
             if (!isNetworkAvailable()) {
                 Log.d(TAG, "Network not available, scheduling new check")
                 scheduleUpdatesCheck()
