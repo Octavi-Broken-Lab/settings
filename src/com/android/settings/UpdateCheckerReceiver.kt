@@ -102,10 +102,10 @@ class UpdateCheckerReceiver : BroadcastReceiver() {
                                             }
                                         } catch (e: Exception) {
                                             e.printStackTrace()
-                                        } else {
+                                        }
+                                    } else {
                                         notificationManager.cancel(NEW_UPDATES_NOTIFICATION_ID)
                                         updateRepeatingUpdatesCheck()
-                                        }
                                     }
                                 }
                             }
