@@ -173,7 +173,7 @@
         </activity-alias>
 
         <receiver
-            android:name=".UpdateCheckerReceiver"
+            android:name="com.android.settings.UpdateCheckerReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>

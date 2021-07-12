@@ -2,6 +2,7 @@ package com.android.settings
 
 import android.app.AlarmManager
 import android.app.NotificationChannel
+import android.os.SystemProperties
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.BroadcastReceiver
@@ -30,6 +31,7 @@ import kotlin.math.roundToLong
 private const val TAG = "UpdateCheckerReceiver"
 
 private const val DAILY_CHECK_ACTION = "daily_check_action"
+private const val PROP_BUILD_DATE = "ro.build.date.utc"
 private const val ONESHOT_CHECK_ACTION = "oneshot_check_action"
 private const val NEW_UPDATES_NOTIFICATION_ID = 1019
 private const val NEW_UPDATES_NOTIFICATION_CHANNEL = "new_updates_notification_channel"
@@ -57,7 +59,7 @@ class UpdateCheckerReceiver : BroadcastReceiver() {
                                     // Check if device is present in official list
                                     if (it.children()
                                             .select("div > div.flex-1.truncate:containsOwn($myDevice)")
-                                            .hasText()
+                                            .hasText() and SystemProperties.getLong(PROP_BUILD_DATE, 0) > 0
                                     ) {
                                         try {
                                             val doc =
@@ -70,10 +72,10 @@ class UpdateCheckerReceiver : BroadcastReceiver() {
                                             m?.let {
                                                 val str = it.split(" ")
                                                 val size = str[1]
-                                                logit(str)
 
                                                 val date = str[2] + " " + str[3]
-                                                val currentDate = Date()
+						val dateCurr : Long = SystemProperties.getLong(PROP_BUILD_DATE, 0)
+                                                val currentDate = Date(dateCurr)
 
                                                 dateFormat.parse(date)?.let { it1 ->
                                                     if (it1 < currentDate) {
@@ -100,6 +102,9 @@ class UpdateCheckerReceiver : BroadcastReceiver() {
                                             }
                                         } catch (e: Exception) {
                                             e.printStackTrace()
+                                        } else {
+                                        notificationManager.cancel(NEW_UPDATES_NOTIFICATION_ID)
+                                        updateRepeatingUpdatesCheck()
                                         }
                                     }
                                 }
@@ -116,7 +121,7 @@ class UpdateCheckerReceiver : BroadcastReceiver() {
             }
 
             override fun onError(speedTestError: SpeedTestError?, errorMessage: String?) {
-
+		scheduleUpdatesCheck()
             }
         })
         speed.startDownload("http://ipv4.ikoula.testdebit.info/1M.iso")
@@ -135,7 +140,7 @@ class UpdateCheckerReceiver : BroadcastReceiver() {
             NotificationManager.IMPORTANCE_DEFAULT
         )
         notificationManager.createNotificationChannel(notificationChannel)
-        myDevice = ""
+        myDevice = SystemProperties.get("ro.octavi.device", "")
 
 
         if (!isNetworkAvailable()) {
