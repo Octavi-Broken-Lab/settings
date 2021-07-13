@@ -96,7 +96,7 @@ public class OosAboutPreference extends Preference implements View.OnTouchListen
         View root = holder.itemView;
         int index = findIndex(SystemProperties.get("ro.product.device"));
 
-        TextView display = null, cpu = null, battery = null, soc = null, cam = null,
+        TextView display = null, cpu = null, battery = null, soc = null, cam = null, img = null,
                 device, deviceSec, octaviVer, octaviStatus,
                 kernel, maintainer, rom;
 
@@ -113,12 +113,12 @@ public class OosAboutPreference extends Preference implements View.OnTouchListen
         octaviVer = root.findViewById(R.id.octaviVer);
 	octaviStatus = root.findViewById(R.id.octaviStatus);
 
-        TextView[] var = {display, cpu, battery, soc, cam};
+        TextView[] var = {display, cpu, battery, soc, cam, img};
         int[] ids = {R.id.display_about, R.id.cpu_about, R.id.battery_about, R.id.soc_about, R.id.camera_about, R.id.device_about};
         final String[] texts = {
                 data.get(index).getDisplay(), data.get(index).getCpu(),
                 data.get(index).getBattery(), data.get(index).getSoc(),
-                data.get(index).getCamera()),
+                data.get(index).getCamera(), String.valueOf(data.get(index).getImg()),
         };
 
         for (int i = 0; i < var.length; i++) {
