@@ -178,7 +178,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
-		<action android:name="hello_ocatvi" />
+		<action android:name="RECHECK_UPDATE_OCTAVI" />
             </intent-filter>
         </receiver>
 

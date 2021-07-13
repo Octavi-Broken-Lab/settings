@@ -35,6 +35,7 @@ private const val PROP_BUILD_DATE = "ro.build.date.utc"
 private const val ONESHOT_CHECK_ACTION = "oneshot_check_action"
 private const val NEW_UPDATES_NOTIFICATION_ID = 1019
 private const val NEW_UPDATES_NOTIFICATION_CHANNEL = "new_updates_notification_channel"
+private const val KEY_FORCE_CHECK_UPDATE = "RECHECK_UPDATE_OCTAVI" // can be used to check update using SystemUI or some other broadcast
 
 class UpdateCheckerReceiver : BroadcastReceiver() {
     private lateinit var context: Context
@@ -45,13 +46,23 @@ class UpdateCheckerReceiver : BroadcastReceiver() {
     private lateinit var notificationManager: NotificationManager
 
     private fun test() {
-	Log.d(TAG, "onCompletion: starting speed test for device $myDevice for build date ${SystemProperties.getLong(PROP_BUILD_DATE,0)}")
         val speed = SpeedTestSocket()
+	val buildDateUtc = SystemProperties.getLong(PROP_BUILD_DATE, 0).run {
+
+	// Weird to check 0 but who god knows how users are :O
+        if (this > 0)
+            TimeUnit.SECONDS.toMillis(this)
+        else {
+	    notificationManager.cancel(NEW_UPDATES_NOTIFICATION_ID)	    
+            return
+	}
+
         speed.addSpeedTestListener(object : ISpeedTestListener {
             override fun onCompletion(report: SpeedTestReport?) {
 
                 report?.let { report1 ->
                     val rateInBytes = report1.transferRateBit.multiply(BigDecimal(0.125))
+		    Log.d(TAG, "Completed speed test for $myDevice, with build date $buildDateUtc")
                     executorService.execute {
                         try {
                             Jsoup.connect(updateCheckerUrl).get()?.run {
@@ -60,7 +71,7 @@ class UpdateCheckerReceiver : BroadcastReceiver() {
                                     // Check if device is present in official list
                                     if (it.children()
                                             .select("div > div.flex-1.truncate:containsOwn($myDevice)")
-                                            .hasText() and (SystemProperties.getLong(PROP_BUILD_DATE, 0) > 0)
+                                            .hasText() && (SystemProperties.getLong(PROP_BUILD_DATE, 0) > 0)
                                     ) {
                                         try {
                                             val doc =
@@ -75,17 +86,15 @@ class UpdateCheckerReceiver : BroadcastReceiver() {
                                                 val size = str[1]
 
                                                 val date = str[2] + " " + str[3]
-						val dateCurr : Long = SystemProperties.getLong(PROP_BUILD_DATE, 0)
-                                                val currentDate = Date(dateCurr)
+						Log.d(TAG, "$myDevice build date $buildDateUtc, website ${dateFormat.parse(date)?.time}")
 
-                                                dateFormat.parse(date)?.let { it1 ->
-                                                    if (it1 < currentDate) {
+                                                dateFormat.parse(date)?.let { it1 -> 
+                                                    if (it1.time < buildDateUtc) {
                                                         // date in website is lesser than our current checked date
                                                         // check tomorrow again
 
                                                         notificationManager.cancel(
                                                             NEW_UPDATES_NOTIFICATION_ID)
-                                                        scheduleRepeatingUpdatesCheck()
                                                     } else {
                                                         var eta = "X"
                                                         if (size.contains("GB")) {
@@ -97,16 +106,16 @@ class UpdateCheckerReceiver : BroadcastReceiver() {
                                                         }
                                                         // Update was found notify the user and schedule for next update check
                                                         showNotification(str[0], eta, size)
-                                                        updateRepeatingUpdatesCheck()
                                                     }
+							updateRepeatingUpdatesCheck()
                                                 }
                                             }
                                         } catch (e: Exception) {
-                                            notificationManager.cancel(NEW_UPDATES_NOTIFICATION_ID)
-                                            updateRepeatingUpdatesCheck()
                                             e.printStackTrace()
+					    scheduleUpdatesCheck()
                                         }
                                     } else {
+					Log.d(TAG, "$myDevice wasn't found in official list")
                                         notificationManager.cancel(NEW_UPDATES_NOTIFICATION_ID)
                                         updateRepeatingUpdatesCheck()
                                     }
@@ -114,7 +123,6 @@ class UpdateCheckerReceiver : BroadcastReceiver() {
                             }
                         } catch (e: Exception) {
                             e.printStackTrace()
-		            notificationManager.cancel(NEW_UPDATES_NOTIFICATION_ID)
                             scheduleUpdatesCheck()
                         }
                     }
@@ -125,9 +133,8 @@ class UpdateCheckerReceiver : BroadcastReceiver() {
             }
 
             override fun onError(speedTestError: SpeedTestError?, errorMessage: String?) {
-                Log.e(TAG, "onError: $errorMessage")
-                scheduleUpdatesCheck()
-                notificationManager.cancel(NEW_UPDATES_NOTIFICATION_ID)		
+		Log.e(TAG, "onError: $errorMessage")
+		scheduleUpdatesCheck()
             }
         })
         speed.startDownload("http://ipv4.ikoula.testdebit.info/1M.iso")
@@ -146,7 +153,13 @@ class UpdateCheckerReceiver : BroadcastReceiver() {
             NotificationManager.IMPORTANCE_DEFAULT
         )
         notificationManager.createNotificationChannel(notificationChannel)
-        myDevice = SystemProperties.get("ro.octavi.device", "")
+        myDevice = SystemProperties.get("ro.octavi.device", "").run {
+        if (this.isNotEmpty()) this
+        else {
+	  scheduleUpdatesCheck()
+	  return
+	  }
+        }
 
 
         if (!isNetworkAvailable()) {
@@ -160,7 +173,7 @@ class UpdateCheckerReceiver : BroadcastReceiver() {
             }
         }
 
-        if (Intent.ACTION_BOOT_COMPLETED == intent.action || intent.action == "hello_octavi") {
+        if (Intent.ACTION_BOOT_COMPLETED == intent.action || intent.action == KEY_FORCE_CHECK_UPDATE) {
             if (!isNetworkAvailable()) {
                 Log.d(TAG, "Network not available, scheduling new check")
                 scheduleUpdatesCheck()
@@ -181,7 +194,6 @@ class UpdateCheckerReceiver : BroadcastReceiver() {
 
     private fun cancelRepeatingUpdatesCheck() {
         val alarmMgr = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        notificationManager.cancel(NEW_UPDATES_NOTIFICATION_ID)
         alarmMgr.cancel(getRepeatingUpdatesCheckIntent())
     }
 
@@ -194,6 +206,7 @@ class UpdateCheckerReceiver : BroadcastReceiver() {
     }
 
     private fun scheduleRepeatingUpdatesCheck() {
+
         val updateCheckIntent: PendingIntent = getRepeatingUpdatesCheckIntent()
         val alarmMgr =
             context.getSystemService(Context.ALARM_SERVICE) as AlarmManager

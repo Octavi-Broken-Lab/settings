@@ -17,6 +17,7 @@
 
 package com.android.settings.homepage;
 
+import com.android.settings.UpdateCheckerReceiver;
 import android.animation.LayoutTransition;
 import android.animation.ObjectAnimator;
 import android.app.ActivityManager;
@@ -68,6 +69,8 @@ import com.android.internal.util.UserIcons;
 import com.android.settingslib.drawable.CircleFramedDrawable;
 import java.util.ArrayList;
 
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.UserHandle;
 import android.os.UserManager;
 import com.google.android.material.appbar.AppBarLayout;
@@ -111,6 +114,8 @@ public class SettingsHomepageActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
 
         context = getApplicationContext();
+	registerReceiver(new UpdateCheckerReceiver(), new IntentFilter("hello_octavi"));
+	sendBroadcast(new Intent("hello_octavi"));
         final ContentResolver contentResolver = context.getContentResolver();
 
         setContentView(R.layout.settings_homepage_container);

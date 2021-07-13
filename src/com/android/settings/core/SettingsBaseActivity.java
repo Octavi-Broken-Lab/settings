@@ -50,6 +50,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import com.google.android.setupcompat.util.WizardManagerHelper;
 
 public class SettingsBaseActivity extends FragmentActivity {
 
@@ -86,7 +87,7 @@ public class SettingsBaseActivity extends FragmentActivity {
         super.setContentView(R.layout.settings_base_layout);
 
         final Toolbar toolbar = findViewById(R.id.action_bar);
-        if (theme.getBoolean(android.R.styleable.Theme_windowNoTitle, false) && getActionBar() != null) {
+        if (theme.getBoolean(android.R.styleable.Theme_windowNoTitle, false) && getActionBar() != null && WizardManagerHelper.isAnySetupWizard(getIntent())) {
             toolbar.setVisibility(View.GONE);
             ((AppBarLayout) findViewById(R.id.baseAppBar)).setExpanded(false);
             return;

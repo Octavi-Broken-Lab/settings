@@ -29,7 +29,6 @@ android_library {
 
     srcs: ["src/**/*.java", 
 	   "src/**/*.kt",
-	   "src/*/*/s*/*.kt",
            "OctaviLab/src/**/*.java",
            "OctaviLab/src/**/*.kt",
     ],
@@ -62,6 +61,7 @@ android_library {
         "jsr305",
 	"jsoup-html",
 	"speed-test",
+	"http-endec",
         "settings-contextual-card-protos-lite",
         "settings-log-bridge-protos-lite",
         "contextualcards",
@@ -136,5 +136,11 @@ java_import {
 java_import {                                                                                                                        
     name: "speed-test",                                                                                                                                                  
     jars: ["libs/speed-test.jar"],                                                                           
+    sdk_version: "current",
+}
+
+java_import {
+    name: "http-endec",
+    jars: ["libs/http-endec-1.04.jar"],
     sdk_version: "current",
 }
