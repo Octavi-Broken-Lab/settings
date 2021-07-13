@@ -45,6 +45,7 @@ class UpdateCheckerReceiver : BroadcastReceiver() {
     private lateinit var notificationManager: NotificationManager
 
     private fun test() {
+	Log.d(TAG, "onCompletion: starting speed test for device $myDevice for build date ${SystemProperties.getLong(PROP_BUILD_DATE,0)}")
         val speed = SpeedTestSocket()
         speed.addSpeedTestListener(object : ISpeedTestListener {
             override fun onCompletion(report: SpeedTestReport?) {
@@ -101,6 +102,8 @@ class UpdateCheckerReceiver : BroadcastReceiver() {
                                                 }
                                             }
                                         } catch (e: Exception) {
+                                            notificationManager.cancel(NEW_UPDATES_NOTIFICATION_ID)
+                                            updateRepeatingUpdatesCheck()
                                             e.printStackTrace()
                                         }
                                     } else {
@@ -111,6 +114,7 @@ class UpdateCheckerReceiver : BroadcastReceiver() {
                             }
                         } catch (e: Exception) {
                             e.printStackTrace()
+		            notificationManager.cancel(NEW_UPDATES_NOTIFICATION_ID)
                             scheduleUpdatesCheck()
                         }
                     }
@@ -121,7 +125,9 @@ class UpdateCheckerReceiver : BroadcastReceiver() {
             }
 
             override fun onError(speedTestError: SpeedTestError?, errorMessage: String?) {
-		scheduleUpdatesCheck()
+                Log.e(TAG, "onError: $errorMessage")
+                scheduleUpdatesCheck()
+                notificationManager.cancel(NEW_UPDATES_NOTIFICATION_ID)		
             }
         })
         speed.startDownload("http://ipv4.ikoula.testdebit.info/1M.iso")
@@ -154,7 +160,7 @@ class UpdateCheckerReceiver : BroadcastReceiver() {
             }
         }
 
-        if (Intent.ACTION_BOOT_COMPLETED == intent.action) {
+        if (Intent.ACTION_BOOT_COMPLETED == intent.action || intent.action == "hello_octavi") {
             if (!isNetworkAvailable()) {
                 Log.d(TAG, "Network not available, scheduling new check")
                 scheduleUpdatesCheck()
@@ -188,7 +194,6 @@ class UpdateCheckerReceiver : BroadcastReceiver() {
     }
 
     private fun scheduleRepeatingUpdatesCheck() {
-
         val updateCheckIntent: PendingIntent = getRepeatingUpdatesCheckIntent()
         val alarmMgr =
             context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
