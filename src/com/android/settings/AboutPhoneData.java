@@ -8,7 +8,6 @@ public class AboutPhoneData {
     String battery;
     String display;
     String camera;
-    int img;
 
     public AboutPhoneData(int index) {
         this.index = index;
@@ -22,7 +21,6 @@ public class AboutPhoneData {
         this.battery = battery;
         this.display = display;
         this.camera = camera;
-        this.img = img;
     }
 
     public int getIndex() {
@@ -53,7 +51,4 @@ public class AboutPhoneData {
         return getIndex() == 0 ? "Unknown" : camera;
     }
 
-    public int getImg() {
-        return getIndex() == 0 ? 0 : img;
-    }
 }
