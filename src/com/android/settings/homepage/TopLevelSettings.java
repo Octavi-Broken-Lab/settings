@@ -203,6 +203,9 @@ public class TopLevelSettings extends DashboardFragment implements
             if (key.equals("top_level_usercard")){
                 preference.setLayoutResource(R.layout.usercard);
             }
+            if (key.equals("top_level_wellbeing")){
+                preference.setLayoutResource(R.layout.card_view_pref_top);
+            }
             if (key.equals("dashboard_tile_pref_com.google.android.apps.wellbeing.settings.TopLevelSettingsActivity")){
                 preference.setLayoutResource(R.layout.card_view_pref_top);
             }
