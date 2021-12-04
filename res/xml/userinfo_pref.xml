@@ -19,6 +19,26 @@
     <com.android.settingslib.widget.LayoutPreference
         android:layout="@layout/user_info_frag"
         android:key="user_header"
+	android:selectable="false"
         android:order="10" />
+
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="multiuser"
+        android:layout="@layout/multiuser"
+        android:fragment="com.android.settings.users.UserSettings"
+        android:order="30" />
+
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="accounts"
+        android:icon="@drawable/manage_account"
+        android:layout="@layout/manage_account"
+        android:fragment="com.android.settings.accounts.AccountDashboardFragment"
+        android:order="40" />
+
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="emergency"
+        android:layout="@layout/emergency"
+        android:fragment="com.android.settings.emergency.EmergencyDashboardFragment"
+        android:order="50" />
 
 </PreferenceScreen>

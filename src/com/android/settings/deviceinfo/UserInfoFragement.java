@@ -17,6 +17,8 @@
 
 package com.android.settings.deviceinfo;
 
+import static android.app.Activity.RESULT_OK;
+
 import com.android.internal.logging.nano.MetricsProto;
 
 import android.view.View;
@@ -32,6 +34,7 @@ import android.content.pm.ActivityInfo;
 import android.content.pm.UserInfo;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.UserHandle;
@@ -39,8 +42,9 @@ import android.os.UserManager;
 import android.view.Surface;
 import com.android.settings.R;
 import com.android.settings.Utils;
-
+import android.net.Uri;
 import com.android.internal.util.UserIcons;
+import com.android.settings.core.SettingsBaseActivity;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settingslib.drawable.CircleFramedDrawable;
 import com.android.settings.widget.EntityHeaderController;
@@ -55,6 +59,7 @@ import android.content.res.Resources;
 import android.content.ComponentName;
 import android.widget.ImageView;
 import android.widget.TextView;
+import java.io.FileNotFoundException;
 
 public class UserInfoFragement extends SettingsPreferenceFragment {
 
@@ -65,10 +70,11 @@ public class UserInfoFragement extends SettingsPreferenceFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         addPreferencesFromResource(R.xml.userinfo_pref);
-
+	context = getActivity();
+	((SettingsBaseActivity)getActivity()).mAppBarLayout.setExpanded(false);
     }
+
 
     @Override
     public void onStart() {
@@ -103,15 +109,50 @@ public class UserInfoFragement extends SettingsPreferenceFragment {
           return account;
     }
 
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode,Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (resultCode == RESULT_OK && data != null && data.getData() != null && requestCode == 100) {
+            String path = data.getData().toString();
+            try {
+                iv.setImageBitmap(BitmapFactory.decodeStream(getContentResolver().openInputStream(Uri.parse(path))));
+            } catch (FileNotFoundException e) {
+                iv.setImageResource(R.drawable.user);
+            }
+            context.getSharedPreferences("image_path", Context.MODE_PRIVATE).edit().putString("image_path", path).commit();
+        }
+    }
+
+    private ImageView iv;
+
     private void onUserCard() {
         final LayoutPreference headerPreference =
                 (LayoutPreference) getPreferenceScreen().findPreference(KEY_USER_CARD);
         final View userCard = headerPreference.findViewById(R.id.entity_header);
-        final TextView useremail = headerPreference.findViewById(R.id.summary);
+        final TextView useremail = headerPreference.findViewById(R.id.email);
         String email = getEmail(getContext());
         useremail.setText(email!=null?email:"Add a Google account to show email");
+	iv = headerPreference.findViewById(R.id.image_holder);
+        Intent i = new Intent(Intent.ACTION_GET_CONTENT);
+        i.setType("image/*");
+	iv.setOnClickListener(v -> {
+		startActivityForResult(i, 100);
+	});
+
         final Activity context = getActivity();
         final Bundle bundle = getArguments();
+
+        String path = context.getSharedPreferences("image_path", Context.MODE_PRIVATE).getString("image_path", "");
+        if (!path.isEmpty()) {
+            try {
+                iv.setImageBitmap(BitmapFactory.decodeStream(getContentResolver().openInputStream(Uri.parse(path))));
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+
         final EntityHeaderController controller = EntityHeaderController
                 .newInstance(context, this, userCard)
                 .setRecyclerView(getListView(), getSettingsLifecycle())
@@ -127,6 +168,6 @@ public class UserInfoFragement extends SettingsPreferenceFragment {
             controller.setLabel(info.name);
         }
 
-        controller.done(context, true /* rebindActions */);
+        controller.done(context, true);
     }
 }

@@ -123,4 +123,8 @@
     <!-- Whether the dots will be drawn when using the lockscreen pattern -->
     <string name="lockpattern_settings_enable_dots_title">Show pattern dots</string>
 
+    <!-- Owner info -->
+    <string name="about_user">Owner Info</string>
+    <string name="userpref_summary">Personal Information about current user</string>
+    <string name="user_title">User Info</string>
 </resources>
