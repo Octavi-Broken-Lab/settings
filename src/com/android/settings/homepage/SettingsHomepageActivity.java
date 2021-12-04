@@ -105,7 +105,7 @@ public class SettingsHomepageActivity extends FragmentActivity implements
 	AppBarLayout appBarLayout = root.findViewById(R.id.appbar);
         appBarLayout.addOnOffsetChangedListener((appBarLayout1, i) -> {
 
-            float abs = ((float) Math.abs(i)) / ((float) appBarLayout1.getTotalScrollRange());
+	    float abs = ((float) Math.abs(i)) / ((float) appBarLayout1.getTotalScrollRange());
             float f2 = 1.0f - abs;
             //greeter text
             if (f2 == 1.0)
